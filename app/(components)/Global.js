@@ -1,0 +1,9 @@
+export const color1 = '#bf1e2e'; //reddish brown
+export const color2 = '#f7941d';
+export const color3 = '#1976d2'; //default blue
+export const color4 = '#f7941d'; // orange
+export const color = color3;
+export const HomeDoctorList = color1;
+export const DoctorDetails = color1;
+export const Font = 'montserrat';
+export const HName = 'SCI/';
