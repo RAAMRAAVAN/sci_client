@@ -93,7 +93,7 @@ export async function fetchDoctors2(payload = { ccode: "SCI" }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ccode: "SCI " }),
-      next: { revalidate: 60 },
+      next: { revalidate: 900 },
       // cache: "no-store",
     });
 
@@ -115,7 +115,7 @@ export async function fetchAccomplishments2() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ccode: "SCI " }),
-      next: { revalidate: 60 },
+      next: { revalidate: 900 },
       // cache: "no-store",
     });
 
@@ -445,7 +445,7 @@ export async function fetchNewsAndEvents2() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ccode: "SCI " }),
-      next: { revalidate: 60 },
+      next: { revalidate: 900 },
       // cache: "no-store",
     });
 
