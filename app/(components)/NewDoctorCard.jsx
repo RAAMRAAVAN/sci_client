@@ -76,18 +76,18 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
       >
         <Box display="flex" flexDirection="column" width="100%">
           <Box display="flex" width="100%" justifyContent="space-between">
+            
             <Box
               display="flex"
-              width="120px"
-              height="120px"
+              width="100px"
+              height="100px"
               overflow="hidden"
               borderRadius="50%"
-              padding="5px"
+              padding="1px"
             >
               <Avatar
                 src={preloadedImage || "/Doctors/doctor_image.webp"}
                 alt={name}
-                loading="lazy"
                 sx={{
                   width: "100%",
                   height: "100%",
@@ -97,13 +97,13 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
               />
             </Box>
 
-            <Box display="flex" width="60%" flexDirection="column">
+            <Box display="flex" width="65%" flexDirection="column">
               <Typography
                 fontWeight="bold"
                 variant="h6"
                 overflow="hidden"
-                textOverflow="ellipsis"
-                whiteSpace="nowrap"
+                // textOverflow="ellipsis"
+                // whiteSpace="nowrap"
               >
                 {name}
               </Typography>
@@ -125,6 +125,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                 <Typography noWrap fontSize={13}>
                   {department || ""}
                 </Typography>
+
                 <Link
                   href={`/consultants/doctor_details`}
                   passHref
@@ -144,6 +145,9 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                   </Typography>
                 </Link>
               </Box>
+
+              
+
             </Box>
           </Box>
           <div style={{ padding: "10px 0" }}>
@@ -172,8 +176,8 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                   sx: { backgroundColor: HomeDoctorList, bottom: "1px", height: "2px" },
                 }}
               >
-                <Tab label="Specialization and Expertise" value="1" sx={{ fontSize: "12px" }} />
-                <Tab label="Qualification" value="2" sx={{ fontSize: "12px" }} />
+                <Tab label="Specialization and Expertise" value="1" sx={{ fontSize: "12px",px: 1,py: 0.5,textTransform: "none"}}/>
+                <Tab label="Qualification" value="2" sx={{ fontSize: "12px",px: 1,py: 0.5,textTransform: "none"}} />
               </TabList>
             </Box>
 

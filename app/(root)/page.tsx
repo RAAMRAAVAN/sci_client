@@ -12,11 +12,15 @@ const Facilities = lazy(() => import("../(components)/Facilities/FacilityData"))
 const AccomplishmentsMain = lazy(() => import("../(components)/Accomplishments/AccomplichmentsMain"));
 const WhatsHappening = lazy(() => import("../(components)/WhatsHappening"));
 const OurHospitals = lazy(() => import("../(components)/Hospitals/OurHospitalsPage"));
+const VideoGrid = lazy(() => import("../(components)/Videos/VideoGrid"));
+import TextCarousel from "../(components)/TextCarousel";
 
 // ✅ Server Component
 export default async function Home() {
   const homeContent = HomeContent;
   return (
+    <>
+    <TextCarousel />
     <Box
       display="flex"
       flexDirection="column"
@@ -86,6 +90,18 @@ export default async function Home() {
         <WhatsHappening />
       </Suspense>
 
+      <Box display='flex' width='100%' justifyContent='center'>
+        <Box display='flex' width='90%' flexDirection='column' marginTop={2}>
+          <Typography  variant="h5" fontWeight="bold" marginBottom={3}>
+            Our Stories
+          </Typography>
+          <Suspense>
+            <VideoGrid />
+          </Suspense>
+        </Box>
+      </Box>
+      
+      
       {/* Our Hospitals */}
       <Box display='flex' width='100%' justifyContent='center'>
         <Box display='flex' width='90%' flexDirection='column'>
@@ -98,5 +114,6 @@ export default async function Home() {
         </Box>
       </Box>
     </Box>
+    </>
   );
 }

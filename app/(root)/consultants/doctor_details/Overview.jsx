@@ -1,6 +1,6 @@
 'use client';
 import { ExpandCircleDownRounded, LocationCity, Share } from "@mui/icons-material";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, createTheme, Grid, Typography } from "@mui/material";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
@@ -14,6 +14,8 @@ import '@/lib/custom-dayjs-locale';
 import DINCModal from "@/app/(components)/DoctorCard/DINCModal";
 import { useSelector } from "react-redux";
 import { selectDoctorById, selectDoctorsAvailability } from "@/redux/features/doctorSlice";
+
+const today = dayjs();
 
 // Share Function
 const handleShare = async () => {
@@ -41,6 +43,8 @@ const Overview = () => {
     const [loading, setLoading] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
 
+    const [staticOPD, setStaticOPD] = useState([1,2,3,4,5,6]);
+
     // useEffect(() => {
     //     const timer = setTimeout(() => setLoading(false), 0);
     //     return () => clearTimeout(timer);
@@ -51,6 +55,22 @@ const Overview = () => {
         // const timer = setTimeout(() => setLoading(false), 1000);
         // return () => clearTimeout(timer);
     }, []);
+
+    const theme = createTheme({
+        components: {
+          MuiPickersDay: {
+            styleOverrides: {
+              root: {
+                '&.Mui-disabled': {
+                  color: '#ccc', // Custom color
+                  backgroundColor:'#FFF'
+                },
+              },
+            },
+          },
+        },
+      });
+
 
     if (loading || !DoctorsAvailability) return <Loader />;
 
@@ -110,76 +130,70 @@ const Overview = () => {
                 {/* Calendar Section */}
 
                 <Grid item md={4} xs={12} display="flex" justifyContent="center" alignItems="center">
-                    {doctorDetails.opd_days ? (doctorDetails.opd_days.length !== 0 ? <Box backgroundColor='white' sx={{ borderRadius: '20px 20px 0px 0px' }}>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DateCalendar
-                                value={value}
-                                onChange={(newValue) => setValue(newValue)}
-                                minDate={today}
-                                showDaysOutsideCurrentMonth={true}
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    width: '350px',
-                                    height: '500px',  // ✅ Increased height here
-                                    // border: '1px solid black',
-                                    overflow: 'hidden',// Prevents scrollbars if content overflows
-                                    '.MuiDayCalendar-weekDayLabel': {
-                                        fontWeight: 'bold',
-                                        margin: '4px',// ⬅️ this makes weekday labels bold
-                                    }
-                                }}
-                                slots={{
-                                    day: (props) => {
-                                        const { day, selectedDays, ...other } = props;
-                                        const isHighlighted = doctorDetails.opd_days.includes(day.day());
-                                        // const isOutsideMonth = day.month() !== value.month();
-                                        return (
-                                            <PickersDay
-                                                {...other}
-                                                day={day}
-                                                selected={selectedDays?.includes(day)}
-                                                // disabled
-                                                sx={{
-                                                    color: !isHighlighted ? '#58595b' : 'white',
-                                                    fontWeight: 'bold',
-                                                    pointerEvents: !isHighlighted ? 'none' : 'auto',
-                                                    backgroundColor: !isHighlighted
-                                                        ? '#f8f8f8'
-                                                        : DoctorDetails,
-                                                    cursor: !isHighlighted ? 'not-allowed' : 'pointer',
-                                                    margin: '4px',
-                                                    minWidth: '36px',
-                                                    minHeight: '36px',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
+  {staticOPD && staticOPD.length !== 0 && (
+    <Box backgroundColor='white' sx={{ borderRadius: '20px' }}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateCalendar
+          value={dayjs()} // fixed current date
+          readOnly // makes the calendar non-editable
+          disableHighlightToday
+          showDaysOutsideCurrentMonth={true}
+          minDate={today}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '350px',
+            height: '500px',
+            overflow: 'hidden',
+            '.MuiDayCalendar-weekDayLabel': {
+              fontWeight: 'bold',
+              margin: '4px',
+            }
+          }}
+          slots={{
+            day: (props) => {
+              const { day, selectedDays, ...other } = props;
+              const isBeforeToday = day.isBefore(today, 'day');
+              const isHighlighted = staticOPD.includes(day.day()); // Highlight based on weekday index (0–6)
+              const isNotThisMonth = day.month() !== today.month();
+              return (
+                <PickersDay
+                  {...other}
+                  day={day}
+                  selected={false}
+                  disableMargin
+                  sx={{
+                    backgroundColor: isBeforeToday || isNotThisMonth ? '#eeeeee' : isHighlighted ? DoctorDetails : '#f8f8f8',
+                    color: isHighlighted ? 'white' : '#c2c2c2',
+                    // backgroundColor: isHighlighted ? DoctorDetails : '#f0f0f0',
+                    fontWeight: 'bold',
+                    cursor: 'default',
+                    margin: '4px',
+                    minWidth: '36px',
+                    minHeight: '36px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    '&:hover': {
+                      backgroundColor: isHighlighted ? DoctorDetails : '#f0f0f0',
+                    },
+                  }}
+                />
+              );
+            },
+          }}
+        />
+      </LocalizationProvider>
+    </Box>
+  )}
+</Grid>
 
-                                                    '&:hover': {
-                                                        backgroundColor: DoctorDetails,
-                                                    },
-                                                    '&.Mui-selected': {
-                                                        backgroundColor: 'red important', // Set the selected date background to red
-                                                        color: 'white !important',
-                                                    },
-                                                }}
-                                            />
-                                        );
-                                    },
-                                }}
-                            />
-                            <Button onClick={() => setOpen(true)} variant="contained" fullWidth sx={{ borderRadius: '0 0px 20px 20px', backgroundColor: DoctorDetails, py: 2 }}>
-                                Book Appointment <ExpandCircleDownRounded sx={{ transform: "rotate(270deg)", marginLeft: 1 }} />
-                            </Button>
-                        </LocalizationProvider>
-                    </Box> : <></>) : <></>}
-                    {/* {try1.opd_days?.length !== 0 ?  : <></>
-                    } */}
-                </Grid>
+
+
 
             </Grid>
             <Box display='felx' width='90%' marginTop={5}>
-                <Typography fontWeight='bold' paddingX={1} >About Dr. Sudhir Dubey</Typography>
+                <Typography fontWeight='bold' paddingX={1} >About {doctorDetails.name}</Typography>
             </Box>
             <Grid container display='flex' width='90%' paddingY={1} paddingX={1}>
                 <Grid item md={2} xs={12} display='flex' padding={1}>

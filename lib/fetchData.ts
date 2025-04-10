@@ -6,6 +6,9 @@ export const HomeContent = {
       "HospitalID": 1,
       "updatedAt": "2025-03-18T08:51:38.302Z"
   }
+
+
+
 export const ImageSliderData = [
   {
       "_id": "67de3609ca53e0286fde64f8",
@@ -23,14 +26,14 @@ export const ImageSliderData = [
       "path": "/SCI/slider/2.jpg",
       "active": "Y"
   },
-  {
-      "_id": "67de3609ca53e0286fde64f9",
-      "id": 3,
-      "HospitalID": 1,
-      "name": "Slider Image 3",
-      "path": "/SCI/slider/3.jpg",
-      "active": "Y"
-  },
+  // {
+  //     "_id": "67de3609ca53e0286fde64f9",
+  //     "id": 3,
+  //     "HospitalID": 1,
+  //     "name": "Slider Image 3",
+  //     "path": "/SCI/slider/3.jpg",
+  //     "active": "Y"
+  // },
   {
       "_id": "67de3609ca53e0286fde64fa",
       "id": 4,
@@ -115,7 +118,7 @@ export async function fetchAccomplishments2() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ccode: "SCI " }),
-      next: { revalidate: 900 },
+      next: { revalidate: 10 },
       // cache: "no-store",
     });
 
@@ -158,7 +161,7 @@ export const FetchFacilitiesData = [
       "HospitalID": 1,
       "title": "PET-MRI",
       "description": "It is the fourth machine of its kind in India. PET-MRI is a hybrid imagining with advantages of both PET and MRI in a single machine. This is also a great Diagnostic cum Research tool. First of its kind in entire Northeast India and in a government setup hospital for treatment, diagnostic and research purpose.",
-      "path": "SCI/Facilities/3.jpg",
+      "path": "SCI/Facilities/PET-MRI.jpeg",
       "Loader": "#0076bd",
       "color1": "#cbdae54",
       "color2": "#ced0d39",
@@ -182,7 +185,7 @@ export const FetchFacilitiesData = [
       "HospitalID": 1,
       "title": "Radiation Oncology",
       "description": "The institute is equipped with two high end linear Accelerator machines, Electa Synergy and Varian TruBeam, capable of carrying out state-of-the-art treatments like IMRT, IGRT, V-MAT, SRS, SBRT with CT simulator and computerized treatment planning system (TPS). One Cobalt Teletherapy and a High Dose Rate (HDR) Brachytherapy unit are available for patient treatment. One conventional Simulator, indigenously manufactured \"Imagine\", was received as a grant from the Dept of Atomic Energy, GOI. High precision radiation treatment, a Radixact Tomotherapy unit was commissioner on 17th February 21. This state-of-the-art cancer treatment facility is the only machine of its kind in the entire Northeast. With procurement of latest technology Quality Assurance (QA) equipment and four variant of treatment planning computers (TPS), State Cancer Institute has a well-equipped Radiation Oncology services comparable to any best establishment of our country.",
-      "path": "SCI/Facilities/5.jpg",
+      "path": "SCI/Facilities/radiation-oncology.jpeg",
       "Loader": "#0076bd",
       "color1": "#cbdae42",
       "color2": "#ced0d2",
@@ -236,176 +239,314 @@ export const FetchFacilitiesData = [
       "color2": "#ced0d28",
       "order": 9
   },
+
   {
-      "_id": "67edf9f274c62b1f3d0231d0",
-      "id": 39,
-      "HospitalID": 1,
-      "title": "Emergancy Medicine",
-      "description": "Emergency medicine is available at the centre for our existing cancer patients.",
-      "path": "SCI/Facilities/11.jpg",
-      "Loader": "#0076bd",
-      "color1": "#cbdae42",
-      "color2": "#ced0d39",
-      "order": 10
+    "_id": "67edf9f274c62b1f3d0231x1",
+    "id": 98,
+    "HospitalID": 1,
+    "title": "Laboratory Services",
+    "description": "The laboratory at state cancer institute is an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc",
+    "path": "SCI/Facilities/45.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d2",
+    "order": 19
   },
+
+  // from dibrugarh 
   {
-      "_id": "67edf9f274c62b1f3d0231d1",
-      "id": 40,
-      "HospitalID": 1,
-      "title": "Ambulance Service",
-      "description": "Ambulance service is available.",
-      "path": "SCI/Facilities/12.jpg",
-      "Loader": "#0076bd",
-      "color1": "#cbdae54",
-      "color2": "#ced0d51",
-      "order": 11
+    "_id": "67edf9f274c62b1f3d0231d2",
+    "id": 99,
+    "HospitalID": 1,
+    "title": "Medical Oncology",
+    "description": "Medical Oncology is a branch of medicine which specializes in the diagnosis and treatment of cancer. It is a super-specialty branch where the Medical Oncologist treat cancer using medication including chemotherapy, immunotherapy, and targeted therapy. The centre has a dedicated daycare setup with modern Chemo Day care wards.",
+    "path": "SCI/Facilities/13.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 12
   },
+
   {
-      "_id": "67edf9f274c62b1f3d0231ce",
-      "id": 41,
-      "HospitalID": 1,
-      "title": "Tele Health Services - Tele-radiology, Virtual Tumour Board (VTB), DiNC",
-      "description": "The facilities are digitally enabled by DiNC. The centre connects the three-tier hospital network in real timne for delivery of virtual care as well as through effective and efficient communication. Tele Radiology & Pathalogy, Virtual Tumour Board, Training and Accreditation, Centralised Treatment Planning, Patient Navigation, Telemedicine, Clinical Command Centre.",
-      "path": "SCI/Facilities/9.jpg",
-      "Loader": "#0076bd",
-      "color1": "#cbdae54",
-      "color2": "#ced0d2",
-      "order": 12
-  }
+    "_id": "67edf9f274c62b1f3d0231d3",
+    "id": 42,
+    "HospitalID": 1,
+    "title": "Surgical Oncology",
+    "description": "Surgical Oncology is the field of cancer care that focuses on surgery to diagnose, stage and treat cancer, and to manage some cancer-related symptoms. Major OT and a Minor OT setup is present at state cancer centre.",
+    "path": "SCI/Facilities/14.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 13
+  },
+
+  {
+    "_id": "67edf9f274c62b1f3d0231d4",
+    "id": 43,
+    "HospitalID": 1,
+    "title": "Palliative Medicine",
+    "description": "Palliative Care is an approach that improves the quality of life of patients (adults and children) and their families who are facing problems associated with complications of cancer.",
+    "path": "SCI/Facilities/15.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 14
+  },
+
+  {
+    "_id": "67edf9f274c62b1f3d0231d0",
+    "id": 39,
+    "HospitalID": 1,
+    "title": "Emergancy Medicine",
+    "description": "Emergency medicine is available at the centre for our existing cancer patients.",
+    "path": "SCI/Facilities/11.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae42",
+    "color2": "#ced0d39",
+    "order": 10
+  },
+
+  // {
+  //   "_id": "67edf9f274c62b1f3d0231d5",
+  //   "id": 44,
+  //   "HospitalID": 1,
+  //   "title": "Nuclear Medicine",
+  //   "description": "Nuclear medicine is a specialized area of radiology that uses very small amounts of radioactive materials, or radiopharmaceuticals, to examine organ function and structure. This branch of radiology is often used to help diagnose and treat abnormalities very early in the progression of a disease.",
+  //   "path": "SCI/Facilities/16.jpg",
+  //   "Loader": "#0076bd",
+  //   "color1": "#cbdae54",
+  //   "color2": "#ced0d51",
+  //   "order": 15
+  // },
+
+
+  {
+    "_id": "67edf9f274c62b1f3d0231d6",
+    "id": 45,
+    "HospitalID": 1,
+    "title": "Anesthesiology",
+    "description": "It is the medical specialty concerned with the total perioperative care of patients before, during and after surgery/procedure. It involves use of anesthesia to safely support a patient's vital functions through out the perioperative period. It encompasses anesthesia, intensive care medicine, critical emergency medicine, and pain medicine. We have a full-fledged Anesthesia department at Dibrugarh",
+    "path": "SCI/Facilities/19.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 16
+  },
+
+
+  {
+    "_id": "67edf9f274c62b1f3d0231e6",
+    "id": 49,
+    "HospitalID": 1,
+    "title": "Endoscopy Services",
+    "description": "The endoscopy procedure uses an endoscope to examine the interior of a hollow organ or cavity of the body. Unlike many other medical imaging techniques, endoscopes are inserted directly into the organ. Most commonly we do endoscopy to examine the gastrointestinal tract.",
+    "path": "SCI/Facilities/49.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 49
+  },
+
+  
+
+
+  {
+    "_id": "67edf9f274c62b1f3d0231d7",
+    "id": 46,
+    "HospitalID": 1,
+    "title": "Critical care (ICU)",
+    "description": "Critical care is medical care for people who have life-threatening injuries and illnesses. It usually takes place in an intensive care unit (ICU). A team of specially trained health care providers gives you 24-hour care. This includes using machines to constantly monitor your vital signs. We are having ICU and HDU set up at the State Cancer Institute to take care of Cancer patients who need ICU care.",
+    "path": "SCI/Facilities/18.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 17
+  },
+
+  
+
+
+
+  
+
+
+  // from dibrugarh
+
+
+
+  // {
+  //     "_id": "67edf9f274c62b1f3d0231ce",
+  //     "id": 41,
+  //     "HospitalID": 1,
+  //     "title": "Tele Health Services - Tele-radiology, Virtual Tumour Board (VTB), DiNC",
+  //     "description": "The facilities are digitally enabled by DiNC. The centre connects the three-tier hospital network in real timne for delivery of virtual care as well as through effective and efficient communication. Tele Radiology & Pathalogy, Virtual Tumour Board, Training and Accreditation, Centralised Treatment Planning, Patient Navigation, Telemedicine, Clinical Command Centre.",
+  //     "path": "SCI/Facilities/9.jpg",
+  //     "Loader": "#0076bd",
+  //     "color1": "#cbdae54",
+  //     "color2": "#ced0d2",
+  //     "order": 12
+  // },
+
+  
+  {
+    "_id": "67edf9f274c62b1f3d0231d1",
+    "id": 40,
+    "HospitalID": 1,
+    "title": "Ambulance Service",
+    "description": "Ambulance service is available.",
+    "path": "SCI/Facilities/12.jpg",
+    "Loader": "#0076bd",
+    "color1": "#cbdae54",
+    "color2": "#ced0d51",
+    "order": 11
+},
 ]
 
 export const FetchHospitalsData = [
+
   {
-      "_id": "67de3bd06487342f61ecdfe7",
-      "id": 7,
-      "name": "SILCHAR CANCER CENTRE",
-      "WhatsAppNumber": "94356 47725",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Silchar/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe3",
+    "id": 3,
+    "name": "BARPETA CANCER CENTRE",
+    "domain": "https://barpetacancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7152.158202780259!2d90.97631346977539!3d26.32393799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37599dfa07ce4509%3A0xe74899e5b2d34f24!2sBarpeta%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1659002675390!5m2!1sen!2sin",
+    "PhoneNumber": "+91 6026332174",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "FAAMCH Campus ,Jania Road , Joti Gaon , Barpeta(Assam). Pin 781301 .",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Barpeta/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe8",
-      "id": 8,
-      "name": "DIBRUGARH CANCER CENTRE",
-      "domain": "https://dibrugarhcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14158.20432243162!2d94.946242!3d27.483232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374099f9a770c52d%3A0xcecf8c7af5f57e89!2sDibrugarh%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1742616826161!5m2!1sen!2sin",
-      "PhoneNumber": "91 6026332165",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Dibrugarh Cancer Centre, Near Namghar, Assam Medical College Campus, Dibrugarh, Assam, 786002.",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Dibrugarh/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe8",
+    "id": 8,
+    "name": "DIBRUGARH CANCER CENTRE",
+    "domain": "https://dibrugarhcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14158.20432243162!2d94.946242!3d27.483232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374099f9a770c52d%3A0xcecf8c7af5f57e89!2sDibrugarh%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1742616826161!5m2!1sen!2sin",
+    "PhoneNumber": "91 6026332165",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Dibrugarh Cancer Centre, Near Namghar, Assam Medical College Campus, Dibrugarh, Assam, 786002.",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Dibrugarh/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe2",
-      "id": 2,
-      "name": "LAKHIMPUR CANCER CENTRE",
-      "domain": "https://lakhimpurcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14527113.716549069!2d94.09987!3d27.261234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374137719ce40f01%3A0x7100ad598a1ca96c!2sLakhimpur%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1741931783298!5m2!1sen!2sin",
-      "PhoneNumber": "+91 6026332184",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Lakhimpur Cancer Centre, Opposite St. Marrys High School, Nakari, Saboti, North Lakhimpur, Lakhimpur, Assam, 787001",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Lakhimpur/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe4",
+    "id": 4,
+    "name": "DARRANG CANCER CENTRE",
+    "domain": "https://darrangcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28580.924975775728!2d92.038973!3d26.435878!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375b1d56bc8e4d1f%3A0xdad0a9647179e4ff!2sAssam%20cancer%20care%2C%20Darrang%2C%20Mangaldoi!5e0!3m2!1sen!2sin!4v1742616576781!5m2!1sen!2sin",
+    "PhoneNumber": "+91 6026332202",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Darrang Cancer Centre, Behind Mangaldai Civil Hospital, Baghpari Chapori, Mangaldoi, Darrang, Assam, 784125",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Darrang/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe5",
-      "id": 5,
-      "name": "TEZPUR CANCER CENTRE",
-      "domain": "https://tezpurcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d912667.0492247979!2d92.662631!3d26.677103!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c5c3e215dd71%3A0x4d4a39d59d0d40cf!2sTezpur%20cancer%20centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616748044!5m2!1sen!2sin",
-      "PhoneNumber": "+91 6026332180",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Tezpur Cancer Centre, Opposite Chandranath Sarma H.S School, Near Tezpur Medical College and Hospital, Geruabari,Bihaguri, Sonitpur, Assam, 784153",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Tezpur/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe9",
+    "id": 9,
+    "name": "JORHAT CANCER CENTRE",
+    "domain": "https://jorhatcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228034.79786141418!2d94.197948!3d26.742981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3746c31f3536f399%3A0x653eb08956568d34!2sJorhat%20Cancer%20Centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616856683!5m2!1sen!2sin",
+    "PhoneNumber": "91 6026332209",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Jorhat Cancer Centre, C/o Jorhat Medical College, Jail Road, Jorhat, Jorhat, Assam, 785001",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Jorhat/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe1",
-      "id": 1,
-      "name": "STATE CANCER INSTITUTE GUWAHATI",
-      "domain": "https://cancercareinstituteguwahati.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.1347530850453!2d91.76288917486926!3d26.159740542044343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a590073ceb703%3A0x13cae1a490750ee1!2sState%20Cancer%20Institute%2CGuwahati%20Assam!5e0!3m2!1sen!2sin!4v1741872609450!5m2!1sen!2sin",
-      "PhoneNumber": "+91 9085202020",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "3rd Floor, V.K Trade Centre, Opp DownTown Hospital, G S Road, Guwahati, Assam PIN–781022",
-      "Facebook": "https://www.facebook.com/CancerHospitalGMCH/",
-      "Twitter": "https://x.com/gmcsci",
-      "Insta": "https://www.instagram.com/explore/locations/1242067485951109/assam-state-cancer-institute/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/SCI/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe6",
+    "id": 6,
+    "name": "KOKRAJHAR CANCER CENTRE",
+    "domain": "https://kokrajharcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828739.9773294877!2d90.280884!3d26.463536!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37588b6b0e849949%3A0xd965f2e851130df7!2sKokrajhar%20Cancer%20Care%20Hospital!5e0!3m2!1sen!2sin!4v1742616785038!5m2!1sen!2sin",
+    "PhoneNumber": 9395891501,
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Kokrajhar Cancer Centre, Near Kokrajhar Medical College & Hospital , Besorgaon, P.O : Rangalikhata -II, District : Kokrajhar ,BTR, Assam, Pin:783370",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Kokrajhar/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe6",
-      "id": 6,
-      "name": "KOKRAJHAR CANCER CENTRE",
-      "domain": "https://kokrajharcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828739.9773294877!2d90.280884!3d26.463536!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37588b6b0e849949%3A0xd965f2e851130df7!2sKokrajhar%20Cancer%20Care%20Hospital!5e0!3m2!1sen!2sin!4v1742616785038!5m2!1sen!2sin",
-      "PhoneNumber": 9395891501,
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Kokrajhar Cancer Centre, Near Kokrajhar Medical College & Hospital , Besorgaon, P.O : Rangalikhata -II, District : Kokrajhar ,BTR, Assam, Pin:783370",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Kokrajhar/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe2",
+    "id": 2,
+    "name": "LAKHIMPUR CANCER CENTRE",
+    "domain": "https://lakhimpurcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14527113.716549069!2d94.09987!3d27.261234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374137719ce40f01%3A0x7100ad598a1ca96c!2sLakhimpur%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1741931783298!5m2!1sen!2sin",
+    "PhoneNumber": "+91 6026332184",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Lakhimpur Cancer Centre, Opposite St. Marrys High School, Nakari, Saboti, North Lakhimpur, Lakhimpur, Assam, 787001",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Lakhimpur/logo/logo.png"
   },
+
   {
-      "_id": "67de3bd06487342f61ecdfe9",
-      "id": 9,
-      "name": "JORHAT CANCER CENTRE",
-      "domain": "https://jorhatcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228034.79786141418!2d94.197948!3d26.742981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3746c31f3536f399%3A0x653eb08956568d34!2sJorhat%20Cancer%20Centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616856683!5m2!1sen!2sin",
-      "PhoneNumber": "91 6026332209",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Jorhat Cancer Centre, C/o Jorhat Medical College, Jail Road, Jorhat, Jorhat, Assam, 785001",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Jorhat/logo/logo.png"
+    "_id": "67de3bd06487342f61ecdfe5",
+    "id": 5,
+    "name": "TEZPUR CANCER CENTRE",
+    "domain": "https://tezpurcancercentre.org/",
+    "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d912667.0492247979!2d92.662631!3d26.677103!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c5c3e215dd71%3A0x4d4a39d59d0d40cf!2sTezpur%20cancer%20centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616748044!5m2!1sen!2sin",
+    "PhoneNumber": "+91 6026332180",
+    "WhatsAppNumber": "94356 47725",
+    "Address": "Tezpur Cancer Centre, Opposite Chandranath Sarma H.S School, Near Tezpur Medical College and Hospital, Geruabari,Bihaguri, Sonitpur, Assam, 784153",
+    "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+    "Twitter": "https://x.com/CareAssam",
+    "Insta": "https://www.instagram.com/careassam/",
+    "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+    "Logo": "/Tezpur/logo/logo.png"
   },
-  {
-      "_id": "67de3bd06487342f61ecdfe4",
-      "id": 4,
-      "name": "DARRANG CANCER CENTRE",
-      "domain": "https://darrangcancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28580.924975775728!2d92.038973!3d26.435878!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375b1d56bc8e4d1f%3A0xdad0a9647179e4ff!2sAssam%20cancer%20care%2C%20Darrang%2C%20Mangaldoi!5e0!3m2!1sen!2sin!4v1742616576781!5m2!1sen!2sin",
-      "PhoneNumber": "+91 6026332202",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "Darrang Cancer Centre, Behind Mangaldai Civil Hospital, Baghpari Chapori, Mangaldoi, Darrang, Assam, 784125",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Darrang/logo/logo.png"
-  },
-  {
-      "_id": "67de3bd06487342f61ecdfe3",
-      "id": 3,
-      "name": "BARPETA CANCER CENTRE",
-      "domain": "https://barpetacancercentre.org/",
-      "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7152.158202780259!2d90.97631346977539!3d26.32393799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37599dfa07ce4509%3A0xe74899e5b2d34f24!2sBarpeta%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1659002675390!5m2!1sen!2sin",
-      "PhoneNumber": "+91 6026332174",
-      "WhatsAppNumber": "94356 47725",
-      "Address": "FAAMCH Campus ,Jania Road , Joti Gaon , Barpeta(Assam). Pin 781301 .",
-      "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
-      "Twitter": "https://x.com/CareAssam",
-      "Insta": "https://www.instagram.com/careassam/",
-      "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
-      "Logo": "/Barpeta/logo/logo.png"
-  }
+
+  // {
+  //     "_id": "67de3bd06487342f61ecdfe7",
+  //     "id": 7,
+  //     "name": "SILCHAR CANCER CENTRE",
+  //     "WhatsAppNumber": "94356 47725",
+  //     "Facebook": "https://www.facebook.com/AssamCancerCareFoundation/",
+  //     "Twitter": "https://x.com/CareAssam",
+  //     "Insta": "https://www.instagram.com/careassam/",
+  //     "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+  //     "Logo": "/Silchar/logo/logo.png"
+  // },
+
+  // {
+  //     "_id": "67de3bd06487342f61ecdfe1",
+  //     "id": 1,
+  //     "name": "STATE CANCER INSTITUTE GUWAHATI",
+  //     "domain": "https://cancercareinstituteguwahati.org/",
+  //     "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.1347530850453!2d91.76288917486926!3d26.159740542044343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a590073ceb703%3A0x13cae1a490750ee1!2sState%20Cancer%20Institute%2CGuwahati%20Assam!5e0!3m2!1sen!2sin!4v1741872609450!5m2!1sen!2sin",
+  //     "PhoneNumber": "+91 9085202020",
+  //     "WhatsAppNumber": "94356 47725",
+  //     "Address": "3rd Floor, V.K Trade Centre, Opp DownTown Hospital, G S Road, Guwahati, Assam PIN–781022",
+  //     "Facebook": "https://www.facebook.com/CancerHospitalGMCH/",
+  //     "Twitter": "https://x.com/gmcsci",
+  //     "Insta": "https://www.instagram.com/explore/locations/1242067485951109/assam-state-cancer-institute/",
+  //     "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
+  //     "Logo": "/SCI/logo/logo.png"
+  // },
+  
+  
+  
+  
 ]
 
 export const FetchAboutUs = [
@@ -450,6 +591,7 @@ export async function fetchNewsAndEvents2() {
     });
 
     const data = await response.json();
+    console.log('Trying to fetch news from barpeta server :', data);
     return data || [];
   } catch (error) {
     console.error("Failed to fetch doctors:", error);

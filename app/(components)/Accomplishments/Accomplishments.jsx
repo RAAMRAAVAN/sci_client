@@ -32,7 +32,7 @@ const Accomplishments = ({ accomplishments }) => {
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Typography  zIndex={2} color="black" textAlign='center'>As on {formatDate(accomplishments.date)}</Typography>
+            <Typography  zIndex={2} color="black" textAlign='center'>March 2025</Typography>
         </Box>
         <Box display="flex" width="100%" justifyContent="center">
 
@@ -50,9 +50,9 @@ const Accomplishments = ({ accomplishments }) => {
                                 <ExportedImage src={`/Accomplishments/people.png`} alt='img' width={100} height={100} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                             </Box>
                             <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
-                                {accomplishments.patient_footfall}
+                                4287 {/* {accomplishments.patient_footfall} */}
                             </Typography>
-                            <Typography  borderTop="1px solid gray" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                            <Typography  borderTop="1px solid gray" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                                 Patient Footfall
                             </Typography>
                         </Box>
@@ -70,9 +70,9 @@ const Accomplishments = ({ accomplishments }) => {
                                 <ExportedImage src={`/Accomplishments/chemo.png`} alt='img' width={100} height={100} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                             </Box>
                             <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
-                                {accomplishments.chemo_session}
+                                905 {/* {accomplishments.chemo_session} */}
                             </Typography>
-                            <Typography  borderTop="1px solid gray" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                            <Typography  borderTop="1px solid gray" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                                 Chemo Session
                             </Typography>
                         </Box>
@@ -90,9 +90,9 @@ const Accomplishments = ({ accomplishments }) => {
                                 <ExportedImage src={`/Accomplishments/radiation.png`} alt='img' width={100} height={100} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                             </Box>
                             <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
-                                {accomplishments.radiation_session}
+                                144 {/* {accomplishments.radiation_session} */}
                             </Typography>
-                            <Typography  borderTop="1px solid gray" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                            <Typography  borderTop="1px solid gray" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                                 Radiation Session
                             </Typography>
                         </Box>
@@ -110,9 +110,9 @@ const Accomplishments = ({ accomplishments }) => {
                                 <ExportedImage src={`/Accomplishments/doctors.png`} alt='img' width={100} height={100} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                             </Box>
                             <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
-                                {accomplishments.total_doctors}
+                                50+ {/* {accomplishments.total_doctors} */}
                             </Typography>
-                            <Typography  borderTop="1px solid gray" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                            <Typography  borderTop="1px solid gray" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                                 Doctors
                             </Typography>
                         </Box>
@@ -134,7 +134,7 @@ const Accomplishments = ({ accomplishments }) => {
                         <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
                             {accomplishments.patient_footfall}
                         </Typography>
-                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                             Patient Footfall
                         </Typography>
                     </Grid>
@@ -153,7 +153,7 @@ const Accomplishments = ({ accomplishments }) => {
                         <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
                             {accomplishments.chemo_session}
                         </Typography>
-                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                             Chemo Session
                         </Typography>
                     </Grid>
@@ -172,7 +172,7 @@ const Accomplishments = ({ accomplishments }) => {
                         <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
                             {accomplishments.radiation_session}
                         </Typography>
-                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                             Radiation Session
                         </Typography>
                     </Grid>
@@ -191,7 +191,7 @@ const Accomplishments = ({ accomplishments }) => {
                         <Typography  variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
                             {accomplishments.total_doctors}
                         </Typography>
-                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h5" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                        <Typography  borderTop="1px solid lightgray" color="black" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
                             Doctors
                         </Typography>
                     </Grid>

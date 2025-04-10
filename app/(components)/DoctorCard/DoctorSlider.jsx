@@ -125,7 +125,7 @@ const DoctorSlider = () => {
                             marginY={2}
                             sx={{ minHeight: "350px" }}
                             display="flex"
-                            width="95%"
+                            width="100%"
                         >
                             {displayedDoctors.length > 0 ? (
                                 displayedDoctors.map((doctor) => (
