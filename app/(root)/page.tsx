@@ -13,6 +13,7 @@ const AccomplishmentsMain = lazy(() => import("../(components)/Accomplishments/A
 const WhatsHappening = lazy(() => import("../(components)/WhatsHappening"));
 const OurHospitals = lazy(() => import("../(components)/Hospitals/OurHospitalsPage"));
 const VideoGrid = lazy(() => import("../(components)/Videos/VideoGrid"));
+const Partners = lazy(() => import("../(components)/Partners/Partners"));
 import TextCarousel from "../(components)/TextCarousel";
 
 // ✅ Server Component
@@ -85,6 +86,17 @@ export default async function Home() {
         </Box>
       </Box>
 
+      <Box display='flex' width='100%' justifyContent='center'>
+        <Box display='flex' width='90%' flexDirection='column' marginTop={2}>
+          <Typography  variant="h5" fontWeight="bold" marginBottom={3}>
+            Our Partner
+          </Typography>
+          <Suspense>
+            <Partners />
+          </Suspense>
+        </Box>
+      </Box>
+
       {/* What's Happening */}
       <Suspense fallback={<Loader />}>
         <WhatsHappening />
@@ -108,7 +120,7 @@ export default async function Home() {
           <Typography  variant="h5" fontWeight="bold" marginBottom={3}>
             ACCF Network
           </Typography>
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<Loader />}> 
             <OurHospitals />
           </Suspense>
         </Box>

@@ -31,6 +31,7 @@ const ImageSlider = ({ Images = [] }) => {
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
+        autoHeight={true}
         spaceBetween={10}
         slidesPerView={1}
         autoplay={{ delay: 3000, disableOnInteraction: false }}

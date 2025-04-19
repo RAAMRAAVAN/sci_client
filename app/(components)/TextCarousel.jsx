@@ -2,6 +2,11 @@
 
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNewses, setID } from '@/redux/features/newsSlice';
+import { useRouter } from 'next/navigation';
+
+
 
 const items = [
     {
@@ -12,6 +17,10 @@ const items = [
 ];
 
 const TextCarousel = () => {
+    const router = useRouter();
+    const news = useSelector(selectNewses);
+    const dispatch = useDispatch();
+    
     return (
         <Box
             sx={{
@@ -20,7 +29,7 @@ const TextCarousel = () => {
                 bgcolor: '#ebebeb',
                 cursor: 'pointer',
             }}
-            onClick={() => window.open(items[0].url, '_blank')}
+            onClick={() => {dispatch(setID(news[0].id));router.push(`/news/details`)}}
         >
             <Box
                 sx={{

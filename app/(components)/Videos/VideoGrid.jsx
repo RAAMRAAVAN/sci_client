@@ -25,7 +25,17 @@ const VideoGrid = () => {
       <Grid container direction="column" spacing={2} sx={{ width: '25%' }}>
         <Grid item>
           <Box>
-            <img src={`SCI/video/dummy.png`} style={{borderRadius:'5px'}}/>
+          <iframe
+            width="90%"
+            height="180"
+            src={videoUrlMain}
+            title="YouTube video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            style={{borderRadius:'10px'}}
+          /> 
           </Box>
         </Grid>
         <Grid item>
@@ -38,17 +48,12 @@ const VideoGrid = () => {
       {/* Center Main Box (50%) */}
       <Box sx={{ width: '50%', margin:'auto' }} >
         <Box>
-          <iframe
-            width="100%"
-            height="280"
-            src={videoUrlMain}
-            title="YouTube video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            style={{borderRadius:'10px'}}
-          />
+
+        <video width="640" height="360" controls>
+          <source src="SCI/video/SCI-OT.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         </Box>
       </Box>
 
