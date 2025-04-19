@@ -39,7 +39,7 @@ const page = async () => {
 
         </Box>
         <Box>
-            <Typography  sx={{ fontSize: { xs: 24 } }} fontStyle="italic" marginTop={1} paddingX={2}>Assam cancer care foundation has inaugrated 8 state-of-the-art ACCF cancer hospitals in Assam</Typography>
+            <Typography  sx={{ fontSize: { xs: 24 } }} fontStyle="italic" marginTop={1} paddingX={2}>Assam cancer care foundation has inaugurated 8 state-of-the-art ACCF cancer hospitals in Assam</Typography>
             <Box marginX={2} marginY={1}>
                 <OurHospitalsPage />
             </Box>

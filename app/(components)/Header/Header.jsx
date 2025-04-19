@@ -8,6 +8,7 @@ import SocialIcons from "../SocialIcons";
 import ContactUs from "../ContactUs/ContactUs";
 import { color1, color2, color3, Font, HName } from "../Global";
 import Loader from "../Loader";
+import LatestEvent from "../LatestEvent/LatestEvent";
 import { color } from "../Global";
 
 const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
@@ -21,6 +22,15 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
 
     useEffect(() => {
         setHydrated(true);
+    }, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setOpen(true);
+        }, 10000); // 10 seconds
+
+        // Cleanup on unmount
+        return () => clearTimeout(timer);
     }, []);
 
     if (!hydrated) return null;
@@ -183,8 +193,12 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
             </Box>
 
             {/* Contact Us Modal */}
-            <Box display="flex" width="100%" justifyContent="center">
+            {/* <Box display="flex" width="100%" justifyContent="center">
                 <ContactUs open={open} handleClose={() => setOpen(false)} />
+            </Box> */}
+
+            <Box display="flex" width="100%" justifyContent="center">
+                <LatestEvent open={open} handleClose={() => setOpen(false)} />
             </Box>
 
             {/* Scroll to Top FAB */}

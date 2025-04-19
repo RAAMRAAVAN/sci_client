@@ -171,8 +171,8 @@ export const FetchFacilitiesData = [
       "_id": "67edf9f274c62b1f3d0231c9",
       "id": 33,
       "HospitalID": 1,
-      "title": "Moleculer Oncology",
-      "description": "State Cancer Institute, Guwahati Medical College has launched a state-of-the-art Molecular Oncology investigation facility, combining cutting-edge technology with medical expertise to revolutionize cancer diagnostics and treatment. The facility offers a comprehensive suite of technologies to unravel molecular cancer mysteries. The targeted investigations offer a comprehensive genetic profile, identifying key mutations and alterations for personalized treatment strategies. They empower healthcare professionals to identify cancer at its earliest stages, improving treatment options and patient outcomes. The tests are affordable, reliable, and data-secure. The molecular investigation uses Quantitative Real Time PCR techniques to test various cancer panels, including Lung, Colorectal, HPV, EBV, BRCA-1 and BRCA-2 mutations, IDH1 and IDH2 and MGMT promoter methylation, DPYD gene mutation detection, Thrombophilia panel mutation detection, and BCL1 and BCL2 determination. The Molecular Oncology Laboratory is updating for Next-Generation Sequencing, FISH, and karyotyping, and using more precise digital PCR techniques for personalized treatment strategies.",
+      "title": "Molecular Oncology",
+      "description": "State Cancer Institute, Guwahati Medical College has launched a state-of-the-art Molecular Oncology investigation facility, combining cutting-edge technology with medical expertise to revolutionize cancer diagnostics and treatment. The facility offers a comprehensive suite of technologies to unravel Molecular cancer mysteries. The targeted investigations offer a comprehensive genetic profile, identifying key mutations and alterations for personalized treatment strategies. They empower healthcare professionals to identify cancer at its earliest stages, improving treatment options and patient outcomes. The tests are affordable, reliable, and data-secure. The Molecular investigation uses Quantitative Real Time PCR techniques to test various cancer panels, including Lung, Colorectal, HPV, EBV, BRCA-1 and BRCA-2 mutations, IDH1 and IDH2 and MGMT promoter methylation, DPYD gene mutation detection, Thrombophilia panel mutation detection, and BCL1 and BCL2 determination. The Molecular Oncology Laboratory is updating for Next-Generation Sequencing, FISH, and karyotyping, and using more precise digital PCR techniques for personalized treatment strategies.",
       "path": "SCI/Facilities/mol-onc.jpg",
       "Loader": "#0076bd",
       "color1": "#cbdae5",
@@ -207,7 +207,7 @@ export const FetchFacilitiesData = [
       "_id": "67edf9f274c62b1f3d0231cc",
       "id": 36,
       "HospitalID": 1,
-      "title": "H B Cancer Registry",
+      "title": "Hospital Based Cancer Registry",
       "description": "Hospital Based Cancer Registry (HBCR) systematically analyzes cancer data to generate reliable insights into disease patterns, survival trends, and treatment outcomes. It plays a crucial role in clinical research, evaluating treatment modalities, and supporting hospital facility planning. Additionally, the registry contributes to active patient follow-up, assesses survival length and quality based on cancer site, stage, and treatment, and tracks time trends in early versus late-stage diagnoses. HBCR also focuses on capacity building by recruiting and training professionals in cancer registration and epidemiology.",
       "path": "SCI/Facilities/7.jpg",
       "Loader": "#0076bd",
@@ -227,18 +227,18 @@ export const FetchFacilitiesData = [
       "color2": "#ced0d51",
       "order": 8
   },
-  {
-      "_id": "67edf9f274c62b1f3d0231cf",
-      "id": 38,
-      "HospitalID": 1,
-      "title": "Proton Therapy Centre",
-      "description": "Radiotherapy is the delivery of precisely measured dose of radiation accurately targeted to the diseased area which are mostly malignant tumours and occasionally to a non-malignant condition. During the last 100 years, Radiation Oncology underwent tremendous development including technological advances. High energy X-Rays from different types of Linear Accelerators have been used predominantly. However, in recent time, Particle Beam Therapies are gaining popularity in Oncology due to their physical and biological advantages. While X-rays or Photons are without any mass and charge, in contrast, Particles have both charge and mass. Protons are positively charged particles possessing unique Physical and Radio-Biological properties. Therefore, Proton Beam Therapy is gaining popularity as a superior Radio-therapeutic tool. Protons are produced and accelerated in a Cyclotron or Synchrotron and then are transported to the nearby treatment machine where the beam is modified and made suitable to treat a particular clinical situation. The Proton beam may also be optimised and modulated to deliver the most sophisticated treatment Intensity Modulated Proton Therapy (IMPT). Proton beam therapy has undergone tremendous progress and latest radiotherapy techniques have been steadily implemented. It is suggested that Protons are more effective in cancer cell killing than photons. The unique physical property of Proton is its Bragg Peak effect, which means that the deposition of energy ends with a peak. This peak may be targeted to the tumour resulting in sparing of nearby critical organs from radiation damage. In this era of Personalised Medicine, Protons may prove to be superior with combination with Immunotherapy. Proton therapy has advantages in treatment of Childhood Cancers because of dose conformality and normal tissue/organ sparing effect with obvious advantages. Another site where Proton has the superiority is Skull based or Sino-nasal malignancies. Proton therapy has shown to be of promising results in treatment of Brain Tumours. Many other sites are also treated with Protons including Head & Neck cancers, Breast cancers, Thoracic malignancies, Prostate cancers, Re-Irradiation (second time treatment after a failed first treatment) and many. Some radio-resistant tumours, viz Chordoma, Melanoma, are ought to be better managed by Proton therapy due higher dose of radiation required to treat these conditions. The first Proton Therapy unit in India was installed in 2018 and the second unit is also functional. There are more upcoming installations taking into considerations of challenges and opportunities.",
-      "path": "SCI/Facilities/10.jpg",
-      "Loader": "#0076bd",
-      "color1": "#cbdae5",
-      "color2": "#ced0d28",
-      "order": 9
-  },
+  // {
+  //     "_id": "67edf9f274c62b1f3d0231cf",
+  //     "id": 38,
+  //     "HospitalID": 1,
+  //     "title": "Proton Therapy Centre",
+  //     "description": "Radiotherapy is the delivery of precisely measured dose of radiation accurately targeted to the diseased area which are mostly malignant tumours and occasionally to a non-malignant condition. During the last 100 years, Radiation Oncology underwent tremendous development including technological advances. High energy X-Rays from different types of Linear Accelerators have been used predominantly. However, in recent time, Particle Beam Therapies are gaining popularity in Oncology due to their physical and biological advantages. While X-rays or Photons are without any mass and charge, in contrast, Particles have both charge and mass. Protons are positively charged particles possessing unique Physical and Radio-Biological properties. Therefore, Proton Beam Therapy is gaining popularity as a superior Radio-therapeutic tool. Protons are produced and accelerated in a Cyclotron or Synchrotron and then are transported to the nearby treatment machine where the beam is modified and made suitable to treat a particular clinical situation. The Proton beam may also be optimised and modulated to deliver the most sophisticated treatment Intensity Modulated Proton Therapy (IMPT). Proton beam therapy has undergone tremendous progress and latest radiotherapy techniques have been steadily implemented. It is suggested that Protons are more effective in cancer cell killing than photons. The unique physical property of Proton is its Bragg Peak effect, which means that the deposition of energy ends with a peak. This peak may be targeted to the tumour resulting in sparing of nearby critical organs from radiation damage. In this era of Personalised Medicine, Protons may prove to be superior with combination with Immunotherapy. Proton therapy has advantages in treatment of Childhood Cancers because of dose conformality and normal tissue/organ sparing effect with obvious advantages. Another site where Proton has the superiority is Skull based or Sino-nasal malignancies. Proton therapy has shown to be of promising results in treatment of Brain Tumours. Many other sites are also treated with Protons including Head & Neck cancers, Breast cancers, Thoracic malignancies, Prostate cancers, Re-Irradiation (second time treatment after a failed first treatment) and many. Some radio-resistant tumours, viz Chordoma, Melanoma, are ought to be better managed by Proton therapy due higher dose of radiation required to treat these conditions. The first Proton Therapy unit in India was installed in 2018 and the second unit is also functional. There are more upcoming installations taking into considerations of challenges and opportunities.",
+  //     "path": "SCI/Facilities/10.jpg",
+  //     "Loader": "#0076bd",
+  //     "color1": "#cbdae5",
+  //     "color2": "#ced0d28",
+  //     "order": 9
+  // },
 
   {
     "_id": "67edf9f274c62b1f3d0231x1",
@@ -297,7 +297,7 @@ export const FetchFacilitiesData = [
     "_id": "67edf9f274c62b1f3d0231d0",
     "id": 39,
     "HospitalID": 1,
-    "title": "Emergancy Medicine",
+    "title": "Emergency Medicine",
     "description": "Emergency medicine is available at the centre for our existing cancer patients.",
     "path": "SCI/Facilities/11.jpg",
     "Loader": "#0076bd",
@@ -562,7 +562,7 @@ export const FetchAboutUs = [
       "_id": "67f1623946886839f4f9b661",
       "HospitalID": 1,
       "title": "Key facilities",
-      "description": "SCI offers facilities like Radiation Oncology (LiNAC, Tomotherepy, Brachytherapy), Medical Oncology (Chemotharepy), Surgical Oncology (Robotic Surgery), Nuclear Medicine (PET CT, PET MRI, Gamma Camera Cyclotron), Bone Marrow Treansplant, Cath Lab, Preventive Oncology, Pain & Palliative Medicine, Radiology(CT Scan, MRI, X-ray, Mammography ECG, USG), Emergancy Onco Care, Critical Care (ICU, HDU), Indoor Patient Depertment, High-end Laboratory (Clinical Pathalogy, Biochemistry, Microbiology, Histopathalogy), Pharmacy, Blood Centre, 24*7 Emergency Service, Research & academics.",
+      "description": "SCI offers facilities like Radiation Oncology (LiNAC, Tomotherepy, Brachytherapy), Medical Oncology (Chemotharepy), Surgical Oncology (Robotic Surgery), Nuclear Medicine (PET CT, PET MRI, Gamma Camera Cyclotron), Bone Marrow Treansplant, Cath Lab, Preventive Oncology, Pain & Palliative Medicine, Radiology(CT Scan, MRI, X-ray, Mammography ECG, USG), Emergency Onco Care, Critical Care (ICU, HDU), Indoor Patient Depertment, High-end Laboratory (Clinical Pathalogy, Biochemistry, Microbiology, Histopathalogy), Pharmacy, Blood Centre, 24*7 Emergency Service, Research & academics.",
       "active": "Y",
       "path": "SCI/about/keyfacilities.jpg"
   },
@@ -614,3 +614,94 @@ export const FetchHospitalDetails = {
   "LinkedIN": "https://www.linkedin.com/company/assam-cancer-care-foundation/",
   "Logo": "/SCI/logo/logo.png"
 }
+
+export const FetchPartners = [{
+  "id": 1,
+  "partner_name": "Numaligarh Refinery Ltd",
+  "partner_image": "/SCI/Partners/nrl-logo.jpg",
+  "path": "https://www.nrl.co.in/"
+},
+{
+  "id": 2,
+  "partner_name": "Bharat Petroleum Corporation Ltd",
+  "partner_image": "/SCI/Partners/BPCL-Logo.jpg",
+  "path": "https://www.bharatpetroleum.in/"
+},
+{
+  "id": 3,
+  "partner_name": "Indian Oil Corporation Ltd",
+  "partner_image": "/SCI/Partners/Indian_Oil_Logo.svg.png",
+  "path": "https://iocl.com/"
+},
+{
+  "id": 4,
+  "partner_name": "Pfizer",
+  "partner_image": "/SCI/Partners/Pfizer.png",
+  "path": "https://www.pfizer.com/"
+},
+{
+  "id": 5,
+  "partner_name": "Induslnd Bank",
+  "partner_image": "/SCI/Partners/indus3.png",
+  "path": "https://www.indusind.com/"
+},
+{
+  "id": 6,
+  "partner_name": "D-Mart",
+  "partner_image": "/SCI/Partners/DMart.png",
+  "path": "https://www.dmartindia.com/"
+},
+{
+  "id": 7,
+  "partner_name": "Indus Towers",
+  "partner_image": "/SCI/Partners/indus-towers.png",
+  "path": "https://www.industowers.com/"
+},
+{
+  "id": 8,
+  "partner_name": "LIC Housing Finance Ltd",
+  "partner_image": "/SCI/Partners/LIC_Housing_Finance_logo.png",
+  "path": "https://www.lichousing.com/"
+},
+{
+  "id": 9,
+  "partner_name": "Mindray",
+  "partner_image": "/SCI/Partners/mindray.jfif",
+  "path": "https://www.mindray.com/"
+},
+{
+  "id": 10,
+  "partner_name": "Titan",
+  "partner_image": "/SCI/Partners/titan.jpg",
+  "path": "http://www.titan.co.in/"
+},
+{
+  "id": 11,
+  "partner_name": "Engineers India Ltd",
+  "partner_image": "/SCI/Partners/EIL.png",
+  "path": "https://engineersindia.com/"
+},
+{
+  "id": 12,
+  "partner_name": "Exim Bank",
+  "partner_image": "/SCI/Partners/Exim.jpg",
+  "path": "https://www.eximbankindia.in/"
+},
+{
+  "id": 13,
+  "partner_name": "Federal Bank",
+  "partner_image": "/SCI/Partners/fedarel.png",
+  "path": "https://www.federalbank.co.in/"
+},
+{
+  "id": 14,
+  "partner_name": "National Thermal Power Corporation",
+  "partner_image": "/SCI/Partners/NTPC.jpg",
+  "path": "https://ntpc.co.in/"
+},
+{
+  "id": 15,
+  "partner_name": "Brahmaputra Crackers and Polymers Ltd",
+  "partner_image": "/SCI/Partners/BCPL.jpg",
+  "path": "https://bcplonline.co.in/"
+}]

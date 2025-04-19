@@ -130,6 +130,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                   href={`/consultants/doctor_details`}
                   passHref
                   scroll={true}
+                  
                   onClick={() => {
                     dispatch(setDoctorID(id));
                   }}
@@ -138,7 +139,8 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                     color={HomeDoctorList}
                     noWrap
                     fontSize={13}
-                    sx={{ display: "flex", alignItems: "center" }}
+                    
+                    sx={{ display: "none", alignItems: "center" }}
                   >
                     <FiberManualRecord sx={{ color: "lightgray", fontSize: "10px", marginX: 1 }} />
                     View Profile
@@ -222,7 +224,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
             // transform: "translateX(-50%)",
             width: "80%",
             // border:'1px black solid',
-            display:'flex',
+            display:'none',
             justifyContent:'center'
           }}
         >

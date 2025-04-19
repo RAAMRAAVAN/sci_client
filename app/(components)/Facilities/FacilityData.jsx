@@ -124,9 +124,9 @@ const Facilities = () => {
                                     ? `${facility.description.slice(0, 300)}...`
                                     : facility.description}
                             </Typography>
-                            <Box sx={{ display: "flex", marginTop: "auto" }} onClick={() => router.push(`/facilities#${facility._id}`)}>
+                            {facility.description.length > 300 ? <Box sx={{ display: "flex", marginTop: "auto" }} onClick={() => router.push(`/facilities#${facility._id}`)}>
                                 <Button aria-label="Submit Form" >Read More</Button>
-                            </Box>
+                            </Box> : <></>}
                         </Grid>
                     </Grid>
                 </Box>

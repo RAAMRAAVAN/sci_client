@@ -22,7 +22,7 @@ const VideoGrid = () => {
       }}
     >
       {/* Left Box (25%) */}
-      <Grid container direction="column" spacing={2} sx={{ width: '25%' }}>
+      <Grid container direction="column" spacing={2} sx={{ width: {xs:'100%', md:'25%'} }}>
         <Grid item>
           <Box>
           <iframe
@@ -46,7 +46,7 @@ const VideoGrid = () => {
       </Grid>
 
       {/* Center Main Box (50%) */}
-      <Box sx={{ width: '50%', margin:'auto' }} >
+      <Box sx={{ width: {xs:'100%', md:'50%'}, margin:'auto' }}>
         <Box>
 
         <video width="640" height="360" controls>
@@ -58,7 +58,7 @@ const VideoGrid = () => {
       </Box>
 
       {/* Right Box (25%) */}
-      <Grid container direction="column" spacing={2} sx={{ width: '25%' }}>
+      <Grid container direction="column" spacing={2} sx={{ width: {xs:'100%', md:'25%'} }}>
         <Grid item>
           <Box sx={{ borderRadius:'5px' }}>
             <img src={`SCI/video/dummy.png`} style={{borderRadius:'5px'}}/>

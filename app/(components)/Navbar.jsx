@@ -139,7 +139,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
           </Box>
 
           <Link href="/social_infra" passHref legacyBehavior>
-            <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+            <Box sx={{ display: { xs: "none", md: "none" }, alignItems: "center" }}>
               <Button sx={{ color: "#fff" }}>
                 <Avatar alt="Social Infrastructure" sx={{ backgroundColor: "white", marginRight: "2px" }} src="/SocialInfra/soc_inf.png" />
                 Social Infrastructure
