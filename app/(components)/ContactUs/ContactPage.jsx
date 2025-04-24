@@ -58,7 +58,7 @@ const ContactPage = () => {
                             </Typography>
                         </Box>
 
-                        <Box display="flex" alignItems="center" my={2}>
+                        {/* <Box display="none" alignItems="center" my={2}>
                             <WhatsApp sx={{ mr: 1 }} />
                             <Typography  fontSize={13} color="#d3d3d3" component="a"
                                 href={`https://wa.me/9435647725`}
@@ -67,7 +67,7 @@ const ContactPage = () => {
                                 sx={{ textDecoration: "none", cursor: "pointer" }}>
                                 9435647725
                             </Typography>
-                        </Box>
+                        </Box> */}
 
                         <Box display="flex" alignItems="center" my={2}>
                             <Mail sx={{ mr: 1 }} />
@@ -129,7 +129,7 @@ const ContactPage = () => {
                             </Typography>
                         </Box>
 
-                        <Box display="flex" alignItems="center" my={2}>
+                        {/* <Box display="flex" alignItems="center" my={2}>
                             <WhatsApp sx={{ mr: 1 }} />
                             <Typography  fontSize={13} color="#d3d3d3" component="a"
                                 href={`https://wa.me/9435647725`}
@@ -138,7 +138,7 @@ const ContactPage = () => {
                                 sx={{ textDecoration: "none", cursor: "pointer" }}>
                                 9435647725
                             </Typography>
-                        </Box>
+                        </Box> */}
 
                         <Box display="flex" alignItems="center" my={2}>
                             <Mail sx={{ mr: 1 }} />

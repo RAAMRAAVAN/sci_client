@@ -38,9 +38,8 @@ const NewsCard = ({ id, image, title = "No Title", text = "No Description", date
               src={image}
               alt="img"
               fill
-              objectFit="cover"
               priority={false}
-              style={{ borderRadius: "4px" }}
+              style={{ borderRadius: "4px", objectFit:"cover" }}
               sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
 

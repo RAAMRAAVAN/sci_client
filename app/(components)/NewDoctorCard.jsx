@@ -76,28 +76,36 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
       >
         <Box display="flex" flexDirection="column" width="100%">
           <Box display="flex" width="100%" justifyContent="space-between">
+
             <Box
               display="flex"
-              width="120px"
-              height="120px"
+              width="100px"
+              height="100px"
               overflow="hidden"
               borderRadius="50%"
-              padding="5px"
+              padding="1px"
+              sx={{
+                transition: "transform 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.05)", // Slight zoom
+                },
+              }}
             >
               <Avatar
                 src={preloadedImage || "/Doctors/doctor_image.webp"}
                 alt={name}
-                loading="lazy"
                 sx={{
                   width: "100%",
                   height: "100%",
                   boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.2)",
                   objectFit: "cover",
+                  cursor: 'pointer',
+
                 }}
               />
             </Box>
 
-            <Box display="flex" width="60%" flexDirection="column">
+            <Box display="flex" width="65%" flexDirection="column">
               <Typography
                 fontWeight="bold"
                 variant="h6"
@@ -125,10 +133,12 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                 <Typography noWrap fontSize={13}>
                   {department || ""}
                 </Typography>
+
                 <Link
                   href={`/consultants/doctor_details`}
                   passHref
                   scroll={true}
+
                   onClick={() => {
                     dispatch(setDoctorID(id));
                   }}
@@ -137,13 +147,17 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                     color={HomeDoctorList}
                     noWrap
                     fontSize={13}
-                    sx={{ display: "flex", alignItems: "center" }}
+
+                    sx={{ display: "none", alignItems: "center" }}
                   >
                     <FiberManualRecord sx={{ color: "lightgray", fontSize: "10px", marginX: 1 }} />
                     View Profile
                   </Typography>
                 </Link>
               </Box>
+
+
+
             </Box>
           </Box>
           <div style={{ padding: "10px 0" }}>
@@ -172,20 +186,20 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
                   sx: { backgroundColor: HomeDoctorList, bottom: "1px", height: "2px" },
                 }}
               >
-                <Tab label="Specialization and Expertise" value="1" sx={{ fontSize: "12px" }} />
-                <Tab label="Qualification" value="2" sx={{ fontSize: "12px" }} />
+                <Tab label="Specialization and Expertise" value="1" sx={{ fontSize: "12px", px: 1, py: 0.5, textTransform: "none" }} />
+                <Tab label="Qualification" value="2" sx={{ fontSize: "12px", px: 1, py: 0.5, textTransform: "none" }} />
               </TabList>
             </Box>
 
             <TabPanel value="1" sx={{ display: "flex", width: "100%", padding: 0, margin: 0 }}>
               <Grid container marginY={4} paddingX={1} justifyContent="space-between">
                 {speciality
-                  ?.split(",")
+                  ?.split(";")
                   .map((item) => item.trim())
                   .map((item, index) => (
-                    <Grid item xs={6} key={index} display="flex">
+                    <Grid item xs={12} key={index} display="flex">
                       <TaskAlt sx={{ fontSize: 13, color: "gray", marginRight: "5px" }} />
-                      <Typography sx={{ color: "gray" }} fontSize={13}>
+                      <Typography sx={{ color: "gray", lineHeight: 1.5 }} fontSize={13}>
                         {item}
                       </Typography>
                     </Grid>
@@ -196,12 +210,12 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
             <TabPanel value="2" sx={{ display: "flex", width: "100%", padding: 0, margin: 0 }}>
               <Grid container marginY={4} paddingX={1} justifyContent="space-between">
                 {qualifications
-                  ?.split(",")
+                  ?.split(";")
                   .map((item) => item.trim())
                   .map((item, index) => (
-                    <Grid item xs={6} key={index} display="flex">
+                    <Grid item xs={12} key={index} display="flex">
                       <TaskAlt sx={{ fontSize: 13, color: "gray", marginRight: "5px" }} />
-                      <Typography sx={{ color: "gray" }} fontSize={13}>
+                      <Typography sx={{ color: "gray", lineHeight: 1.5 }} fontSize={13}>
                         {item}
                       </Typography>
                     </Grid>
@@ -218,8 +232,8 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
             // transform: "translateX(-50%)",
             width: "80%",
             // border:'1px black solid',
-            display:'flex',
-            justifyContent:'center'
+            display: 'none',
+            justifyContent: 'center'
           }}
         >
           <Button

@@ -8,9 +8,13 @@ import SocialIcons from "../SocialIcons";
 import ContactUs from "../ContactUs/ContactUs";
 import { color1, color2, color3, Font, HName } from "../Global";
 import Loader from "../Loader";
+import LatestEvent from "../LatestEvent/LatestEvent";
 import { color } from "../Global";
+// import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
+    const router = useRouter()
     const HoName = HName;
     const [open, setOpen] = useState(false);
     const [hydrated, setHydrated] = useState(false);
@@ -21,6 +25,15 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
 
     useEffect(() => {
         setHydrated(true);
+    }, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setOpen(true);
+        }, 10000); // 10 seconds
+
+        // Cleanup on unmount
+        return () => clearTimeout(timer);
     }, []);
 
     if (!hydrated) return null;
@@ -74,7 +87,8 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                     width={80}
                                     height={90}
                                     priority
-                                    style={{ objectFit: "contain" }}
+                                    style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                    onClick={() => window.location.href = '/'}
                                 />
                             </Grid>
                             <Grid item xs={5} position='absolute' top={10} right={0}>
@@ -84,7 +98,8 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                     width={100}
                                     height={100}
                                     priority
-                                    style={{ objectFit: "contain" }}
+                                    style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                    onClick={() => window.location.href = '/'}
                                 />
                             </Grid>
                         </Grid>
@@ -98,7 +113,8 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 width={80}
                                 height={90}
                                 priority
-                                style={{ objectFit: "contain" }}
+                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                onClick={() => window.location.href = '/'}
                             />
                         </Box>
                         <Box textAlign={{ xs: "center", md: "left" }}>
@@ -128,7 +144,8 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 width={100}
                                 height={100}
                                 priority
-                                style={{ objectFit: "contain" }}
+                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                onClick={() => window.location.href = '/'}
                             />
                         </Box>
                     </Grid>
@@ -183,8 +200,12 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
             </Box>
 
             {/* Contact Us Modal */}
-            <Box display="flex" width="100%" justifyContent="center">
+            {/* <Box display="flex" width="100%" justifyContent="center">
                 <ContactUs open={open} handleClose={() => setOpen(false)} />
+            </Box> */}
+
+            <Box display="flex" width="100%" justifyContent="center">
+                <LatestEvent open={open} handleClose={() => setOpen(false)} />
             </Box>
 
             {/* Scroll to Top FAB */}

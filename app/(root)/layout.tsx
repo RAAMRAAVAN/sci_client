@@ -5,6 +5,7 @@ import HeaderPage from '../(components)/Header/HeaderPage';
 import AnimatedImages from "../(components)/Animation";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cancercareinstituteguwahati.org/'),
   title: "State Cancer Institute Guwahati | Cancer Care Institute Guwahati",
   description:
     "South Asia's largest cancer care network by Assam Govt and Tata Trusts — delivering affordable, high-quality cancer treatment in Guwahati.",

@@ -1,7 +1,7 @@
 'use client'
 import { Box, Modal, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import ContactPage from "./ContactPage";
+import ContactPage2 from "./ContactPage2";
 const ContactUs = ({ open, handleClose }) => {
     return (
         <Modal open={open} onClose={handleClose} sx={{borderRadius:'10px', maxWidth:"100vw"}}>
@@ -44,7 +44,7 @@ const ContactUs = ({ open, handleClose }) => {
                         maxHeight: "85vh", // Allow space for header
                     }}
                 >
-                    <ContactPage />
+                    <ContactPage2 />
                 </Box>
             </Box>
         </Modal>

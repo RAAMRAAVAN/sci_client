@@ -2,7 +2,7 @@
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectHospitalDetails } from "@/redux/features/hospitalDetailSlice";
-import ContactPage from "@/app/(components)/ContactUs/ContactPage";
+import ContactPage2 from "@/app/(components)/ContactUs/ContactPage2";
 
 const Contact = () => {
     const HospitalDetails = useSelector(selectHospitalDetails);
@@ -14,7 +14,8 @@ const Contact = () => {
 
     return (
         <Box display="flex" width="100%" justifyContent="center" sx={{ backgroundColor: '#f6f6f6', color: 'black' }}>
-            <Box
+            <ContactPage2 />
+            {/* <Box
                 display="flex"
                 // width="70%"
                 padding={2}
@@ -31,8 +32,8 @@ const Contact = () => {
                 marginY={2}
                 boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'
             >
-                <ContactPage />
-            </Box>
+                <ContactPage/>
+            </Box> */}
         </Box>
     );
 };
