@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 const items = [
     {
         title:
-            'Inauguration of Robotic Surgery System in State Cancer Institute by the Hon’ble Chief Minister of Assam on 13 April 2025',
+            'Celebrating ACCF Foundation Day on 28th April',
         url: '/news',
     },
 ];
@@ -20,41 +20,45 @@ const TextCarousel = () => {
     const router = useRouter();
     const news = useSelector(selectNewses);
     const dispatch = useDispatch();
-    
+
     return (
         <Box
             sx={{
                 width: '100%',
                 overflow: 'hidden',
-                bgcolor: '#ebebeb',
+                backgroundColor: '#ebebeb',
                 cursor: 'pointer',
+                display: 'flex',
+                
             }}
-            onClick={() => {dispatch(setID(news[0].id));router.push(`/news/details`)}}
+            // onClick={() => { dispatch(setID(news[0].id)); router.push(`/news/details`) }}
         >
+            <Typography
+                sx={{
+                    color: '#fff',
+                    background: 'linear-gradient(-240deg, #bf1e2e 75%, transparent 40%)',
+                    px: 1,
+                    // py: 1,
+                    pr: 4,
+                    borderRadius: '4px',
+                    fontSize: '14px',
+                    flexShrink: 0,
+                    margin: '0px 0 0px -2px',
+                    padding: '0 32px 0 5px',
+                    zIndex:'1'
+                }}
+            >
+                UPDATES
+            </Typography>
             <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
-                    animation: 'stepScroll 5s ease-in-out infinite',
+                    animation: 'stepScroll 20s ease-in-out infinite',
                 }}
             >
-                <Typography
-                    sx={{
-                        color: '#fff',
-                        background: 'linear-gradient(-240deg, #bf1e2e 75%, transparent 40%)',
-                        px: 1,
-                        // py: 1,
-                        pr: 4,
-                        borderRadius: '4px',
-                        fontSize: '14px',
-                        flexShrink: 0,
-                        margin: '0px 0 0px -2px',
-                        padding: '0 32px 0 5px'
-                    }}
-                >
-                    UPDATES
-                </Typography>
+
 
 
 
@@ -63,7 +67,7 @@ const TextCarousel = () => {
                         position: 'relative',
                         overflow: 'hidden',
                         width: '100%',
-                        background: '#ebebeb'
+                        backgroundColor: '#ebebeb'
                     }}
                 >
                     <Box
@@ -74,9 +78,10 @@ const TextCarousel = () => {
                     >
                         <Typography
                             sx={{
-                                color: '#002664', 
+                                color: '#002664',
                                 fontSize: '14px',
                                 fontWeight: 500,
+                                backgroundColor: '#ebebeb',
                                 pr: 0,
                                 display: 'inline-block',
                             }}

@@ -26,7 +26,7 @@ const handleShare = async () => {
                 text: "Check out this doctor's profile!",
                 url: window.location.href,
             });
-            console.log("Successfully shared");
+            // console.log("Successfully shared");
         } catch (error) {
             console.error("Error sharing:", error);
         }

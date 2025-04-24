@@ -1,7 +1,7 @@
 'use client';
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
-import { color, Font } from "../Global";
+import { color, color1, color3, color5, Font } from "../Global";
 import { useSelector } from "react-redux";
 import { selectFacilities } from "@/redux/features/facilitiesSlice";
 import Loader from '../Loader';
@@ -94,18 +94,18 @@ const Facilities = () => {
                                 borderRadius: { xs: "0px 0px 10px 10px", lg: "10px 0px 0px 10px" },
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "center",
+                                // justifyContent: "center",
                                 padding: 3,
                                 backgroundColor: 'transparent'
                             }}
                         >
-                            <Typography  variant="h5" sx={{ fontSize: { xs: "18px", md: "24px" }, fontWeight: "bold" }}>
+                            <Typography variant="h6" sx={{"&:hover":{color: color3}, fontWeight:'bold'}}>
                                 {facility.title}
                             </Typography>
                             <Box
                                 display="flex"
                                 width="100%"
-                                height="50px"
+                                height="40px"
                                 alignItems="center"
                                 marginY={1}
                             >
@@ -115,17 +115,15 @@ const Facilities = () => {
 
                                     sx={{ width: { md: '5%', xs: "20%" } }}
                                     height="10px"
-                                    backgroundColor={color}
+                                    backgroundColor={color3}
                                     borderRadius={20}
                                 ></Box>
                             </Box>
-                            <Typography  sx={{ fontSize: { xs: "14px", md: "16px" } }}>
-                                {facility.description.length > 300
-                                    ? `${facility.description.slice(0, 300)}...`
-                                    : facility.description}
+                            <Typography  sx={{ fontSize: { xs: "14px", md: "16px" },whiteSpace: "pre-line", overflow:'hidden' }}>
+                                {facility.short_description}
                             </Typography>
-                            {facility.description.length > 300 ? <Box sx={{ display: "flex", marginTop: "auto" }} onClick={() => router.push(`/facilities#${facility._id}`)}>
-                                <Button aria-label="Submit Form" >Read More</Button>
+                            {facility.read_more ? <Box sx={{ display: "flex", marginTop: "auto" }} onClick={() => router.push(`/facilities?expand=true#${facility._id}`)}>
+                                <Button aria-label="Submit Form" sx={{color: color3}}>Read More</Button>
                             </Box> : <></>}
                         </Grid>
                     </Grid>

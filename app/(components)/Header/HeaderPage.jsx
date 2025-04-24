@@ -16,7 +16,7 @@ const HeaderPage = () => {
         // setLoading1(true);
         try {
             const data = await fetchDoctors2();
-            console.log("API=", data, data?.length);
+            // console.log("API=", data, data?.length);
             if(data?.length)
                 {dispatch(setDoctors(data)); console.log("dispatched")}
         } catch (error) {

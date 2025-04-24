@@ -35,7 +35,7 @@ const Footer = () => {
             <ListItemIcon sx={{ minWidth: "16px", color: "gray" }}>
                 <FiberManualRecord fontSize="small" sx={{ fontSize: "8px" }} />
             </ListItemIcon>
-            <Typography  sx={{ color: "gray", fontSize: "14px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+            <Typography  sx={{ color: "gray", fontSize: "14px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", '&:hover':{color: 'black'} }}>
                 {text}
             </Typography>
         </ListItem>
@@ -47,11 +47,12 @@ const Footer = () => {
 
                 {/* Our Hospitals */}
                 <Grid item xs={12} sm={6} lg={2}>
-                    <Typography  variant="h6" mb={1}>Our Hospitals</Typography>
+                    <Typography  variant="h6" mb={1}>ACCF Network</Typography>
                     {hospitalList.map((hospital, index) => (
                         <Box key={hospital.id || index} onClick={() => window.open(hospital.domain, '_blank')} sx={{
                             cursor: 'pointer', '&:hover': {
-                                transform: 'scale(1.05)'
+                                // transform: 'scale(1.05)'
+                                // color:'black'
                             },
 
                         }} >
@@ -67,7 +68,7 @@ const Footer = () => {
                         {facilityList.map((facility, index) => (
                             <Grid item xs={6} key={facility._id || index} sx={{
                                 cursor: 'pointer', '&:hover': {
-                                    transform: 'scale(1.05)'
+                                    // transform: 'scale(1.05)'
                                 }
                             }} onClick={() => router.push(`/facilities#${facility._id}`)}>
                                 <RenderListItem text={facility.title} />
@@ -80,20 +81,20 @@ const Footer = () => {
                 <Grid item xs={12} sm={6} lg={3}>
                     <Typography  variant="h6" mb={1}>Contact Us</Typography>
                     <Typography  color="gray" fontSize="14px" display="flex" alignItems="center" mb={1} component="a"
-                        href={`tel:${hospitalData.PhoneNumber || ""}`} sx={{ textDecoration: "none", cursor: "pointer" }}>
+                        href={`tel:${hospitalData.PhoneNumber || ""}`} sx={{ textDecoration: "none", cursor: "pointer", '&:hover':{color: 'black'} }}>
                         <Phone sx={{ color: "gray", mr: 1 }} /> {hospitalData.PhoneNumber || "Not Available"}
                     </Typography>
-                    <Typography  color="gray" fontSize="14px" display="flex" alignItems="center" mb={1} component="a"
+                    {/* <Typography  color="gray" fontSize="14px" display="flex" alignItems="center" mb={1} component="a"
                         href={`https://wa.me/9435647725`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ textDecoration: "none", cursor: "pointer" }}>
+                        sx={{ textDecoration: "none", cursor: "pointer", '&:hover':{color: 'black'} }}>
                         <WhatsApp sx={{ color: "gray", mr: 1 }} /> 9435647725
-                    </Typography>
+                    </Typography> */}
 
                     <Typography  color="gray" fontSize="14px" display="flex" alignItems="center" mb={1} component="a"
                         href="mailto:info@accf.in"
-                        sx={{ textDecoration: "none", cursor: "pointer" }}>
+                        sx={{ textDecoration: "none", cursor: "pointer", '&:hover':{color: 'black'} }}>
                         <Mail sx={{ color: "gray", mr: 1 }} /> info@accf.in
                     </Typography>
                     <Typography 
@@ -106,7 +107,7 @@ const Footer = () => {
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalData.Address || "")}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={{ textDecoration: "none", cursor: "pointer" }}
+                        sx={{ textDecoration: "none", cursor: "pointer", '&:hover':{color: 'black'} }}
                     >
                         <LocationCity sx={{ color: "gray", mr: 1 }} /> {hospitalData.Address || "Not Available"}
                     </Typography>

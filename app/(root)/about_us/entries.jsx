@@ -3,6 +3,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import { API, Font } from "../../(components)/Global";
 import { useEffect, useRef, useState } from "react";
+import ReadMoreText from "@/app/(components)/FacilitiesNew2/ReadMoreText";
 const Entries = (props) => {
   const { entries } = props;
   return (
@@ -55,10 +56,11 @@ const Entries = (props) => {
                 }}
               />
             </Box>
-            <Typography  variant="h5" fontWeight="bold" marginBottom={1} padding={1}>
+            <Typography  variant="h5" fontWeight="bold" marginBottom={1} padding={1} >
               {entry.title}
             </Typography>
-            <ReadMoreText text={entry.description} lineClamp={8}/>
+            {/* <ReadMoreText text={entry.description} lineClamp={8}/> */}
+            <ReadMoreText ShortText={entry.short_description} LongText={entry.description} Expand={false} ReadMoreOption={entry.read_more2}/>
           </Box>
         </Grid>
       ))}
@@ -69,42 +71,43 @@ const Entries = (props) => {
 export default Entries;
 
 
-const ReadMoreText = ({ text, lineClamp = 3 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [isTruncated, setIsTruncated] = useState(false);
-  const [readMore, setReadMore] = useState(true);
-  const ref = useRef(null);
-  const customStyle = {
-    overflow: "hidden",
-    display: "-webkit-box",
-    WebkitBoxOrient: "vertical",
-    WebkitLineClamp: expanded ? "none" : lineClamp,
-    textOverflow: "ellipsis",
-  }
-  const [style, setStyle] = useState(customStyle);
+// const ReadMoreText = ({ text, lineClamp = 3 }) => {
+//   const [expanded, setExpanded] = useState(false);
+//   const [isTruncated, setIsTruncated] = useState(false);
+//   const [readMore, setReadMore] = useState(true);
+//   const ref = useRef(null);
+//   const customStyle = {
+//     overflow: "hidden",
+//     display: "-webkit-box",
+//     WebkitBoxOrient: "vertical",
+//     WebkitLineClamp: expanded ? "none" : lineClamp,
+//     textOverflow: "ellipsis",
+//   }
+//   const [style, setStyle] = useState(customStyle);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (el && el.scrollHeight > el.clientHeight) {
-      setIsTruncated(true);
-    }
-  }, []);
+//   useEffect(() => {
+//     const el = ref.current;
+//     if (el && el.scrollHeight > el.clientHeight) {
+//       setIsTruncated(true);
+//     }
+//   }, []);
 
-  return (
-    <Box padding={1} >
-      <Typography 
-        ref={ref}
-        sx={style}
-      >
-        {text}
-      </Typography>
-      {readMore && isTruncated ? (
-        <Button onClick={() => { setStyle({}); setReadMore(false) }} sx={{ mt: 1 }}>
-          Read More
-        </Button>
-      ) : isTruncated ? (<Button onClick={() => { setStyle(customStyle); setReadMore(true) }} sx={{ mt: 1 }}>
-        Show Less
-      </Button>) : (<></>)}
-    </Box>
-  );
-};
+//   return (
+//     <Box padding={1} >
+//       <Typography 
+//         ref={ref}
+//         sx={style}
+//         style={{ whiteSpace: "pre-line"}}
+//       >
+//         {text}
+//       </Typography>
+//       {readMore && isTruncated ? (
+//         <Button onClick={() => { setStyle({}); setReadMore(false) }} sx={{ mt: 1 }}>
+//           Read More
+//         </Button>
+//       ) : isTruncated ? (<Button onClick={() => { setStyle(customStyle); setReadMore(true) }} sx={{ mt: 1 }}>
+//         Show Less
+//       </Button>) : (<></>)}
+//     </Box>
+//   );
+// };

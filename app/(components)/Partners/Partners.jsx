@@ -3,6 +3,7 @@ import { FetchPartners } from "@/lib/fetchData";
 import { Box, Grid } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import { color1, color4 } from "../Global";
+import ScrollReveal from "../Animation/ScrollReveal";
 
 const Partners = () => {
     const Partners = FetchPartners;
@@ -21,8 +22,10 @@ const Partners = () => {
                     flexDirection="column"
                     justifyContent="center"
                     alignItems="center"
+                    
                 >
-                    <Box display='flex' width='100%' paddingY={1} border={`1px solid ${color1}`} onClick={() => window.open(partner.path, '_blank')} sx={{
+                    <ScrollReveal animation="grow" display="flex" width="200px" sx={{}}>
+                    <Box display='flex' backgroundColor='white' width='100%' paddingY={1} border={`1px solid ${color1}`} onClick={() => window.open(partner.path, '_blank')} sx={{
                             transition: 'transform 0.3s ease',
                             cursor: 'pointer', '&:hover': {
                                 transform: 'scale(1.02)'
@@ -38,10 +41,12 @@ const Partners = () => {
                                 alt="partner logo"
                                 fill
                                 style={{ objectFit: "contain" }}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 priority
                             />
                         </Box>
                     </Box>
+                    </ScrollReveal>
                 </Grid>
             ))}
         </Grid>

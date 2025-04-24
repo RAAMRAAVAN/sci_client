@@ -8,8 +8,9 @@ import Loader from "../Loader";
 import { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from '@mui/material';
 
-const Facilities = () => {
+const Facilities = ({ expand, FID }) => {
   const facilities = useSelector(selectFacilities);
+  console.log("expand=", expand);
   const isMd = useMediaQuery('(min-width: 768px)');
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -45,7 +46,7 @@ const Facilities = () => {
               cursor: "pointer",
             },
           }}
-          
+
         >
           <Grid
             container
@@ -73,8 +74,9 @@ const Facilities = () => {
                 backgroundColor: "transparent",
               }}
             >
-              <Typography 
+              <Typography
                 variant="h5"
+                id={`facility-title-${facility._id}`}
                 sx={{
                   fontSize: { xs: "18px", md: "24px" },
                   fontWeight: "bold",
@@ -92,8 +94,8 @@ const Facilities = () => {
                 <Box
                   display="flex"
                   className="facility-progress"
-                  
-                  sx={{width:{md:'5%',xs:"20%"}}}
+
+                  sx={{ width: { md: '5%', xs: "20%" } }}
                   height="10px"
                   backgroundColor={color}
                   borderRadius={20}
@@ -106,14 +108,14 @@ const Facilities = () => {
               >
                 <Box
                   sx={{
-                    width: {sm:'100%', md:"40%"},
+                    width: { sm: '100%', md: "40%" },
                     height: "300px",
-                    float: {sm:"none", md:'right'},
+                    float: { sm: "none", md: 'right' },
                     top: "0",
-                    marginLeft: {sm:0, md: "10px"},
-                    padding:{sm:0, md: 3}
+                    marginLeft: { sm: 0, md: "10px" },
+                    padding: { sm: 0, md: 3 }
                   }}
-                  
+
                 >
                   <ExportedImage
                     src={`/${facility.path}`}
@@ -131,7 +133,9 @@ const Facilities = () => {
                     }}
                   />
                 </Box>
-                <ReadMoreText text={facility.description} lineClamp={11} />
+                {FID === facility._id ? <><Box display='none'></Box>
+                  <ReadMoreText text={facility.description} expand={true} FID={FID} lineClamp={11} facilityId={facility._id} /></> : 
+                  <><ReadMoreText text={facility.description} expand={false} FID={FID} lineClamp={11} facilityId={facility._id} /></>}
               </Box>
             </Grid>
           </Grid>
@@ -141,19 +145,19 @@ const Facilities = () => {
   );
 };
 
-const ReadMoreText = ({ text, lineClamp = 3 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [isTruncated, setIsTruncated] = useState(false);
-  const [readMore, setReadMore] = useState(true);
+const ReadMoreText = ({ text, expand, FID, facilityId, lineClamp = 3 }) => {
+  const [expanded, setExpanded] = useState(expand);
+  const [isTruncated, setIsTruncated] = useState(expand);
+  const [readMore, setReadMore] = useState(!expand);
   const ref = useRef(null);
   const customStyle = {
     overflow: "hidden",
     display: "-webkit-box",
     WebkitBoxOrient: "vertical",
-    WebkitLineClamp: expanded ? "none" : lineClamp,
+    WebkitLineClamp: lineClamp,
     textOverflow: "ellipsis",
   }
-  const [style, setStyle] = useState(customStyle);
+  const [style, setStyle] = useState(!expand ? customStyle : {});
 
   useEffect(() => {
     const el = ref.current;
@@ -162,21 +166,34 @@ const ReadMoreText = ({ text, lineClamp = 3 }) => {
     }
   }, []);
 
+  const handleShowLess = () => {
+    setStyle(customStyle);
+    setExpanded(false);
+    setReadMore(true);
+
+    // Scroll to title
+    const titleElement = document.getElementById(`facility-title-${facilityId}`);
+    if (titleElement) {
+      titleElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <>
-      <Typography 
+      <Typography
         ref={ref}
         sx={style}
+        style={{ whiteSpace: "pre-line"}}
       >
         {text}
       </Typography>
-      {readMore && isTruncated  ? (
-        <Button onClick={() => {setStyle({}); setReadMore(false)}} sx={{ mt: 1 }}>
+      {readMore && isTruncated ? (
+        <Button onClick={() => { setStyle({}); setReadMore(false) }} sx={{ mt: 1 }}>
           Read More
         </Button>
-      ) : isTruncated?(<Button onClick={() => {setStyle(customStyle); setReadMore(true)}} sx={{ mt: 1 }}>
+      ) : isTruncated ? (<Button onClick={() => { handleShowLess() }} sx={{ mt: 1 }}>
         Show Less
-      </Button>):(<></>)}
+      </Button>) : (<></>)}
     </>
   );
 };
