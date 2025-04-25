@@ -56,11 +56,11 @@ const Entries = (props) => {
                 }}
               />
             </Box>
-            <Typography  variant="h5" fontWeight="bold" marginBottom={1} padding={1} >
+            <Typography id={`AboutTitle${entry.id}`} variant="h5" fontWeight="bold" marginBottom={1} padding={1} >
               {entry.title}
             </Typography>
             {/* <ReadMoreText text={entry.description} lineClamp={8}/> */}
-            <ReadMoreText ShortText={entry.short_description} LongText={entry.description} Expand={false} ReadMoreOption={entry.read_more2}/>
+            <ReadMoreText scrollBack={`AboutTitle${entry.id}`} ShortText={entry.short_description} LongText={entry.description} Expand={false} ReadMoreOption={entry.read_more2}/>
           </Box>
         </Grid>
       ))}

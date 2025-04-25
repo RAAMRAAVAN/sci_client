@@ -29,7 +29,7 @@ const ScrollReveal = ({
 
   if (animation === 'grow') {
     return (
-      <div ref={ref}>
+      <div ref={ref} style={{width: '100%'}}>
         <Grow {...transitionProps}>
           <Box
             {...rest}
@@ -47,7 +47,7 @@ const ScrollReveal = ({
   }
 
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{width: '100%'}}>
       {animation === 'fade' && (
         <Fade {...transitionProps}>
           <Box {...rest} sx={sx}>

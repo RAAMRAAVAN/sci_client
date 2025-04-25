@@ -8,9 +8,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
 import { ExpandMore } from "@mui/icons-material";
-import {Font, HName } from "./Global";
+import { Font, HName } from "./Global";
 import { motion } from "framer-motion";
-
+import { BiSupport } from "react-icons/bi";
+import { CgPhone } from "react-icons/cg";
+import { SiGmail } from "react-icons/si";
 const navItems = [
   { name: "Home", link: "/" },
   { name: "About Us", link: "/about_us" },
@@ -20,10 +22,84 @@ const navItems = [
   { name: "Contact Us", link: "/contact" },
 ];
 
+const ContactUsDropdown = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Box
+      sx={{ display: "inline-block", position: 'relative' }}
+    >
+      <Button
+        sx={{ color: "#fff" }}
+        onMouseEnter={() => setOpen(true)} // Change onHover to onMouseEnter
+        onMouseLeave={() => setOpen(false)} // Optionally, close on mouse leave
+      >
+        Contact Us <ExpandMore />
+      </Button>
+      {open ? <Box boxShadow={3} borderRadius={1} display='flex' width='200px' backgroundColor='white' position='absolute' flexDirection='column' onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} paddingY={1}>
+        <Box padding={1} sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
+          <Link href="/contact" passHref legacyBehavior>
+            <Box display='flex'><BiSupport size={24} color="#454545" /><Typography color="black" marginLeft={1}>Contact Us</Typography></Box>
+          </Link>
+        </Box>
+        <Box padding={1} sx={{ cursor: 'pointer', borderTop: '1px lightgray solid', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
+          <Box display='flex'><CgPhone size={24} color="#454545" />
+            <Typography component="a"
+              href={`tel:${"+91 18003454325" || ""}`} sx={{ cursor: "pointer", '&:hover': { color: 'black' } }} color="black" marginLeft={1}>+91 18003454325</Typography>
+          </Box>
+        </Box>
+        <Box padding={1} sx={{ cursor: 'pointer', borderTop: '1px lightgray solid', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
+          <Box display='flex'><SiGmail  size={24} color="#454545" />
+            <Typography component="a"
+              href="mailto:info@accf.in"
+              sx={{ cursor: "pointer", '&:hover': { color: 'black' } }} color="black" marginLeft={1}>info@accf.in</Typography>
+          </Box>
+        </Box>
+      </Box> : <></>}
+
+
+    </Box>
+  );
+};
+
+{/* <Menu
+        id="contact-menu"
+        anchorEl={anchorEl}
+        open={open}
+        MenuListProps={{
+          onMouseEnter: () => setOpen(true),
+          onMouseLeave: handleMouseLeave,
+          autoFocusItem: false,
+        }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        transformOrigin={{ vertical: "top", horizontal: "left" }}
+      >
+        <MenuItem onClick={handleMouseLeave}>
+          <Link href="/contact" passHref legacyBehavior>
+            <Typography>Contact Us</Typography>
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMouseLeave}>
+          {/* <Link href="/contact/feedback" passHref legacyBehavior>
+          <Typography component="a"
+            href={`tel:${"+91 18003454325" || ""}`} sx={{ cursor: "pointer", '&:hover': { color: 'black' } }}>+91 18003454325</Typography>
+          {/* </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMouseLeave}>
+          {/* <Link href="/contact/careers" passHref legacyBehavior>
+          <Typography component="a"
+            href="mailto:info@accf.in"
+            sx={{ cursor: "pointer", '&:hover': { color: 'black' } }}>info@accf.in</Typography>
+          {/* </Link>
+        </MenuItem>
+      </Menu> */}
+// export default ContactUsDropdown;
+
 export default function Navbar({ Title, OurHospitals, Facilities }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorE2, setAnchorE2] = useState(null); // separate for facilities
+  const [anchorE3, setAnchorE3] = useState(null);
 
   const HoName = HName;
 
@@ -46,7 +122,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
           <Box sx={{ display: { xs: "none", md: "none" }, mr: 1 }}>
             <ExportedImage src="/vercel.gif" alt="logo" width={50} height={50} />
           </Box>
-          <Typography  sx={{ display: { xs: "none", md: "none" }, fontSize: "1rem", fontWeight: "bold" }}>
+          <Typography sx={{ display: { xs: "none", md: "none" }, fontSize: "1rem", fontWeight: "bold" }}>
             {Title}
           </Typography>
 
@@ -128,6 +204,8 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                       </Menu>
                     </Box>
                   );
+                case "Contact Us":
+                  return <ContactUsDropdown key={item.name} />;
                 default:
                   return (
                     <Link key={item.name} href={item.link} passHref legacyBehavior>

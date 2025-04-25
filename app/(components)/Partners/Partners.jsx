@@ -22,9 +22,9 @@ const Partners = () => {
                     flexDirection="column"
                     justifyContent="center"
                     alignItems="center"
-                    
+                    width='100%'
                 >
-                    <ScrollReveal animation="grow" display="flex" width="200px" sx={{}}>
+                    <ScrollReveal animation="grow" display="flex" sx={{}}>
                     <Box display='flex' backgroundColor='white' width='100%' paddingY={1} border={`1px solid ${color1}`} onClick={() => window.open(partner.path, '_blank')} sx={{
                             transition: 'transform 0.3s ease',
                             cursor: 'pointer', '&:hover': {
@@ -41,7 +41,7 @@ const Partners = () => {
                                 alt="partner logo"
                                 fill
                                 style={{ objectFit: "contain" }}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 priority
                             />
                         </Box>
