@@ -7,6 +7,6 @@ export const MedantaOrange = '#f04e30';
 export const color = color3;
 export const HomeDoctorList = color1;
 export const DoctorDetails = color1;
-export const ContactColor = color3;
+export const ContactColor = MedantaOrange;
 export const Font = 'montserrat';
 export const HName = 'SCI/';

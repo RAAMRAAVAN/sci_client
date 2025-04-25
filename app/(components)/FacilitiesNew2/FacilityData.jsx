@@ -71,7 +71,7 @@ const Facilities = ({ expand, FID }) => {
                 },
                 display: "flex",
                 flexDirection: "column",
-                padding: 3,
+                // padding: 3,
                 backgroundColor: "transparent",
               }}
             >
@@ -81,6 +81,7 @@ const Facilities = ({ expand, FID }) => {
                 sx={{
                   fontSize: { xs: "18px", md: "24px" },
                   fontWeight: "bold",
+                  padding: { xs: 2, md: 3 }
                 }}
               >
                 {facility.title}
@@ -88,9 +89,10 @@ const Facilities = ({ expand, FID }) => {
               <Box
                 display="flex"
                 width="100%"
-                height="50px"
+                height="20px"
                 alignItems="center"
-                marginY={1}
+                marginBottom={1}
+                sx={{ marginLeft: { xs: 2, md: 3 } }}
               >
                 <Box
                   display="flex"
@@ -134,7 +136,9 @@ const Facilities = ({ expand, FID }) => {
                     }}
                   />
                 </Box>
-                {FID === facility._id ? <><Box display='none'></Box><ReadMoreText ShortText={facility.long_description} LongText={facility.description} Expand={true} ReadMoreOption={facility.read_more2} showReadmore={facility.read_more2} /></> : <><ReadMoreText ShortText={facility.long_description} LongText={facility.description} Expand={false} ReadMoreOption={facility.read_more2} showReadmore={facility.read_more2} /></>}
+                <Box sx={{marginX:{xs:0,md:2}}}>
+                  {FID === facility._id ? <><Box display='none'></Box><ReadMoreText ShortText={facility.long_description} LongText={facility.description} Expand={true} ReadMoreOption={facility.read_more2} showReadmore={facility.read_more2} scrollBack={`facility-title-${facility._id}`}/></> : <><ReadMoreText ShortText={facility.long_description} LongText={facility.description} Expand={false} ReadMoreOption={facility.read_more2} showReadmore={facility.read_more2} scrollBack={`facility-title-${facility._id}`}/></>}
+                </Box>
               </Box>
             </Grid>
           </Grid>
