@@ -49,7 +49,7 @@ const ContactPage = () => {
                     We would love to hear from you! Please fill in the required details and our team will get in touch with you.
                 </Typography>
                 <Grid container width='100%' marginTop={5} height='100%' justifyContent='center' sx={{ paddingX: 1 }}>
-                    <Grid item md={4} sm={12} marginBottom={5} sx={{ padding: '0px', marginRight: { md: '30px' }, backgroundColor: 'rgba(243, 239, 239, 0.88)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} >
+                    <Grid item md={4} sm={12} marginBottom={5} sx={{ padding: '0px', marginRight: { md: '30px' }, backgroundColor: 'rgba(243, 239, 239, 1)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} >
                         <Box padding={3}>
                             <Typography fontFamily='Montserrat,sans-serif' fontWeight='600' fontSize='20px' color="#454545">Contact Details</Typography>
                         </Box>
@@ -79,7 +79,7 @@ const ContactPage = () => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item md={7} sm={12} marginBottom={5} sx={{ backgroundColor: 'rgba(243, 239, 239, 0.88)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} backgroundColor='#f6f6f6'>
+                    <Grid item md={7} sm={12} marginBottom={5} sx={{ backgroundColor: 'rgba(243, 239, 239, 1)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} backgroundColor='#f6f6f6'>
 
                         <Box paddingX={3} marginY={3}>
                             <Grid container spacing={3}>
@@ -108,16 +108,13 @@ const ContactPage = () => {
                                                 },
                                                 color: '#58595b',              // Input text color
                                                 marginY: '10px',
-                                                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                                backdropFilter: 'blur(10px)',
-                                                WebkitBackdropFilter: 'blur(10px)',
                                             },
                                         }}
                                         inputProps={{
                                             style: {
                                                 color: 'black',              // Actual input text color
                                                 fontSize: '13px',
-                                                // backgroundColor: 'rgba(243, 239, 239, 0.53)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)'
+                                                backgroundColor: 'rgba(243, 239, 239, 1)'
                                             },
                                             placeholder: "Enter Your Name", // Needed here for styling placeholder
                                         }}
@@ -148,16 +145,13 @@ const ContactPage = () => {
                                                 },
                                                 color: '#58595b',              // Input text color
                                                 marginY: '10px',
-                                                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                                backdropFilter: 'blur(10px)',
-                                                WebkitBackdropFilter: 'blur(10px)',
                                             },
                                         }}
                                         inputProps={{
                                             style: {
                                                 color: 'black',              // Actual input text color
                                                 fontSize: '13px',
-                                                // backgroundColor: 'rgba(243, 239, 239, 0.53)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)'
+                                                backgroundColor: 'rgba(243, 239, 239, 1)'
                                             },
                                             placeholder: "Enter Your Name", // Needed here for styling placeholder
                                         }}
@@ -191,16 +185,13 @@ const ContactPage = () => {
                                                 },
                                                 color: '#58595b',              // Input text color
                                                 marginY: '10px',
-                                                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                                backdropFilter: 'blur(10px)',
-                                                WebkitBackdropFilter: 'blur(10px)',
                                             },
                                         }}
                                         inputProps={{
                                             style: {
                                                 color: 'black',              // Actual input text color
                                                 fontSize: '13px',
-                                                // backgroundColor: 'rgba(243, 239, 239, 0.53)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)'
+                                                backgroundColor: 'rgba(243, 239, 239, 1)'
                                             },
                                             placeholder: "Enter Your Name", // Needed here for styling placeholder
                                         }}
