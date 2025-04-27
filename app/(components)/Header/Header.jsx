@@ -12,6 +12,7 @@ import LatestEvent from "../LatestEvent/LatestEvent";
 import { color } from "../Global";
 // import Router from "next/router";
 import { useRouter } from "next/navigation";
+import { VideosAccess } from "@/lib/fetchData";
 
 const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
     const router = useRouter()
@@ -93,7 +94,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             </Grid>
                             <Grid item xs={5} position='absolute' top={10} right={0}>
                                 <ExportedImage
-                                    src={`/${HoName}logo/accf_logo.png`}
+                                    src={`/accf_logo.png`}
                                     alt="ACCF Logo"
                                     width={100}
                                     height={100}
@@ -139,7 +140,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             display: { xs: 'none', md: 'flex' },
                         }}>
                             <ExportedImage
-                                src={`/${HoName}logo/accf_logo.png`}
+                                src={`/accf_logo.png`}
                                 alt="ACCF Logo"
                                 width={100}
                                 height={100}
@@ -203,10 +204,10 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
             {/* <Box display="flex" width="100%" justifyContent="center">
                 <ContactUs open={open} handleClose={() => setOpen(false)} />
             </Box> */}
-
-            <Box display="flex" width="100%" justifyContent="center">
+            {VideosAccess?<Box display="flex" width="100%" justifyContent="center">
                 <LatestEvent open={open} handleClose={() => setOpen(false)} />
-            </Box>
+            </Box>:<></>}
+            
 
             {/* Scroll to Top FAB */}
             <Fab

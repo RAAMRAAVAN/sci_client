@@ -19,7 +19,7 @@ const NewsCard = ({ id, image, title = "No Title", text = "No Description", date
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        m: 3,
+        // m: 3,
         overflow: "hidden",
         position: "relative",
         transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",

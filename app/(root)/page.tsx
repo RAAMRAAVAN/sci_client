@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { Suspense, lazy } from "react";
 // import { fetchHomeContent} from "../../lib/fetchData";
 import Loader from "../(components)/Loader";
-import { HomeContent } from "@/lib/fetchData";
+import { HomeContent, UpdatesAccess, VideosAccess } from "@/lib/fetchData";
 import DoctorSlider from '../(components)/DoctorCard/DoctorSlider';
 import ScrollReveal from "../(components)/Animation/ScrollReveal";
 
@@ -21,7 +21,8 @@ export default async function Home() {
   const homeContent = HomeContent;
   return (
     <>
-      <TextCarousel />
+      {UpdatesAccess?<TextCarousel />: <></>}
+      
       <Box
         display="flex"
         flexDirection="column"
@@ -98,7 +99,7 @@ export default async function Home() {
           <WhatsHappening />
         </Suspense>
 
-        <Box display='flex' width='100%' justifyContent='center'>
+        {VideosAccess?<Box display='flex' width='100%' justifyContent='center'>
           <Box display='flex' width='90%' flexDirection='column' marginTop={2}>
             <Typography variant="h5" fontWeight="bold" marginBottom={3}>
               Our Stories
@@ -107,7 +108,8 @@ export default async function Home() {
               <VideoGrid />
             </Suspense>
           </Box>
-        </Box>
+        </Box>: <></>}
+        
 
 
         {/* Our Hospitals */}

@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import Footer from "../(components)/Footer/Footer";
 import HeaderPage from '../(components)/Header/HeaderPage';
 import AnimatedImages from "../(components)/Animation";
+import { HospitalName } from "@/lib/fetchData";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cancercareinstituteguwahati.org/'),
-  title: "State Cancer Institute Guwahati | Cancer Care Institute Guwahati",
+  title: `${HospitalName}`,
   description:
     "South Asia's largest cancer care network by Assam Govt and Tata Trusts — delivering affordable, high-quality cancer treatment in Guwahati.",
   keywords: [
