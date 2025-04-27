@@ -2,9 +2,10 @@
 import { Box, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import Facilities from "../../(components)/FacilitiesNew2/FacilityData";
-import { API, HName } from "@/app/(components)/Global";
+// import { API, HName } from "@/app/(components)/Global";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import {HName} from '@/lib/fetchData';
 
 const FacilitiesClient = () => {
     const searchParams = useSearchParams();
@@ -29,7 +30,7 @@ const FacilitiesClient = () => {
         <>
             <Box display="flex" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
                 <ExportedImage
-                    src={`/${HoName}Facilities/facilities_bg.jpg`}
+                    src={`${HName}/Facilities/facilities_bg.jpg`}
                     alt="background"
                     fill
                     style={{ objectFit: "cover" }}

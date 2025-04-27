@@ -1,11 +1,10 @@
 import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import Entries from "./entries";
-import { FetchAboutUs} from "@/lib/fetchData";
-import { Font } from "@/app/(components)/Global";
+import { AcademicsContents} from "@/lib/fetchData";
 
 const page = async() => {
-    const Entris = FetchAboutUs;
+    const Entris = AcademicsContents;
     return (<>
         <Box display="flex" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
             <ExportedImage

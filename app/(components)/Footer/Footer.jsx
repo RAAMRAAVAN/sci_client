@@ -56,7 +56,7 @@ const Footer = () => {
                             },
 
                         }} >
-                            <RenderListItem text={hospital.name.split(" ")[0].charAt(0).toUpperCase() + hospital.name.split(" ")[0].slice(1).toLowerCase()} />
+                            <RenderListItem text={hospital.short_name} />
                         </Box>
                     ))}
                 </Grid>

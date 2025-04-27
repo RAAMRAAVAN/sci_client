@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import Entries from "./entries";
-import { API, Font, HName } from "@/app/(components)/Global";
-import { FetchAboutUs} from "@/lib/fetchData";
+// import { API, Font, HName } from "@/app/(components)/Global";
+import { FetchAboutUs, HName} from "@/lib/fetchData";
 import OurHospitalsPage from "@/app/(components)/Hospitals/OurHospitalsPage";
 
 const page = async () => {
@@ -11,7 +11,7 @@ const page = async () => {
     return (<>
         <Box display="flex" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
             <ExportedImage
-                src={`/${HoName}about/about_us.jpg`}
+                src={`${HName}/about/about_us.jpg`}
                 alt="background"
                 fill
                 style={{ objectFit: "cover" }}

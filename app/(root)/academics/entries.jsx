@@ -12,7 +12,7 @@ const Entries = (props) => {
     <Box display="flex" flexDirection="column" width="100%">
       {Entris.map((Entry, index) => (
         <Grid
-          key={Entry.title}
+          key={Entry.id}
           container
           width="100%"
           sx={{
@@ -32,7 +32,7 @@ const Entries = (props) => {
           >
             <Box width="100%" sx={{ height: { xs: "150px", md: "300px" } }}>
               <ExportedImage
-                src={`/${Entry.path}`}
+                src={`${Entry.ImagePath}`}
                 alt="who we are"
                 layout="fill"
                 style={{ objectFit: "cover", borderRadius: 5 }}
@@ -52,7 +52,7 @@ const Entries = (props) => {
             justifyContent="center"
           >
             <Typography  variant="h6" fontWeight="bold">{Entry.title}</Typography>
-            <Typography >{Entry.description}</Typography>
+            <Typography >{Entry.Description}</Typography>
           </Grid>
         </Grid>
       ))}

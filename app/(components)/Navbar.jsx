@@ -13,13 +13,15 @@ import { motion } from "framer-motion";
 import { BiSupport } from "react-icons/bi";
 import { CgPhone } from "react-icons/cg";
 import { SiGmail } from "react-icons/si";
+import { HomePageAccess, AboutUsAccess, FacilitiesAccess, HospitalsAccess, NewsAndEventsAccess, ContactUsAccess, SocialInfraAccess, AcademicsAccess} from "@/lib/fetchData";
 const navItems = [
-  { name: "Home", link: "/" },
-  { name: "About Us", link: "/about_us" },
-  { name: "Facilities", link: "/facilities" },
-  { name: "Hospitals", link: "/" },
-  { name: "News & Events", link: "/news" },
-  { name: "Contact Us", link: "/contact" },
+  { name: "Home", link: "/", Active: HomePageAccess },
+  { name: "About Us", link: "/about_us", Active: AboutUsAccess },
+  { name: "Facilities", link: "/facilities", Active: FacilitiesAccess },
+  { name: "Hospitals", link: "/", Active: HospitalsAccess },
+  { name: "News & Events", link: "/news", Active: NewsAndEventsAccess },
+  { name: "Academics", link: "/academics", Active: AcademicsAccess},
+  { name: "Contact Us", link: "/contact", Active: ContactUsAccess },
 ];
 
 const ContactUsDropdown = () => {
@@ -128,6 +130,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
 
           <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
             {navItems.map((item) => {
+              if(item.Active)
               switch (item.name) {
                 case "Hospitals":
                   return (
@@ -217,7 +220,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
           </Box>
 
           <Link href="/social_infra" passHref legacyBehavior>
-            <Box sx={{ display: { xs: "none", md: "none" }, alignItems: "center" }}>
+            <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
               <Button sx={{ color: "#fff" }}>
                 <Avatar alt="Social Infrastructure" sx={{ backgroundColor: "white", marginRight: "2px" }} src="/SocialInfra/soc_inf.png" />
                 Social Infrastructure
@@ -233,13 +236,14 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
         <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
           <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle}>
             <List>
-              {navItems.map((item) => (
+              {navItems.map((item) => {if(item.Active) return(
+                
                 <Link key={item.name} href={item.link} passHref legacyBehavior>
                   <ListItem component="div">
                     <ListItemText primary={item.name} />
                   </ListItem>
                 </Link>
-              ))}
+              )})}
             </List>
           </Box>
         </Drawer>
