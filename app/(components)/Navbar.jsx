@@ -13,14 +13,14 @@ import { motion } from "framer-motion";
 import { BiSupport } from "react-icons/bi";
 import { CgPhone } from "react-icons/cg";
 import { SiGmail } from "react-icons/si";
-import { HomePageAccess, AboutUsAccess, FacilitiesAccess, HospitalsAccess, NewsAndEventsAccess, ContactUsAccess, SocialInfraAccess, AcademicsAccess} from "@/lib/fetchData";
+import { HomePageAccess, AboutUsAccess, FacilitiesAccess, HospitalsAccess, NewsAndEventsAccess, ContactUsAccess, SocialInfraAccess, AcademicsAccess } from "@/lib/fetchData";
 const navItems = [
   { name: "Home", link: "/", Active: HomePageAccess },
   { name: "About Us", link: "/about_us", Active: AboutUsAccess },
   { name: "Facilities", link: "/facilities", Active: FacilitiesAccess },
   { name: "Hospitals", link: "/", Active: HospitalsAccess },
   { name: "News & Events", link: "/news", Active: NewsAndEventsAccess },
-  { name: "Academics", link: "/academics", Active: AcademicsAccess},
+  { name: "Academics", link: "/academics", Active: AcademicsAccess },
   { name: "Contact Us", link: "/contact", Active: ContactUsAccess },
 ];
 
@@ -51,7 +51,7 @@ const ContactUsDropdown = () => {
           </Box>
         </Box>
         <Box padding={1} sx={{ cursor: 'pointer', borderTop: '1px lightgray solid', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
-          <Box display='flex'><SiGmail  size={24} color="#454545" />
+          <Box display='flex'><SiGmail size={24} color="#454545" />
             <Typography component="a"
               href="mailto:info@accf.in"
               sx={{ cursor: "pointer", '&:hover': { color: 'black' } }} color="black" marginLeft={1}>info@accf.in</Typography>
@@ -130,103 +130,103 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
 
           <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
             {navItems.map((item) => {
-              if(item.Active)
-              switch (item.name) {
-                case "Hospitals":
-                  return (
-                    <Box key={item.name}>
-                      <Button
-                        sx={{ color: "#fff" }}
-                        onClick={handleHospitalsClick}
-                        aria-controls={anchorEl ? "hospitals-menu" : undefined}
-                        aria-haspopup="true"
-                      >
-                        {item.name} <ExpandMore />
-                      </Button>
-                      <Menu
-                        id="hospitals-menu"
-                        anchorEl={anchorEl}
-                        open={Boolean(anchorEl)}
-                        onClose={handleHospitalsClose}
-                      >
-                        {OurHospitals?.length > 0 ? (
-                          OurHospitals.map((hospital) => (
-                            <MenuItem key={hospital.name} onClick={handleHospitalsClose}>
-                              <a
-                                href={hospital.domain}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none", color: "inherit" }}
-                              >
-                                <Typography >{hospital.name}</Typography>
-                              </a>
+              if (item.Active)
+                switch (item.name) {
+                  case "Hospitals":
+                    return (
+                      <Box key={item.name}>
+                        <Button
+                          sx={{ color: "#fff" }}
+                          onClick={handleHospitalsClick}
+                          aria-controls={anchorEl ? "hospitals-menu" : undefined}
+                          aria-haspopup="true"
+                        >
+                          {item.name} <ExpandMore />
+                        </Button>
+                        <Menu
+                          id="hospitals-menu"
+                          anchorEl={anchorEl}
+                          open={Boolean(anchorEl)}
+                          onClose={handleHospitalsClose}
+                        >
+                          {OurHospitals?.length > 0 ? (
+                            OurHospitals.map((hospital) => (
+                              <MenuItem key={hospital.name} onClick={handleHospitalsClose}>
+                                <a
+                                  href={hospital.domain}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none", color: "inherit" }}
+                                >
+                                  <Typography >{hospital.name}</Typography>
+                                </a>
+                              </MenuItem>
+                            ))
+                          ) : (
+                            <MenuItem disabled>
+                              <Typography >No hospitals available</Typography>
                             </MenuItem>
-                          ))
-                        ) : (
-                          <MenuItem disabled>
-                            <Typography >No hospitals available</Typography>
-                          </MenuItem>
-                        )}
-                      </Menu>
-                    </Box>
-                  );
-                case "Facilities":
-                  return (
-                    <Box key={item.name}>
-                      <Button
-                        sx={{ color: "#fff" }}
-                        onClick={handleFacilitiesClick}
-                        aria-controls={anchorE2 ? "facilities-menu" : undefined}
-                        aria-haspopup="true"
-                      >
-                        {item.name} <ExpandMore />
-                      </Button>
-                      <Menu
-                        id="facilities-menu"
-                        anchorEl={anchorE2}
-                        open={Boolean(anchorE2)}
-                        onClose={handleFacilitiesClose}
-                      >
-                        {Facilities?.length > 0 ? (
-                          Facilities.map((facility) => (
-                            <Link
-                              key={facility.id}
-                              href={`/facilities#${facility._id}`}
-                              passHref
-                              legacyBehavior
-                            >
-                              <MenuItem key={facility.name || facility.title} onClick={handleFacilitiesClose}>
-                                <Typography >{facility.title}</Typography>
-                              </MenuItem></Link>
-                          ))
-                        ) : (
-                          <MenuItem disabled>
-                            <Typography >No facilities available</Typography>
-                          </MenuItem>
-                        )}
-                      </Menu>
-                    </Box>
-                  );
-                case "Contact Us":
-                  return <ContactUsDropdown key={item.name} />;
-                default:
-                  return (
-                    <Link key={item.name} href={item.link} passHref legacyBehavior>
-                      <Button sx={{ color: "#fff" }}>{item.name}</Button>
-                    </Link>
-                  );
-              }
+                          )}
+                        </Menu>
+                      </Box>
+                    );
+                  case "Facilities":
+                    return (
+                      <Box key={item.name}>
+                        <Button
+                          sx={{ color: "#fff" }}
+                          onClick={handleFacilitiesClick}
+                          aria-controls={anchorE2 ? "facilities-menu" : undefined}
+                          aria-haspopup="true"
+                        >
+                          {item.name} <ExpandMore />
+                        </Button>
+                        <Menu
+                          id="facilities-menu"
+                          anchorEl={anchorE2}
+                          open={Boolean(anchorE2)}
+                          onClose={handleFacilitiesClose}
+                        >
+                          {Facilities?.length > 0 ? (
+                            Facilities.map((facility) => (
+                              <Link
+                                key={facility.id}
+                                href={`/facilities#${facility._id}`}
+                                passHref
+                                legacyBehavior
+                              >
+                                <MenuItem key={facility.name || facility.title} onClick={handleFacilitiesClose}>
+                                  <Typography >{facility.title}</Typography>
+                                </MenuItem></Link>
+                            ))
+                          ) : (
+                            <MenuItem disabled>
+                              <Typography >No facilities available</Typography>
+                            </MenuItem>
+                          )}
+                        </Menu>
+                      </Box>
+                    );
+                  case "Contact Us":
+                    return <ContactUsDropdown key={item.name} />;
+                  default:
+                    return (
+                      <Link key={item.name} href={item.link} passHref legacyBehavior>
+                        <Button sx={{ color: "#fff" }}>{item.name}</Button>
+                      </Link>
+                    );
+                }
             })}
           </Box>
-
-          <Link href="/social_infra" passHref legacyBehavior>
+          {SocialInfraAccess ? <Link href="/social_infra" passHref legacyBehavior>
             <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
               <Button sx={{ color: "#fff" }}>
                 <Avatar alt="Social Infrastructure" sx={{ backgroundColor: "white", marginRight: "2px" }} src="/SocialInfra/soc_inf.png" />
                 Social Infrastructure
               </Button>
             </Box>
-          </Link>
+          </Link> : <></>}
+
 
           <IconButton edge="end" sx={{ display: { xs: "block", md: "none" }, color: "#fff" }} onClick={handleDrawerToggle}>
             <MenuIcon />
@@ -236,14 +236,16 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
         <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
           <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle}>
             <List>
-              {navItems.map((item) => {if(item.Active) return(
-                
-                <Link key={item.name} href={item.link} passHref legacyBehavior>
-                  <ListItem component="div">
-                    <ListItemText primary={item.name} />
-                  </ListItem>
-                </Link>
-              )})}
+              {navItems.map((item) => {
+                if (item.Active) return (
+
+                  <Link key={item.name} href={item.link} passHref legacyBehavior>
+                    <ListItem component="div">
+                      <ListItemText primary={item.name} />
+                    </ListItem>
+                  </Link>
+                )
+              })}
             </List>
           </Box>
         </Drawer>
