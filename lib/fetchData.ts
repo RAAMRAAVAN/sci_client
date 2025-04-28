@@ -160,22 +160,22 @@ export const FetchFacilitiesData = [
     "color2": "#ced0d2",
     "order": 1
   },
-  {
-    "_id": "67edf9f274c62b1f3d0231c72",
-    "id": 31,
-    "HospitalID": 1,
-    "title": "Bone Marrow Transplant",
-    "short_description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).",
-    "long_description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).\n\nEarlier, these stem cells were taken from inside the bone, but now they are mostly collected from the donor’s blood through a vein, which is easier. These stem cells go to the patient’s bone marrow and help make new blood cells.",
-    "read_more": true,
-    "read_more2": true,
-    "description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).\n\nEarlier, these stem cells were taken from inside the bone, but now they are mostly collected from the donor’s blood through a vein, which is easier. These stem cells go to the patient’s bone marrow and help make new blood cells.\n\nDepending on who the stem cells are taken from, there are two types of BMT. In autologous BMT, the stem cells are taken from the patient’s own body. In allogenic BMT, the stem cells come from someone else — usually a family member like a brother, sister, or parent, or sometimes an unrelated person.\n\nAllogenic BMT can be of three types: from a matching sibling (called MSD), from a half-matched family member (called Haplo BMT), or from an unrelated matching person (called MUD). Haplo BMT and MUD BMT are more difficult than MSD BMT.\n\nBMT can cure several serious blood diseases like aplastic anemia, acute leukemia, multiple myeloma, and relapsed lymphoma.\n\nBMT is one of the most complex treatments in medicine. It requires a skilled team including doctors, nurses, lab experts, dieticians, and ICU staff. It is available only in selected hospitals in India, and many patients from Assam have to go outside the state for this treatment. \n\nAvailability of BMT in State Cancer Institute will be a definitive moment in the landscape of cancer care in Assam- patients will be able to get quality care at an affordable price.",
-    "path": "SCI/Facilities/2.jpg",
-    "Loader": "#0076bd",
-    "color1": "#cbdae42",
-    "color2": "#ced0d28",
-    "order": 2
-  },
+  // {
+  //   "_id": "67edf9f274c62b1f3d0231c72",
+  //   "id": 31,
+  //   "HospitalID": 1,
+  //   "title": "Bone Marrow Transplant",
+  //   "short_description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).",
+  //   "long_description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).\n\nEarlier, these stem cells were taken from inside the bone, but now they are mostly collected from the donor’s blood through a vein, which is easier. These stem cells go to the patient’s bone marrow and help make new blood cells.",
+  //   "read_more": true,
+  //   "read_more2": true,
+  //   "description": "Bone marrow transplantation, also known as stem cell transplantation, is an advanced treatment done in a few special hospitals. In this procedure, healthy stem cells are taken from one person (called the donor) and given to the patient (called the recipient).\n\nEarlier, these stem cells were taken from inside the bone, but now they are mostly collected from the donor’s blood through a vein, which is easier. These stem cells go to the patient’s bone marrow and help make new blood cells.\n\nDepending on who the stem cells are taken from, there are two types of BMT. In autologous BMT, the stem cells are taken from the patient’s own body. In allogenic BMT, the stem cells come from someone else — usually a family member like a brother, sister, or parent, or sometimes an unrelated person.\n\nAllogenic BMT can be of three types: from a matching sibling (called MSD), from a half-matched family member (called Haplo BMT), or from an unrelated matching person (called MUD). Haplo BMT and MUD BMT are more difficult than MSD BMT.\n\nBMT can cure several serious blood diseases like aplastic anemia, acute leukemia, multiple myeloma, and relapsed lymphoma.\n\nBMT is one of the most complex treatments in medicine. It requires a skilled team including doctors, nurses, lab experts, dieticians, and ICU staff. It is available only in selected hospitals in India, and many patients from Assam have to go outside the state for this treatment. \n\nAvailability of BMT in State Cancer Institute will be a definitive moment in the landscape of cancer care in Assam- patients will be able to get quality care at an affordable price.",
+  //   "path": "SCI/Facilities/2.jpg",
+  //   "Loader": "#0076bd",
+  //   "color1": "#cbdae42",
+  //   "color2": "#ced0d28",
+  //   "order": 2
+  // },
   {
     "_id": "67edf9f274c62b1f3d0231c83",
     "id": 32,
@@ -291,10 +291,10 @@ export const FetchFacilitiesData = [
     "HospitalID": 1,
     "title": "Laboratory Services",
     "short_description": "The institute is equipped with an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc",
-    "long_description": "The institute is equipped with an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc",
+    "long_description": "The institute is equipped with an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc\n\nEquipped with the state of art Vitros 5600 integrated auto-analyzer, the Biomerieux  Vidas system, Fuji drichem series and siemens wet chemistry analyzer, we strive to adhere to the Good Laboratory Practices to provide accurate and reliable laboratory results to our patients.",
     "read_more2": false,
-    "read_more": false,
-    "description": "The institute is equipped with an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc",
+    "read_more": true,
+    "description": "The institute is equipped with an advanced unit with Histopathology, Cytology services along with routine Pathology, Biochemistry etc \n\nEquipped with the state of art Vitros 5600 integrated auto-analyzer, the Biomerieux  Vidas system, Fuji drichem series and siemens wet chemistry analyzer, we strive to adhere to the Good Laboratory Practices to provide accurate and reliable laboratory results to our patients.",
     "path": "SCI/Facilities/45.jpg",
     "Loader": "#0076bd",
     "color1": "#cbdae54",
@@ -506,7 +506,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe3",
     "id": 3,
     "name": "BARPETA CANCER CENTRE",
-    "short_name":"Barpeta",
+    "short_name": "Barpeta",
     "domain": "https://barpetacancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7152.158202780259!2d90.97631346977539!3d26.32393799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37599dfa07ce4509%3A0xe74899e5b2d34f24!2sBarpeta%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1659002675390!5m2!1sen!2sin",
     "PhoneNumber": "+91 6026332174",
@@ -523,7 +523,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe8",
     "id": 8,
     "name": "DIBRUGARH CANCER CENTRE",
-    "short_name":"Dibrugarh",
+    "short_name": "Dibrugarh",
     "domain": "https://dibrugarhcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14158.20432243162!2d94.946242!3d27.483232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374099f9a770c52d%3A0xcecf8c7af5f57e89!2sDibrugarh%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1742616826161!5m2!1sen!2sin",
     "PhoneNumber": "91 6026332165",
@@ -540,7 +540,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe4",
     "id": 4,
     "name": "DARRANG CANCER CENTRE",
-    "short_name":"Darrang",
+    "short_name": "Darrang",
     "domain": "https://darrangcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28580.924975775728!2d92.038973!3d26.435878!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375b1d56bc8e4d1f%3A0xdad0a9647179e4ff!2sAssam%20cancer%20care%2C%20Darrang%2C%20Mangaldoi!5e0!3m2!1sen!2sin!4v1742616576781!5m2!1sen!2sin",
     "PhoneNumber": "+91 6026332202",
@@ -557,7 +557,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe9",
     "id": 9,
     "name": "JORHAT CANCER CENTRE",
-    "short_name":"Jorhat",
+    "short_name": "Jorhat",
     "domain": "https://jorhatcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228034.79786141418!2d94.197948!3d26.742981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3746c31f3536f399%3A0x653eb08956568d34!2sJorhat%20Cancer%20Centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616856683!5m2!1sen!2sin",
     "PhoneNumber": "91 6026332209",
@@ -574,7 +574,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe6",
     "id": 6,
     "name": "KOKRAJHAR CANCER CENTRE",
-    "short_name":"Kokrajhar",
+    "short_name": "Kokrajhar",
     "domain": "https://kokrajharcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828739.9773294877!2d90.280884!3d26.463536!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37588b6b0e849949%3A0xd965f2e851130df7!2sKokrajhar%20Cancer%20Care%20Hospital!5e0!3m2!1sen!2sin!4v1742616785038!5m2!1sen!2sin",
     "PhoneNumber": 9395891501,
@@ -591,7 +591,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe2",
     "id": 2,
     "name": "LAKHIMPUR CANCER CENTRE",
-    "short_name":"Lakhimpur",
+    "short_name": "Lakhimpur",
     "domain": "https://lakhimpurcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14527113.716549069!2d94.09987!3d27.261234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374137719ce40f01%3A0x7100ad598a1ca96c!2sLakhimpur%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1741931783298!5m2!1sen!2sin",
     "PhoneNumber": "+91 6026332184",
@@ -608,7 +608,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe5",
     "id": 5,
     "name": "TEZPUR CANCER CENTRE",
-    "short_name":"Tezpur",
+    "short_name": "Tezpur",
     "domain": "https://tezpurcancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d912667.0492247979!2d92.662631!3d26.677103!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744c5c3e215dd71%3A0x4d4a39d59d0d40cf!2sTezpur%20cancer%20centre%20ACCF!5e0!3m2!1sen!2sin!4v1742616748044!5m2!1sen!2sin",
     "PhoneNumber": "+91 6026332180",
@@ -661,7 +661,7 @@ export const FetchAboutUs = [
     "_id": "67e008c4738919e55f45e3ef",
     "HospitalID": 1,
     "title": "Who we are",
-    "short_description": "The State Cancer Institute (SCI), Guwahati was established on 17 February 2017 to cater to the needs of the cancer patients of the region who used to go to metro cities located outside of the state for treatment. The hospital started with 135 beds and by 2024 it has been expanded to 350 beds.\n\nThe hospital serves as the apex centre of Assam Cancer Care Foundation (ACCF) – an initiative of the Government of Assam and the Tata Trusts. The Government of Assam has entrusted the operational charges to ACCF while the academic section continues with Gauhati Medical College.",
+    "short_description": "The State Cancer Institute (SCI), Guwahati was inaugurated on 17th February 2017 by the then Union Health Minister Shri J.P. Nadda, in the august presence of the then Chief Minister of Assam Shri Sarbananda Sonowal and then Health Minister Dr. Himanta Biswa Sarma. It was established to address the growing burden of cancer in the region, which earlier compelled patients to seek treatment in metro cities outside Assam.",
     "read_more2": true,
     "description2": "The State Cancer Institute (SCI), Guwahati was established on 17 February 2017 to cater to the needs of the cancer patients of the region who used to go to metro cities located outside of the state for treatment. The hospital started with 135 beds and by 2024 it has been expanded to 350 beds.\n\nThe hospital serves as the apex centre of Assam Cancer Care Foundation (ACCF) – an initiative of the Government of Assam and the Tata Trusts. The Government of Assam has entrusted the operational charges to ACCF while the academic section continues with Gauhati Medical College.\n\nThe expansion of SCI to a total area of 4.76 lakh square feet represents a significant enhancement in infrastructure - allowing incorporation of additional advanced facilities and services to better serve cancer patients. The hospital will significantly increase its capacity to accommodate patients, ensuring they receive high-quality, affordable care.\n\nEstablished in August 2016 as a 200-bedded Cancer Hospital under Gauhati Medical College, the State Cancer Institute (SCI) has been a landmark addition to Assam’s oncology care infrastructure. It was formally inaugurated on 17th February 2017 by Dr. J.P. Nadda, the then Union Health Minister of India, becoming the third cancer hospital in Assam after B. Borooah Cancer Institute and Cachar Cancer Hospital.\n\nIn 2018, the Government of India conferred SCI with the prestigious status of a State Cancer Institute, with Dr. B.C. Goswami serving as its founding Director. The institute was initially equipped with state-of-the-art technology, including the Elekta Synergy LINAC, PET-CT, and Cyclotron, followed by Telecobalt and Brachytherapy systems.\n\nOver time, SCI has continued to integrate advanced medical technologies, such as High-end Linear Accelerator (LINAC), 3D Treatment Planning System (TPS), CT, MRI, Mammography, Digital X-ray, and 3D/4D Ultrasound, Dual-head Gamma Camera, and Robotic Surgery. Additionally, SCI has undertaken vertical expansion, extending to the 5th and 6th floors to accommodate future advancements.\n\nWith a comprehensive and holistic approach to oncology, SCI is equipped with a Nuclear Medicine Department, Comprehensive Radiodiagnosis Unit (CT, MRI, Ultrasound), Advanced Oncology Laboratory & Molecular Lab. SCI offers all three pillars of cancer treatment—radiation, medical, and surgical oncology—alongside superior diagnostics and palliative care, ensuring world-class cancer treatment and research for patients across the region.\n\nIn May 2017, Tata Trusts initiated discussions with the State Cancer Institute (SCI) to support its modernization, marking the beginning of a transformative journey in oncology care. As part of this collaboration, Tata Trusts undertook the beautification of SCI, creating a garden and enhancing housekeeping services to provide a more patient-friendly environment.\n\nA major milestone was achieved with the establishment of the Digital Nerve Centre (DiNC) in partnership with Tata Consultancy Services (TCS), aimed at enhancing patient experience through advanced digital interventions. Assam Cancer Care Foundation (ACCF) further strengthened its support to SCI by continuing to provide essential housekeeping and patient care services.\n\nIn a significant expansion move, the design for the new SCI building was finalized in September 2018, with construction commencing under Larsen & Toubro (L&T) in September 2019. A key addition to the institute’s infrastructure, the state-of-the-art Radiation Block, was inaugurated by the Hon’ble Home Minister, Shri Amit Shah, in July 2021.\n\nAfter years of dedicated efforts, the new SCI building was successfully completed and formally inaugurated by the Hon’ble Chief Minister of Assam, Shri Himanta Biswa Sarma, on 2nd March 2024, ushering in a new era of comprehensive cancer care in the region.\n\nAs a pioneering centre for advanced oncology care, SCI has continually evolved, integrating cutting-edge medical technologies. Under the Assam Cancer Care Foundation, the institute’s new Radiation Therapy Block has been equipped with state-of-the-art Tomo-Therapy and LINAC machines, reinforcing its mission to deliver world-class cancer treatment.\n\nAs we celebrate 17th February as the Foundation Day of State Cancer Institute, Guwahati, heartfelt congratulations go to the dedicated team at Assam Cancer Care Foundation, whose relentless efforts have made this achievement possible. This facility is set to bring solace to countless patients, alleviating suffering and providing renewed hope.\n\nThe establishment of this cutting-edge nuclear medicine facility at SCI marks a transformative leap in cancer diagnostics and treatment, benefiting not just the people of Assam, but the entire Northeastern Region. This advanced technology will significantly enhance precision in cancer care, enabling early detection and more effective therapeutic interventions.\n\nRecognizing the challenges faced by cancer patients in the state, the Government of Assam and Tata Trusts signed an MoU on 3rd February 2018 to implement the Distributed Cancer Care Model. This three-tiered model is designed to provide comprehensive cancer care, ranging from diagnostic tests to advanced treatment procedures, while strengthening the existing public health system.\n\nAs part of this initiative, a structured hierarchy of cancer care facilities is being developed, including State Cancer Institute, Guwahati as the Apex Referral Centre, Comprehensive Cancer Hospitals, and Diagnostic & Day Care Centres adjacent to Government Medical Colleges and District Hospitals.\n\nSCI, Guwahati, is poised to become the Level 1 Apex Cancer Referral Centre of Assam, setting new benchmarks in comprehensive oncology care. The newly expanded facility now houses 350 beds, including suites, private and semi-private cabins, and general wards, ensuring a patient-centric approach to treatment.\n\nThe institute features 8 advanced state-of-the-art modular operating theatres, 23 Intensive Care Units Beds, a dedicated Bone Marrow Transplant (BMT) facility, and a cutting-edge Critical Care Unit equipped with the latest diagnostic and life-support technologies.\n\nIt stands as a testament to SCI’s commitment to excellence, featuring some of the most advanced cancer treatment technologies, including Tomo Therapy System, Linear Accelerators (LINACs), and future plans for an MRI-guided Linear Accelerator. With these advancements, SCI is set to redefine cancer care in the region, offering unparalleled treatment and hope to patients.\n\nAt SCI, Guwahati, patients receive trusted and compassionate care from a highly skilled multidisciplinary team dedicated to excellence in oncology. The institute brings together specialists from various fields, including Radiation Oncologists, Medical Oncologists, Surgical Oncologists, Maxillofacial Surgeons, Anesthetists, Nuclear Medicine Specialists, Radiologists, and Oncopathologists.\n\nWith seamless coordination, the team at SCI ensures a comprehensive and integrated approach to cancer treatment, reaffirming its position as a premier cancer care institution in the region.\n\nThe new building of the State Cancer Institute (SCI) has been operationalized in a phased manner, ensuring superior quality of service and a state-of-the-art healthcare experience. The following facilities have been introduced, significantly enhancing patient care: Medical Oncology OPD, Surgical Oncology OPD, Head & Neck Oncology OPD, Dental OPD, Day Care & Long Chemotherapy Wards, General Wards & Twin Sharing Rooms, Blood Collection Centre, Advanced Diagnostic Unit featuring MRI, CT Scan, X-ray, Ultrasound, and Mammography, Physiotherapy Unit, 24-Hour Emergency Ward & Palliative Procedure Room, Oncopathology Laboratory, Biochemistry Laboratory, Microbiology Laboratory, Mortuary, and a State-of-the-Art Laundry Facility.\n\nSCI further expanded its services with the inauguration of the Preventive Oncology Department. This department focuses on early detection and timely intervention, offering screening services for Oral, Breast, and Cervical Cancer, reinforcing SCI’s commitment to comprehensive cancer prevention and care.",
     "description": "The State Cancer Institute (SCI), Guwahati was inaugurated on 17th February 2017 by the then Union Health Minister Shri J.P. Nadda, in the august presence of the then Chief Minister of Assam Shri Sarbananda Sonowal and then Health Minister Dr. Himanta Biswa Sarma. It was established to address the growing burden of cancer in the region, which earlier compelled patients to seek treatment in metro cities outside Assam.\n\nOriginally starting with 200 beds, SCI has expanded to 350 beds by 2024, becoming a vital hub for cancer care in the Northeast. It operates as the apex centre of the Assam Cancer Care Foundation (ACCF) — a joint initiative of the Government of Assam and Tata Trusts. While ACCF manages operational responsibilities, the academic wing is affiliated with Gauhati Medical College.\n\nSpanning an area of 4.76 lakh square feet, the expanded infrastructure enables SCI to integrate advanced diagnostic and treatment technologies. This transformation ensures access to high-quality, affordable cancer care for all.\n\nInitially established in August 2016 as a 200-bed cancer hospital under Gauhati Medical College, SCI was formally dedicated as a standalone institute on 17th February 2017, becoming Assam’s third cancer hospital, after Dr. B. Borooah Cancer Institute and Cachar Cancer Hospital, with Dr. B.C. Goswami as its founding Director.\n\nFrom the outset, SCI was equipped with cutting-edge technologies including Elekta Synergy LINAC, PET-CT, Cyclotron, Telecobalt, and Brachytherapy systems. Over the years, it has added high-end medical technologies such as Advanced Linear Accelerators, 3D Treatment Planning System (TPS), MRI, CT, Digital X-ray, 3D/4D Ultrasound, Mammography, Dual-head Gamma Camera, and Robotic Surgery. The institute has also expanded vertically to the 5th and 6th floors, accommodating future medical advancements.\n\nSCI houses departments including Nuclear Medicine, Comprehensive Radiodiagnosis Unit, Advanced Oncology and Molecular Labs. It offers the three primary pillars of cancer treatment — radiation, medical, and surgical oncology, in addition to diagnostics, palliative care, and oncology research.\n\nIn May 2017, Tata Trusts initiated support for SCI's modernization, including the development of a garden and improved housekeeping services to foster a patient-friendly environment. A notable milestone was the launch of the Digital Nerve Centre (DiNC), developed in collaboration with Tata Consultancy Services (TCS), and inaugurated by Shri Ratan Tata during his visit on 17th June 2018. DiNC serves as a digital platform for patient navigation, appointment scheduling, treatment coordination, and hosting Virtual Tumour Boards (VTBs) with other hospitals.\n\nThe design for the new SCI building was finalized in September 2018, and construction commenced under Larsen & Toubro (L&T) in September 2019. A new Radiation Block was inaugurated by Hon’ble Home Minister Shri Amit Shah in July 2021. The new SCI building, completed after years of dedicated work, was inaugurated by Hon’ble Chief Minister Shri Himanta Biswa Sarma on 2nd March 2024, marking a new era in comprehensive cancer care.\n\nUnder ACCF’s leadership, SCI’s new Radiation Therapy Block has been equipped with Tomo-Therapy and the latest LINAC machines, further strengthening its capacity to deliver world-class oncology services.\n\nWe proudly celebrate 17th February as the Foundation Day of SCI, Guwahati . SCI stands as a symbol of hope and healing for countless patients across the region.\n\nThe introduction of an advanced Nuclear Medicine Facility marks a transformative step in cancer diagnosis and treatment, enhancing precision and enabling early detection and targeted interventions for patients across the Northeastern Region.\n\nTo address the increasing burden of cancer, the Government of Assam and Tata Trusts signed an MoU on 3rd February 2018 to implement the Distributed Cancer Care Model — a three-tiered system designed to strengthen public healthcare and make comprehensive cancer care accessible throughout the state.\n\nThis model includes:\n- Level 1: SCI, Guwahati – Apex Referral Centre\n- Level 2: Comprehensive Cancer Hospitals\n- Level 3: Diagnostic & Day Care Centres adjacent to Government Medical Colleges and District Hospitals\n\nSCI is poised to serve as the Level 1 Apex Cancer Referral Centre of Assam. Its new infrastructure includes suites, private and semi-private cabins, general wards, and offers 350 beds to ensure comfort and personalized care.\n\nThe institute features:\n- 8 modular operation theatres\n- 23 ICU beds\n- A dedicated Bone Marrow Transplant (BMT) facility\n- A modern Critical Care Unit\n- State-of-the-art treatment equipment such as Tomo Therapy, LINAC, and upcoming MRI-guided LINAC systems\n\nSCI is staffed by a multidisciplinary team of experts including Radiation, Medical, and Surgical Oncologists, Maxillofacial Surgeons, Anesthetists, Radiologists, Nuclear Medicine Specialists, and Oncopathologists, all working in unison to deliver holistic cancer care.\n\nThe new SCI building, operationalized in a phased manner, includes:\n- Oncology OPDs (Medical, Surgical, Head & Neck, Dental)\n- Day Care & Long Chemotherapy Wards\n- General Wards & Twin Sharing Rooms\n- Blood Collection Centre\n- Advanced Diagnostics (MRI, CT, X-ray, Ultrasound, Mammography)\n- Physiotherapy Unit\n- 24-Hour Emergency Ward & Palliative Procedure Room\n- Oncopathology, Biochemistry & Microbiology Labs\n- Mortuary\n- Modern Laundry Facility\n\nAdding to its comprehensive care model, SCI has also inaugurated the Preventive Oncology Department which focuses on early detection and screening for oral, breast, and cervical cancers — strengthening its mission to not just treat but prevent cancer.",
@@ -839,31 +839,65 @@ export const SocialInfra = [
   {
     "id": 1,
     "Title": "Accommodation ( housing/ hotels)",
-    "Description":["Long stay: Decent apartments at Dutta bhawan, like Luit View apartments, Jsb Ananda at pn road etc. and limited independent houses", "Short Stay: Good 3 star hotels like Hotel Tea County, Hotel Sarovar Portico, Tree Fern, Dibrugarh Club House, Raj Palace,Nataraj, Manohari Resorts etc."]
+    "Description": ["Long stay: Decent apartments at Dutta bhawan, like Luit View apartments, Jsb Ananda at pn road etc. and limited independent houses", "Short Stay: Good 3 star hotels like Hotel Tea County, Hotel Sarovar Portico, Tree Fern, Dibrugarh Club House, Raj Palace,Nataraj, Manohari Resorts etc."]
   },
   {
     "id": 2,
     "Title": "Education centres",
-    "Description":["Good primary and secondary schools like DPS, Don Bosco, Little Flower School, VKV Dibrugarh, St. Xavier's School, Siksha Valley, Salt Brook Academy etc."]
+    "Description": ["Good primary and secondary schools like DPS, Don Bosco, Little Flower School, VKV Dibrugarh, St. Xavier's School, Siksha Valley, Salt Brook Academy etc."]
   },
   {
     "id": 3,
     "Title": "Health facilities",
-    "Description":["Good multispecialty Hospitals like Srishti Hospitals & Research Centre,Aditya, M.F. Hospital & Research Centre, Assam medical college etc."]
+    "Description": ["Good multispecialty Hospitals like Srishti Hospitals & Research Centre,Aditya, M.F. Hospital & Research Centre, Assam medical college etc."]
   },
   {
     "id": 4,
     "Title": "Air/ Road/ Rail Connectivity",
-    "Description":["Air: Domestic Airport at Mohanbari", "Rail: 2 railway stations, at Dibrugarh town & Banipur"]
+    "Description": ["Air: Domestic Airport at Mohanbari", "Rail: 2 railway stations, at Dibrugarh town & Banipur"]
   },
   {
     "id": 5,
     "Title": "Restaurants",
-    "Description":["Few fine dining restaurants like Yolo, KFC, Dominos, and good outing places like Food infinity, Atmosphere, El Dorado Bar & Restaurant, Hotel Garden Treat, May Flower, Bogibeel Eco Resort, Kanchunjunga (Floating Restaurant over Brahmaputra) etc."]
+    "Description": ["Few fine dining restaurants like Yolo, KFC, Dominos, and good outing places like Food infinity, Atmosphere, El Dorado Bar & Restaurant, Hotel Garden Treat, May Flower, Bogibeel Eco Resort, Kanchunjunga (Floating Restaurant over Brahmaputra) etc."]
   },
   {
     "id": 6,
     "Title": "Malls/ Movie Halls",
-    "Description":["Good Shopping centres like Sohum,Junction mall, Reliance Trends, Reliance Digital, Reliance Smart, Pantaloons, westside, Vishal, HS plaza and entertainment centres like, Galleria Cinema, Dibrugarh Gymkhana Club etc."]
+    "Description": ["Good Shopping centres like Sohum,Junction mall, Reliance Trends, Reliance Digital, Reliance Smart, Pantaloons, westside, Vishal, HS plaza and entertainment centres like, Galleria Cinema, Dibrugarh Gymkhana Club etc."]
   }
+]
+
+export const LatestVideos = [{
+  "id": 1,
+  "Title": "Integrated Robotic Surgery Facility",
+  "Image": "/SCI/LatestVideos/robotic.jpeg",
+  "Link": "/SCI/LatestVideos/SCI-OT.mp4",
+  "duration": 0
+}, {
+  "id": 2,
+  "Title": "A new chapter in cancer healing beings",
+  "Image": "/SCI/LatestVideos/tvc.png",
+  "Link": "/SCI/LatestVideos/TVC HINDI.MP4",
+  "duration": 0
+},
+{
+  "id": 3,
+  "Title": "State of the Art Cancer Hospital in Guwahati",
+  "Image": "/SCI/LatestVideos/new_hospital.png",
+  "Link": "https://www.youtube.com/watch?v=xziy2MCp95U",
+  "duration": 0
+}, {
+  "id": 4,
+  "Title": `Gaath Pe Dhyan "Breast cancer awareness"`,
+  "Image": "/SCI/LatestVideos/sanjeev_kapoor.png",
+  "Link": "/SCI/LatestVideos/GPD.mp4",
+  "duration": 0
+}, {
+  "id": 5,
+  "Title": "PM Modi Dedicates & Lays Foundation Stone of Cancer Hospitals in Assam",
+  "Image": "/SCI/LatestVideos/Bihu_Video.png",
+  "Link": "https://www.youtube.com/watch?v=ptmiMutYI6I",
+  "duration": 0
+},
 ]
