@@ -205,7 +205,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                 <ContactUs open={open} handleClose={() => setOpen(false)} />
             </Box> */}
             {VideosAccess?<Box display="flex" width="100%" justifyContent="center">
-                <LatestEvent open={open} handleClose={() => setOpen(false)} />
+                <LatestEvent open={open} handleClose={() => setOpen(false)} setOpen={setOpen}/>
             </Box>:<></>}
             
 
