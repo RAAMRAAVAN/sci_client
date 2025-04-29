@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 const items = [
     {
         title:
-            'Celebrating ACCF Foundation Day on 28th April',
+            'Celebrated ACCF Foundation Day on 28th April',
         url: '/news',
     },
 ];
