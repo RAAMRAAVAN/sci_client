@@ -53,25 +53,38 @@ export default function NewsLink() {
 
       {news.slice(0, 2).map((entry, index) => (
         <Grid key={index} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
-          <Card onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} style={{ backgroundColor: 'rgb(232, 237, 238)', display:'flex', width:'100%'}}>
-            <CardActionArea>
+          <Card onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} style={{ backgroundColor: 'rgb(232, 237, 238)', display: 'flex', width: '100%', position: 'relative' }}>
+            <CardActionArea sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'start' }}>
               <CardMedia
                 component="img"
                 sx={{
-                  height: '175px'
+                  height: '175px',
+                  // border:'1px black  solid'
                 }}
                 image={`/News/${entry.id}/1.jpg`}
                 alt="green iguana"
               />
               <CardContent>
-                <Typography gutterBottom variant="h6" component="div" sx={{ height: '4em' }}>
+                <Typography gutterBottom variant="h6" component="div" sx={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}>
                   {entry.content_heading}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                <Typography variant="body2" sx={{
+                  color: 'text.secondary', display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}>
                   {entry.sub_heading}
                 </Typography>
               </CardContent>
-              <CardActions sx={{ paddingY: 1, marginBottom: 2 }}>
+              <CardActions sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
                 <div className="news-arrow">
                   <East fontSize="large" />
                 </div>

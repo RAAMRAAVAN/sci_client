@@ -21,6 +21,7 @@ const VideoCard = ({ LatestVideosData, setOpen, setSelectedVideo, id }) => {
 
     }}
   >
+    {/* <Box >     */}
     <img
       src={LatestVideosData[id].Image}
       style={{
@@ -38,6 +39,7 @@ const VideoCard = ({ LatestVideosData, setOpen, setSelectedVideo, id }) => {
         e.target.style.transform = 'scale(1)';
       }}
     />
+    {/* </Box> */}
 
     {/* Play button with a click handler */}
     <IconButton
@@ -76,6 +78,7 @@ const VideoCard = ({ LatestVideosData, setOpen, setSelectedVideo, id }) => {
         WebkitBoxOrient: 'vertical',
         textOverflow: 'ellipsis',
         width: '90%',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
       }}
     >
       {LatestVideosData[id].Title}
