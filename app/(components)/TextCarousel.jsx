@@ -70,7 +70,7 @@ const TextCarousel = () => {
                         backgroundColor: '#ebebeb'
                     }}
                 >
-                    <Box
+                    {/* <Box
                         sx={{
                             display: 'inline-block',
                             whiteSpace: 'nowrap',
@@ -88,7 +88,7 @@ const TextCarousel = () => {
                         >
                             {items[0].title}
                         </Typography>
-                    </Box>
+                    </Box> */}
                 </Box>
             </Box>
 

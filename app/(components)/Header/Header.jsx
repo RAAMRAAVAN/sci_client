@@ -114,7 +114,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 width={80}
                                 height={90}
                                 priority
-                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                style={{ objectFit: "contain", width:'auto', height:'100px', cursor:'pointer' }}
                                 onClick={() => window.location.href = '/'}
                             />
                         </Box>

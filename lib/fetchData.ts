@@ -14,8 +14,8 @@ export const UpdatesAccess = true;
 export const HomeContent = {
   "_id": "67d5201b92ae82369ef8f29d",
   "id": 1,
-  "heading": "South Asia's Largest Cancer Care Networks",
-  "description": "Assam Cancer Care Foundation is a joint partnership between the Government of Assam and the Tata Trusts. It was set up in December 2017 to create a first-of-its-kind, three-level cancer grid in the state of Assam. The distributed care model was conceptualized by the Trusts and the Government of Assam to create patient-centric cancer institutions to deliver standardized and affordable care closer to patients' homes. With a plan to set up 17 cancer hospitals in the state, it is the largest cancer care network in South Asia. Of the 17 hospitals, Hon’ble Prime Minister Shri Narendra Modi inaugurated seven centres at Dibrugarh, Barpeta, Tezpur, Lakhimpur, Jorhat, Kokrajhar, and Darrang; and laid the foundation stone for seven new hospitals at Nagaon, Goalpara, Nalbari, Golaghat, Tinsukia, Sivasagar, and Dhubri on April 28, 2022. Construction work for the Diphu centre is currently in progress. In March 2024, the Guwahati and Silchar centres were successfully inaugurated.",
+  "heading": "South Asia's Largest Cancer Care Network",
+  "description": "Assam Cancer Care Foundation is a joint initiative between the Government of Assam and the Tata Trusts. It was set up in December 2017 to create a first-of-its-kind, three-level cancer grid in the state of Assam. The distributed care model was conceptualized by the Government of Assam and Tata Trusts to create patient-centric cancer care hospitals to deliver standardized and affordable care closer to patients' homes. With a plan to set up 17 cancer hospitals in the state of Assam, it is the largest cancer care network in South Asia. Of the 17 hospitals, Hon’ble Prime Minister, Shri Narendra Modi inaugurated seven hospitals at Dibrugarh, Barpeta, Tezpur, Lakhimpur, Jorhat, Kokrajhar, and Darrang and also laid the foundation stones for seven more new cancer care hospitals at Nagaon, Goalpara, Nalbari, Golaghat, Tinsukia, Sivasagar, and Dhubri on April 28, 2022. Subsequently, two more hospitals at State Cancer Institute Guwahati and Silchar were inaugurated by Hon’ble Chief Minister of Assam, Dr. Himanta Biswa Sarma in March 2024. Construction works at Diphu and the seven new sites are currently in progress.",
   "HospitalID": 1,
   "updatedAt": "2025-03-18T08:51:38.302Z"
 }
@@ -24,6 +24,14 @@ export const HomeContent = {
 
 export const ImageSliderData = [
   {
+    "_id": "6712",
+    "id": 2,
+    "HospitalID": 1,
+    "name": "Slider Image 0",
+    "path": "/SCI/slider/bg2.jpg",
+    "active": "Y"
+  }, 
+  {
     "_id": "6711",
     "id": 1,
     "HospitalID": 1,
@@ -31,20 +39,78 @@ export const ImageSliderData = [
     "path": "/SCI/slider/bg3.jpg",
     "active": "Y"
   },
-  {
-    "_id": "6712",
-    "id": 2,
-    "HospitalID": 1,
-    "name": "Slider Image 0",
-    "path": "/SCI/slider/bg2.jpg",
-    "active": "Y"
-  },
+  
   {
     "_id": "6713",
     "id": 3,
     "HospitalID": 1,
     "name": "Slider Image 1",
     "path": "/SCI/slider/1.jpg",
+    "active": "Y"
+  },
+  // {
+  //   "_id": "6715",
+  //   "id": 5,
+  //   "HospitalID": 1,
+  //   "name": "Slider Image 4",
+  //   "path": "/SCI/slider/4.jpg",
+  //   "active": "Y"
+  // },
+  // {
+  //   "_id": "6716",
+  //   "id": 6,
+  //   "HospitalID": 1,
+  //   "name": "Slider Image 5",
+  //   "path": "/SCI/slider/5.jpg",
+  //   "active": "Y"
+  // },
+  // {
+  //   "_id": "6717",
+  //   "id": 7,
+  //   "HospitalID": 1,
+  //   "name": "Slider Image 6",
+  //   "path": "/SCI/slider/6.jpg",
+  //   "active": "Y"
+  // }
+  // ,
+  // {
+  //   "_id": "6718",
+  //   "id": 8,
+  //   "HospitalID": 1,
+  //   "name": "Slider Image 7",
+  //   "path": "/SCI/slider/7.jpg",
+  //   "active": "Y"
+  // },
+  // {
+  //   "_id": "6719",
+  //   "id": 9,
+  //   "HospitalID": 1,
+  //   "name": "Slider Image 9",
+  //   "path": "/SCI/slider/9.jpg",
+  //   "active": "Y"
+  // },
+  {
+    "_id": "6720",
+    "id": 10,
+    "HospitalID": 1,
+    "name": "Slider Image 10",
+    "path": "/SCI/slider/10.jpg",
+    "active": "Y"
+  },
+  {
+    "_id": "6721",
+    "id": 11,
+    "HospitalID": 1,
+    "name": "Slider Image 11",
+    "path": "/SCI/slider/11.jpg",
+    "active": "Y"
+  },
+  {
+    "_id": "6721",
+    "id": 12,
+    "HospitalID": 1,
+    "name": "Slider Image 12",
+    "path": "/SCI/slider/12.jpg",
     "active": "Y"
   },
   {
@@ -55,47 +121,6 @@ export const ImageSliderData = [
     "path": "/SCI/slider/2.jpg",
     "active": "Y"
   },
-  {
-    "_id": "6715",
-    "id": 5,
-    "HospitalID": 1,
-    "name": "Slider Image 4",
-    "path": "/SCI/slider/4.jpg",
-    "active": "Y"
-  },
-  {
-    "_id": "6716",
-    "id": 6,
-    "HospitalID": 1,
-    "name": "Slider Image 5",
-    "path": "/SCI/slider/5.jpg",
-    "active": "Y"
-  },
-  {
-    "_id": "6717",
-    "id": 7,
-    "HospitalID": 1,
-    "name": "Slider Image 6",
-    "path": "/SCI/slider/6.jpg",
-    "active": "Y"
-  }
-  ,
-  {
-    "_id": "6718",
-    "id": 8,
-    "HospitalID": 1,
-    "name": "Slider Image 7",
-    "path": "/SCI/slider/7.jpg",
-    "active": "Y"
-  },
-  {
-    "_id": "6719",
-    "id": 9,
-    "HospitalID": 1,
-    "name": "Slider Image 9",
-    "path": "/SCI/slider/9.jpg",
-    "active": "Y"
-  }
 ]
 
 // ✅ Fetch Doctors
@@ -895,7 +920,7 @@ export const LatestVideos = [{
   "duration": 0
 }, {
   "id": 5,
-  "Title": "PM Modi Dedicates & Lays Foundation Stone of Cancer Hospitals in Assam",
+  "Title": "Hon’ble Prime Minister, Shri Narendra Modi Dedicates & Lays Foundation Stone of Cancer Hospitals in Assam",
   "Image": "/SCI/LatestVideos/Bihu_Video.png",
   "Link": "https://www.youtube.com/watch?v=ptmiMutYI6I",
   "duration": 0

@@ -77,8 +77,10 @@ const VideoCard = ({ LatestVideosData, setOpen, setSelectedVideo, id }) => {
         WebkitLineClamp: 2, // LIMIT to 2 lines
         WebkitBoxOrient: 'vertical',
         textOverflow: 'ellipsis',
-        width: '90%',
+        width: '100%',
+        padding:'5px 40px',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+        background:'#1565c047'
       }}
     >
       {LatestVideosData[id].Title}
