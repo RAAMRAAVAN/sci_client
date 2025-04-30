@@ -4,11 +4,13 @@ import Entries from "./entries";
 // import { API, Font, HName } from "@/app/(components)/Global";
 import { FetchAboutUs, HName} from "@/lib/fetchData";
 import OurHospitalsPage from "@/app/(components)/Hospitals/OurHospitalsPage";
+import ModelofCare from "@/app/(components)/ModelofCare/ModelofCare";
 
 const page = async () => {
     const HoName = HName;
     const Entris = FetchAboutUs;
     return (<>
+        {/* <ModelofCare/> */}
         <Box display="flex" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
             <ExportedImage
                 src={`${HName}/about/about_us.jpg`}

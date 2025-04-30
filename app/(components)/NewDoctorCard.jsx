@@ -47,7 +47,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
   // Preload Image when component mounts
   useEffect(() => {
     const imageUrl = image
-      ? `https://barpetacancercentre.org/images/allLocationDoctors/${image}`
+      ? `http://barpetacancercentre.org/images/allLocationDoctors/${image}`
       : "/Doctors/doctor_image.webp";
     preloadImage(imageUrl)
       .then((src) => setPreloadedImage(src))

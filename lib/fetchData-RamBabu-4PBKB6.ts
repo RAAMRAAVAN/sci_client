@@ -90,7 +90,7 @@ export async function fetchDoctors2(payload = { ccode: "SCI" }) {
   // ⚠️ Bypass SSL check (only for local development)
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   try {
-    const response = await fetch(`https://barpetacancercentre.org/api/get-doctor-for-center`, {
+    const response = await fetch(`http://barpetacancercentre.org/api/get-doctor-for-center`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -112,7 +112,7 @@ export async function fetchDoctors2(payload = { ccode: "SCI" }) {
 export async function fetchAccomplishments2() {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   try {
-    const response = await fetch(`https://barpetacancercentre.org/api/get-counts-for-center`, {
+    const response = await fetch(`http://barpetacancercentre.org/api/get-counts-for-center`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -408,7 +408,7 @@ export const FetchHospitalsData = [
     "_id": "67de3bd06487342f61ecdfe3",
     "id": 3,
     "name": "BARPETA CANCER CENTRE",
-    "domain": "https://barpetacancercentre.org/",
+    "domain": "http://barpetacancercentre.org/",
     "Location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7152.158202780259!2d90.97631346977539!3d26.32393799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37599dfa07ce4509%3A0xe74899e5b2d34f24!2sBarpeta%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1659002675390!5m2!1sen!2sin",
     "PhoneNumber": "+91 6026332174",
     "WhatsAppNumber": "94356 47725",
@@ -580,7 +580,7 @@ export const FetchAboutUs = [
 export async function fetchNewsAndEvents2() {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   try {
-    const response = await fetch(`https://barpetacancercentre.org/api/get-news-events-for-center`, {
+    const response = await fetch(`http://barpetacancercentre.org/api/get-news-events-for-center`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
