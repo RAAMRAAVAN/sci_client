@@ -1,15 +1,15 @@
 "use client";
-import { Box, IconButton, Grid, useMediaQuery, Typography } from "@mui/material";
+import { Box, IconButton, Grid, useMediaQuery, Typography, TextField } from "@mui/material";
 import { useState, useEffect, useMemo } from "react";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { useSwipeable } from "react-swipeable";
 import NewDoctorCard from "../../(components)/NewDoctorCard";
-import { color1 } from "../Global";
+import { color1, MedantaOrange } from "../Global";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDoctors, selectPage, setPage } from "@/redux/features/doctorSlice";
 import Loader from "../Loader";
 import { AnimatePresence, motion } from "framer-motion";
-
+import SearchDoctors from "./SearchDoctors";
 const DoctorSlider = () => {
     const dispatch = useDispatch();
     const doctors = useSelector(selectDoctors);
@@ -74,10 +74,14 @@ const DoctorSlider = () => {
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Box display='flex' width='90%' flexDirection='column'>
-                <Typography variant="h5" fontWeight="bold" marginTop={5} onClick={()=>dispatch(setPage(1))} sx={{cursor:'pointer'}}>
+            <Box display='flex' width='90%' alignItems='center' marginTop={5} justifyContent='space-between'>
+                <Typography variant="h5" fontWeight="bold"  onClick={() => dispatch(setPage(1))} sx={{ cursor: 'pointer' }}>
                     Our Doctors
                 </Typography>
+                <Box display='none' width='50%'>
+                    <SearchDoctors doctors={doctors} />
+                </Box>
+
             </Box>
         </Box>
         <Box

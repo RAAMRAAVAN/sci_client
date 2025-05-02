@@ -843,7 +843,15 @@ export const FetchPartners = [{
   "partner_name": "Brahmaputra Crackers and Polymers Ltd",
   "partner_image": "/Partners/BCPL.jpg",
   "path": "https://bcplonline.co.in/"
-}]
+},
+{
+  "id": 16,
+  "partner_name": "iciciFoundation",
+  "partner_image": "/Partners/iciciFoundation.png",
+  "path": "https://www.icicifoundation.org/"
+}
+
+]
 
 export const AcademicsContents = [
   {

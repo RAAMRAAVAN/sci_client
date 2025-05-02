@@ -39,8 +39,8 @@ const Accomplishments = ({ accomplishments }) => {
         <Box display="flex" width="100%" justifyContent="center">
 
 
-            <Grid container justifyContent="center" width="80%" padding={2} marginY={3} spacing={3}>
-                <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
+            <Grid container justifyContent="center" width="100%" padding={2} marginY={3} spacing={3}>
+                <Grid item xs={12} sm={6} md={4} lg={2.1} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
                     onMouseEnter={(e) => {
                         e.target.style.transform = "scale(1.01)"; // ✅ Zoom in
                     }}
@@ -68,7 +68,38 @@ const Accomplishments = ({ accomplishments }) => {
                     </Typography>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
+                <Grid item xs={12} sm={6} md={4} lg={2.1} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
+                    onMouseEnter={(e) => {
+                        e.target.style.transform = "scale(1.01)"; // ✅ Zoom in
+                    }}
+                    onMouseLeave={(e) => {
+                        e.target.style.transform = "scale(1)"; // ✅ Reset zoom
+                    }}
+                >
+                    <Box sx={{ backgroundColor: "white", padding: "30px", display: "flex", borderRadius: "50%" }}>
+                        <ExportedImage src={`/SCI/Accomplishments/beds.png`} alt='img' width={100} height={100} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" sx={{ width: 'auto', height: 'auto' }} />
+                    </Box>
+                    {/* <Typography variant="h3" fontWeight="bold" color="orange" sx={{ textshadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
+                            {accomplishments.total_doctors}
+                        </Typography> */}
+                    <Box display='flex'>
+                        <AnimatedCounter
+                            end={350}
+                            duration={AnimationDuration}
+                            fontWeight="bold"
+                            color="orange"
+                            sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
+                        />
+                        <Typography variant="h3" fontWeight="bold" color="orange" sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}>
+                            +
+                        </Typography>
+                    </Box>
+                    <Typography borderTop="1px solid lightgray" color="black" padding={1} variant="h6" margin={1} width="100%" textAlign="center" fontWeight="bold">
+                        Beds
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={4} lg={2.1} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
                     onMouseEnter={(e) => {
                         e.target.style.transform = "scale(1.01)"; // ✅ Zoom in
                     }}
@@ -96,7 +127,7 @@ const Accomplishments = ({ accomplishments }) => {
                     </Typography>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
+                <Grid item xs={12} sm={6} md={4} lg={2.1} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
                     onMouseEnter={(e) => {
                         e.target.style.transform = "scale(1.01)"; // ✅ Zoom in
                     }}
@@ -125,7 +156,7 @@ const Accomplishments = ({ accomplishments }) => {
                     </Typography>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
+                <Grid item xs={12} sm={6} md={4} lg={2.1} sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", cursor: 'pointer', transition: "all 0.1s ease-in-out", }}
                     onMouseEnter={(e) => {
                         e.target.style.transform = "scale(1.01)"; // ✅ Zoom in
                     }}
