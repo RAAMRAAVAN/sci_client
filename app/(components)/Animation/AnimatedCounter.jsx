@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 const AnimatedCounter = ({
   end = 1000,
   duration = 2000,
-  variant = 'h3',
+  variant = 'h4',
   ...props
 }) => {
   const [count, setCount] = useState(0);

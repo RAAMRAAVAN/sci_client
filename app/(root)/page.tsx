@@ -58,7 +58,7 @@ export default async function Home() {
         </Box>
 
         <Box marginY={5} textAlign="center" display="flex" justifyContent='center' flexDirection='column' >
-          <Typography color="brown" fontWeight="bolder" variant="h4" zIndex={2}>
+          <Typography fontWeight="bolder" variant="h4" zIndex={2}>
             Our Accomplishments
           </Typography>
           <Box zIndex={2}>
