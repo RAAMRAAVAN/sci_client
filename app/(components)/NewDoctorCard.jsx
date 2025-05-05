@@ -107,15 +107,20 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
             </Box>
 
             <Box display="flex" width="65%" flexDirection="column">
-              <Typography
-                fontWeight="bold"
-                variant="h6"
-                overflow="hidden"
-                textOverflow="ellipsis"
-                whiteSpace="nowrap"
-              >
-                {name}
-              </Typography>
+               <Typography
+               fontWeight="bold"
+               variant="h6"
+               fontSize={16}
+               sx={{
+                 display: '-webkit-box',
+                 WebkitLineClamp: 2,
+                 WebkitBoxOrient: 'vertical',
+                 overflow: 'hidden',
+                 textOverflow: 'ellipsis',
+               }}
+             >
+               {name}
+             </Typography>
               <Typography color="gray" noWrap fontSize={13}>
                 {designation || "Designation"}
               </Typography>
