@@ -94,7 +94,7 @@ const Overview = () => {
             <ExportedImage
               src={
                 doctorDetails?.doctor_image
-                  ? `http://barpetacancercentre.org/images/allLocationDoctors/${doctorDetails.doctor_image}`
+                  ? `https://barpetacancercentre.org/images/allLocationDoctors/${doctorDetails.doctor_image}`
                   : `/Doctors/doctor_image.webp`
               }
               alt="Doctor Image"

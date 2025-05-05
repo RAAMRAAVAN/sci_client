@@ -74,15 +74,18 @@ const DoctorSlider = () => {
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Box display='flex' width='90%' alignItems='center' marginTop={5} justifyContent='space-between'>
-                <Typography variant="h5" fontWeight="bold"  onClick={() => dispatch(setPage(1))} sx={{ cursor: 'pointer' }}>
-                    Our Doctors
-                </Typography>
-                <Box display='none' width='50%'>
-                    <SearchDoctors doctors={doctors} />
-                </Box>
-
-            </Box>
+            <Grid container display='flex' width='90%' alignItems='center' marginTop={5} justifyContent='space-between'>
+                <Grid item lg={2} md={4} sm={4} xs={12}>
+                    <Typography variant="h5" fontWeight="bold" onClick={() => dispatch(setPage(1))} sx={{ cursor: 'pointer' }}>
+                        Our Doctors
+                    </Typography>
+                </Grid>
+                {/* <Grid item lg={4} md={6} sm={8} xs={12}>
+                    <Box position='relative'>
+                        <SearchDoctors doctors={doctors} />
+                    </Box>
+                </Grid> */}
+            </Grid>
         </Box>
         <Box
             {...handlers}

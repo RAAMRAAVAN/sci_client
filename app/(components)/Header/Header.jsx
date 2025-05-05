@@ -192,7 +192,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                     width: "100%",
                     position: "sticky",
                     top: 0,
-                    zIndex: 1001,
+                    zIndex: 5,
                     backgroundColor: "white",
                 }}
             >
