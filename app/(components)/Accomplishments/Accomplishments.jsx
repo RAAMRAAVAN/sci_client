@@ -4,7 +4,7 @@ import ExportedImage from "next-image-export-optimizer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Font } from "../Global";
+import { color4, Font } from "../Global";
 import AnimatedCounter from "../Animation/AnimatedCounter";
 
 function formatDate(dateString) {
@@ -194,10 +194,10 @@ const Accomplishments = ({ accomplishments }) => {
                         end={accomplishments.patient_footfall}
                         duration={AnimationDuration}
                         fontWeight="bold"
-                        color="orange"
+                        color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                     />
-                        <Typography variant="h4" fontWeight="bold" color="orange" 
+                        <Typography variant="h4" fontWeight="bold" color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                         >
                             +
@@ -212,10 +212,10 @@ const Accomplishments = ({ accomplishments }) => {
                         end={accomplishments.chemo_session}
                         duration={AnimationDuration}
                         fontWeight="bold"
-                        color="orange"
+                        color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                     />
-                        <Typography variant="h4" fontWeight="bold" color="orange" 
+                        <Typography variant="h4" fontWeight="bold" color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                         >
                             +
@@ -230,10 +230,10 @@ const Accomplishments = ({ accomplishments }) => {
                         end={accomplishments.radiation_session}
                         duration={AnimationDuration}
                         fontWeight="bold"
-                        color="orange"
+                        color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                     />
-                        <Typography variant="h4" fontWeight="bold" color="orange" 
+                        <Typography variant="h4" fontWeight="bold" color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                         >
                             +
@@ -246,13 +246,13 @@ const Accomplishments = ({ accomplishments }) => {
 
                 <Grid item lg={2.1} sx={{cursor:'pointer'}} md={3} sm={4} xs={12} border='1px black sold' backgroundColor='white' borderRadius={2} paddingY={2} boxShadow={5} display='flex' flexDirection='column' alignItems='center'>
                     <Box display='flex'><AnimatedCounter
-                        end={50}
+                        end={accomplishments.total_doctors}
                         duration={AnimationDuration}
                         fontWeight="bold"
-                        color="orange"
+                        color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                     />
-                        <Typography variant="h4" fontWeight="bold" color="orange" 
+                        <Typography variant="h4" fontWeight="bold" color={color4} 
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                         >
                             +
@@ -269,10 +269,10 @@ const Accomplishments = ({ accomplishments }) => {
                         end={350}
                         duration={AnimationDuration}
                         fontWeight="bold"
-                        color="orange"
+                        color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                     />
-                        <Typography variant="h4" fontWeight="bold" color="orange" 
+                        <Typography variant="h4" fontWeight="bold" color={color4}
                         // sx={{ textShadow: "3px 3px 5px rgba(0, 0, 0, 0.8)" }}
                         >
                             +
