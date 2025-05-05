@@ -58,11 +58,11 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
 
   return (
     <>
-      <DINCModal open={open} handleClose={() => setOpen(false)} doctorDetails={doctorDetails} />
+      {/* <DINCModal open={open} handleClose={() => setOpen(false)} doctorDetails={doctorDetails} /> */}
       <Card
         key={id}
         sx={{
-          // width: 500,
+          width: '100%',
           maxWidth: 500,
           mx: "auto",
           height: 400,

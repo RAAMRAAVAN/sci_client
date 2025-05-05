@@ -57,20 +57,20 @@ const DoctorSlider = () => {
         trackMouse: true,
     });
 
-    useEffect(() => {
-        const preloadImages = () => {
-            filteredDoctors.forEach((doctor) => {
-                if (doctor.doctor_image && !preloadedImages.has(doctor.doctor_image)) {
-                    const img = new Image();
-                    img.src = doctor.doctor_image;
-                    img.onload = () => {
-                        setPreloadedImages((prev) => new Set(prev).add(doctor.doctor_image));
-                    };
-                }
-            });
-        };
-        preloadImages();
-    }, [filteredDoctors]);
+    // useEffect(() => {
+    //     const preloadImages = () => {
+    //         filteredDoctors.forEach((doctor) => {
+    //             if (doctor.doctor_image && !preloadedImages.has(doctor.doctor_image)) {
+    //                 const img = new Image();
+    //                 img.src = doctor.doctor_image;
+    //                 img.onload = () => {
+    //                     setPreloadedImages((prev) => new Set(prev).add(doctor.doctor_image));
+    //                 };
+    //             }
+    //         });
+    //     };
+    //     preloadImages();
+    // }, [filteredDoctors]);
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
@@ -156,6 +156,7 @@ const DoctorSlider = () => {
                                         alignItems="stretch"
                                         marginY={2}
                                         position="relative"
+                                        // border='1px black solid'
                                     >
                                         <NewDoctorCard
                                             id={doctor.id}
@@ -191,7 +192,8 @@ const DoctorSlider = () => {
             ) : (
                 <Loader />
             )}
-        </Box></>
+        </Box>
+        </>
     );
 };
 
