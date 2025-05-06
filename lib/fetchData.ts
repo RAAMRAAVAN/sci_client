@@ -812,7 +812,7 @@ export const FetchPartners = [{
   "id": 10,
   "partner_name": "Titan",
   "partner_image": "/Partners/titan.jpg",
-  "path": "http://www.titan.co.in/"
+  "path": "https://www.titan.co.in/"
 },
 {
   "id": 11,
