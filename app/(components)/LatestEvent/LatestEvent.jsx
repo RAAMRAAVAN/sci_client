@@ -48,7 +48,7 @@ const LatestEvent = ({ open, setOpen }) => {
 
     return (
         <Box
-            zIndex={3}
+            zIndex={10}
             sx={{ pointerEvents: "none", display: open ? 'flex' : 'none' }}
         >
             <Box
