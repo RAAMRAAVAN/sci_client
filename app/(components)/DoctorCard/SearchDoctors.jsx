@@ -331,12 +331,12 @@ const SearchDoctors = ({ doctors }) => {
                                     bgcolor="white"
                                     borderRadius="50%"
                                     position='absolute'
-                                    height="40px"
-                                    width="40px"
-                                    right='2%'
+                                    height="35px"
+                                    width="35px"
+                                    right='1%'
                                 >
                                     <InputAdornment>
-                                        <SearchIcon sx={{ color: color4, fontSize: '28px' }} />
+                                        <SearchIcon sx={{ color: color4, fontSize: '20px' }} />
                                     </InputAdornment>
                                 </Box>
                             ),
@@ -348,19 +348,23 @@ const SearchDoctors = ({ doctors }) => {
                             '& .MuiOutlinedInput-root': {
                                 color: 'white',
                                 fontWeight: 'bold',
-                                // paddingX: 2,
+                                padding: '2px 8px',
                                 '& fieldset': { border: 'none' },
                                 '&:hover fieldset': { border: 'none' },
                                 '&.Mui-focused fieldset': { border: 'none' },
                                 '& input::placeholder': {
                                     color: 'white',
                                     opacity: 1,
-                                    fontSize: 14
+                                    fontSize: 14,
+                                    // border:'1px black solid',
+                                    marginY:0
                                 },
                             },
                             position: 'relative',
                             zIndex: 4,
-
+                            padding:0,
+                            // border:'1px black solid',
+                            margin:0
                         }}
                     />
                 )}
