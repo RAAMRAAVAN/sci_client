@@ -33,7 +33,7 @@ const Consultants = () => {
             const uniqueDepartments = [...new Set(
                 doctors
                     .map(doc => doc.depertment)  // ✅ fixed typo
-                    .filter(Boolean)
+                    .filter(dep => dep && dep.toLowerCase() !== 'hospital administration')
             )];
             setDepartments(uniqueDepartments);
         }
@@ -63,7 +63,7 @@ const Consultants = () => {
         <Box display="flex" width="100%">
             <Box display="flex" flexDirection="column" width="100%" padding={1}>
                 {/* Department Dropdown Button */}
-                <Grid display='none' container sx={{justifyContent: {xs:'center',sm: "center", md: "center", lg:"space-between"}}} position="relative" zIndex={1} marginTop={3}>
+                <Grid  container sx={{justifyContent: {xs:'center',sm: "center", md: "center", lg:"space-between"}}} position="relative" zIndex={1} marginTop={3}>
                     <Grid item lg={8} />
                     <Grid item lg={3} md={10} sm={10} xs={10} position='relative' ref={selectDepartmentRef}>
                         <Button

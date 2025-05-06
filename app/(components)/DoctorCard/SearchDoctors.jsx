@@ -45,7 +45,7 @@ const CustomPopper = ({
             anchorEl={anchorEl}
             placement="bottom-start"
             modifiers={[{ name: 'offset', options: { offset: [0, 8] } }]}
-            style={{ display: 'flex', position: 'absolute', zIndex: 4 }}
+            style={{ display: 'flex', position: 'absolute', zIndex: 3 }}
         >
             <Grid
                 container
@@ -58,8 +58,8 @@ const CustomPopper = ({
                     height: '100vh'
                 }}
             >
-                <Grid item xs={12} display='flex' flexDirection='column' width='100%' boxShadow={3} bgcolor='white' sx={{ position: 'absolute', top: '-30px', borderRadius: '0px 0px 10px 10px', paddingTop: 3, zIndex:4 }}>
-                     {inputValue.length > 0 && (
+                <Grid item xs={12} display='flex' flexDirection='column' width='100%' boxShadow={3} bgcolor='white' sx={{ position: 'absolute', top: '-30px', borderRadius: '0px 0px 10px 10px', paddingTop: 3, zIndex: 4 }}>
+                    {inputValue.length > 0 && (
                         <Box
                             sx={{
                                 boxShadow: 'none',
@@ -80,9 +80,9 @@ const CustomPopper = ({
                             {children}
                         </Box>
                     )}
-                    <Box borderTop="1px solid #eee"/>
-                    <Grid container paddingX={3} paddingBottom={1}  spacing={3} justifyContent='space-between' marginBottom={1}>
-                         {/* Doctors Button  */}
+                    <Box borderTop="1px solid #eee" />
+                    <Grid container paddingX={3} paddingBottom={1} spacing={3} justifyContent='space-between' marginBottom={1}>
+                        {/* Doctors Button  */}
                         <Grid item xs={6}>
                             <Button
                                 sx={{
@@ -100,7 +100,7 @@ const CustomPopper = ({
                             >
                                 Doctors
                             </Button>
-                            {openDoctors &&(
+                            {openDoctors && (
                                 <Box
                                     sx={{
                                         // border: '1px gray solid',
@@ -145,7 +145,7 @@ const CustomPopper = ({
                             )}
                         </Grid>
 
-                         {/* Speciality Button  */}
+                        {/* Speciality Button  */}
                         <Grid item xs={6}>
                             <Button
                                 sx={{
@@ -204,7 +204,7 @@ const CustomPopper = ({
                                 </Box>
                             )}
                         </Grid>
-                    </Grid> 
+                    </Grid>
                 </Grid>
             </Grid>
         </Popper>
@@ -213,6 +213,11 @@ const CustomPopper = ({
 
 const SearchDoctors = ({ doctors }) => {
     const [inputValue, setInputValue] = useState('');
+    const [filteredDoctors, setFilteredDoctors] = useState(
+        doctors.filter(doc =>
+            doc.depertment?.toLowerCase() !== 'hospital administration'
+        )
+    ); 
     const dispatch = useDispatch();
     const router = useRouter();
     const [open, setOpen] = useState(false);
@@ -233,7 +238,7 @@ const SearchDoctors = ({ doctors }) => {
             const uniqueDepartments = [...new Set(
                 doctors
                     .map(doc => doc.depertment)
-                    .filter(Boolean) // removes undefined/null/empty strings
+                    .filter(dep => dep && dep.toLowerCase() !== 'hospital administration') // removes undefined/null/empty strings
             )];
             //   console.log("working data", uniqueDepartments)
             setDepartments(uniqueDepartments);
@@ -267,13 +272,14 @@ const SearchDoctors = ({ doctors }) => {
         e.stopPropagation();
         setSpecialityList((prev) => !prev);
         setDoctorList(false);
+        setOpenDoctors(false);
         setInputValue('');
     };
 
     return (
         <Box ref={wrapperRef} display="flex" width="100%" flexDirection="column" position="relative" >
             <Autocomplete
-                options={doctors}
+                options={filteredDoctors}
                 disableCloseOnBlur
                 disableCloseOnSelect
                 getOptionLabel={(option) => option.name || ''}
@@ -285,11 +291,13 @@ const SearchDoctors = ({ doctors }) => {
                 inputValue={inputValue}
                 onInputChange={(event, newInputValue) => {
                     setInputValue(newInputValue);
+                    setOpenDoctors(false);
                 }}
                 onChange={(event, newValue) => {
                     dispatch(setDoctorID(newValue.id));
                     router.push('/consultants/doctor_details');
                     setOpen(false);
+                    
                 }}
                 PopperComponent={(props) => (
                     <Box width='100%' position='relative'>
@@ -298,9 +306,9 @@ const SearchDoctors = ({ doctors }) => {
                             inputValue={inputValue}
                             doctorList={doctorList}
                             setOpen={setOpen}
-                            doctors={doctors}
+                            doctors={filteredDoctors}
                             openDoctors={openDoctors}
-                            setOpenDoctors = {setOpenDoctors}
+                            setOpenDoctors={setOpenDoctors}
                             departments={departments}
                             specialityList={specialityList}
                             handleDoctorClick={handleDoctorClick}
@@ -347,10 +355,11 @@ const SearchDoctors = ({ doctors }) => {
                                 '& input::placeholder': {
                                     color: 'white',
                                     opacity: 1,
+                                    fontSize: 14
                                 },
                             },
                             position: 'relative',
-                            zIndex: 5,
+                            zIndex: 4,
 
                         }}
                     />
