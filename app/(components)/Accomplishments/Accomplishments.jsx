@@ -24,7 +24,7 @@ function formatDate(dateString) {
         }
     };
 
-    return `${day}${getOrdinal(day)} ${month} ${year}`;
+    return `${month} ${year}`;
 }
 
 const Accomplishments = ({ accomplishments }) => {
@@ -34,7 +34,7 @@ const Accomplishments = ({ accomplishments }) => {
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Typography zIndex={2} color="black" textAlign='center'>March 2025</Typography>
+            <Typography zIndex={2} color="black" textAlign='center'>{formatDate(accomplishments.date)}</Typography>
         </Box>
         <Box display="flex" width="100%" justifyContent="center">
 
