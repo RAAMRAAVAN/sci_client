@@ -20,9 +20,10 @@ const DoctorSlider = () => {
 
     const isXs = useMediaQuery("(max-width:600px)");
     const isSm = useMediaQuery("(min-width:601px) and (max-width:960px)");
-    const isMd = useMediaQuery("(min-width:961px)");
+    const isMd = useMediaQuery("(min-width:961px) and (max-width:1280px)");
+    const isLg = useMediaQuery("(min-width:1281px)");
 
-    const doctorsPerPage = isXs ? 1 : isSm ? 2 : 3;
+    const doctorsPerPage = isXs ? 1 : isSm ? 2 : isMd ? 2 : 3;
 
     // Use memoization to avoid recalculating filteredDoctors on each render
     const filteredDoctors = useMemo(() =>
@@ -74,17 +75,17 @@ const DoctorSlider = () => {
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Grid container display='flex' width='90%' alignItems='center' marginTop={5} justifyContent='space-between'>
+            <Grid container display='flex' sx={{width: { lg: '90%', md: "90%", sm: "100%", xs:"90%"}}} alignItems='center' marginTop={5} justifyContent='space-between'>
                 <Grid item lg={2} md={4} sm={4} xs={12}>
                     <Typography variant="h5" fontWeight="bold" onClick={() => dispatch(setPage(1))} sx={{ cursor: 'pointer' }}>
                         Our Doctors
                     </Typography>
                 </Grid>
-                {/* <Grid item lg={4} md={6} sm={8} xs={12}>
+                <Grid item lg={4} md={6} sm={6} xs={12} sx={{paddingX:{xs:'0px',sm:'20px' }}}>
                     <Box position='relative'>
                         <SearchDoctors doctors={doctors} />
                     </Box>
-                </Grid> */}
+                </Grid>
             </Grid>
         </Box>
         <Box
@@ -100,13 +101,14 @@ const DoctorSlider = () => {
             {filteredDoctors.length > 0 ? (
                 <Box
                     sx={{
-                        width: { md: "90%", xs: "100%" },
+                        width: { lg: '90%', md: "90%", xs: "100%" },
                         minHeight: "380px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexDirection: "column",
                         overflow: "hidden",
+                        // border: '1px black solid'
                     }}
                 >
                     <IconButton
@@ -150,7 +152,8 @@ const DoctorSlider = () => {
                                         item
                                         xs={12}
                                         sm={6}
-                                        md={4}
+                                        md={6}
+                                        lg={4}
                                         display="flex"
                                         justifyContent="center"
                                         alignItems="stretch"
@@ -193,7 +196,7 @@ const DoctorSlider = () => {
                 <Loader />
             )}
         </Box>
-        </>
+    </>
     );
 };
 

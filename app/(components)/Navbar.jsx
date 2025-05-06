@@ -96,8 +96,8 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <AppBar position="static" style={{ zIndex: 3 }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: 'relative', zIndex: 3 }}>
+      <AppBar position="static" style={{ zIndex: 6 }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: 'relative', zIndex: 6 }}>
           <Box sx={{ display: { xs: "none", md: "none" }, mr: 1 }}>
             <ExportedImage src="/vercel.gif" alt="logo" width={50} height={50} />
           </Box>
@@ -200,8 +200,8 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
               </Box>
             </Grid>
             <Grid item lg={4} md={8} sm={8} xs={10} sx={{ display: 'flex', width: '100%' }}>
-              {showSpecialButton ? <><DepartmentButton/>
-              </> : <><SearchDoctors doctors={doctors} /></>}
+              {/* {showSpecialButton ? <><DepartmentButton/>
+              </> : <><SearchDoctors doctors={doctors} /></>} */}
             </Grid>
           </Grid>
           {SocialInfraAccess ? <Link href="/social_infra" passHref legacyBehavior>
