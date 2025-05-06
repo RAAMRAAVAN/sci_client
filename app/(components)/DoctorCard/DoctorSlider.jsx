@@ -122,7 +122,7 @@ const DoctorSlider = () => {
                             fontSize: "3rem",
                             color: color1,
                             "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.2)" },
-                            display: isMd ? "flex" : "none",
+                            display: isXs? "none" : "flex",
                         }}
                     >
                         <ArrowBackIosNew sx={{ fontSize: "3rem" }} />
@@ -186,7 +186,7 @@ const DoctorSlider = () => {
                             fontSize: "3rem",
                             color: color1,
                             "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.2)" },
-                            display: isMd ? "flex" : "none",
+                            display: isXs? "none" : "flex",
                         }}
                     >
                         <ArrowForwardIos sx={{ fontSize: "3rem" }} />
