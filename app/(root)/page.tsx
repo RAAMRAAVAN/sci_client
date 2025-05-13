@@ -37,11 +37,11 @@ export default async function Home() {
           <Suspense fallback={<Loader />}>
             <ImageSliderMain />
           </Suspense>
-          <Box padding={2} sx={{ width: { xs: "100%", md: "40%" } }}>
+          <Box paddingX={2} sx={{ width: { xs: "100%", md: "40%" } }}>
             {homeContent ? (
               <>
                 <Typography variant="h6">{homeContent.heading}</Typography>
-                <Typography textAlign="justify">{homeContent.description}</Typography>
+                <Typography textAlign="justify" fontSize={14}>{homeContent.description}</Typography>
               </>
             ) : (
               <Loader />

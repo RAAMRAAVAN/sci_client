@@ -15,10 +15,15 @@ import { motion } from "framer-motion";
 import { BiSupport } from "react-icons/bi";
 import { CgPhone } from "react-icons/cg";
 import { SiGmail } from "react-icons/si";
+import { IoIosMail } from "react-icons/io";
+import { IoIosCall } from "react-icons/io";
+import { RiContactsLine } from "react-icons/ri";
+
 import { HomePageAccess, AboutUsAccess, FacilitiesAccess, HospitalsAccess, NewsAndEventsAccess, ContactUsAccess, SocialInfraAccess, AcademicsAccess } from "@/lib/fetchData";
 import SearchDoctors from "./DoctorCard/SearchDoctors";
 import { useSelector } from "react-redux";
 import { selectDoctors } from "@/redux/features/doctorSlice";
+
 import DepartmentButton from './DepartmentButton';
 const navItems = [
   { name: "Home", link: "/", Active: HomePageAccess },
@@ -46,19 +51,19 @@ const ContactUsDropdown = () => {
         Contact Us <ExpandMore />
       </Button>
       {open ? <Box boxShadow={3} borderRadius={1} display='flex' width='200px' backgroundColor='white' position='absolute' flexDirection='column' onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} paddingY={1}>
-        <Box padding={1} sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
+        <Box padding={1} onClick={()=>setOpen(false)} sx={{ cursor: 'pointer', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
           <Link href="/contact" passHref legacyBehavior>
-            <Box display='flex'><BiSupport size={24} color="#454545" /><Typography color="black" marginLeft={1}>Contact Us</Typography></Box>
+            <Box display='flex'><RiContactsLine size={24} color="#454545" /><Typography color="black" marginLeft={1}>Contact Us</Typography></Box>
           </Link>
         </Box>
         <Box padding={1} sx={{ cursor: 'pointer', borderTop: '1px lightgray solid', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
-          <Box display='flex'><CgPhone size={24} color="#454545" />
+          <Box onClick={()=>setOpen(false)} display='flex'><IoIosCall  size={25} color="#454545" />
             <Typography component="a"
               href={`tel:${"+91 18003454325" || ""}`} sx={{ cursor: "pointer", '&:hover': { color: 'black' } }} color="black" marginLeft={1}>+91 18003454325</Typography>
           </Box>
         </Box>
         <Box padding={1} sx={{ cursor: 'pointer', borderTop: '1px lightgray solid', '&:hover': { backgroundColor: 'lightgray', display: 'flex', width: '100%' } }}>
-          <Box display='flex'><SiGmail size={24} color="#454545" />
+          <Box onClick={()=>setOpen(false)} display='flex'><IoIosMail size={24} color="#454545" />
             <Typography component="a"
               href="mailto:info@accf.in"
               sx={{ cursor: "pointer", '&:hover': { color: 'black' } }} color="black" marginLeft={1}>info@accf.in</Typography>

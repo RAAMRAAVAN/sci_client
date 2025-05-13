@@ -204,9 +204,9 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
             {/* <Box display="flex" width="100%" justifyContent="center">
                 <ContactUs open={open} handleClose={() => setOpen(false)} />
             </Box> */}
-            {VideosAccess?<Box display="flex" width="100%" justifyContent="center">
+            {/* {VideosAccess?<Box display="flex" width="100%" justifyContent="center">
                 <LatestEvent open={open} handleClose={() => setOpen(false)} setOpen={setOpen}/>
-            </Box>:<></>}
+            </Box>:<></>} */}
             
 
             {/* Scroll to Top FAB */}

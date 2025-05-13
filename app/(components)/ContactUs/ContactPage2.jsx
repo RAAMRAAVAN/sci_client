@@ -60,8 +60,8 @@ const ContactPage = () => {
             />
             <Box sx={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                 <Typography variant="h5" my={1} fontWeight="bold" color="white">Contact Us</Typography>
-                <Typography my={1} mx={1} textAlign="center" color="white" fontWeight='bold' display='flex' sx={{ width: { md: '50vw' } }}>
-                    We would love to hear from you! Please fill in the required details and our team will get in touch with you.
+                <Typography my={1} mx={1} textAlign="center" color="white" fontWeight='bold' display='flex'>
+                    We would love to hear from you!
                 </Typography>
                 <Grid container width='100%' marginTop={5} height='100%' justifyContent='center' sx={{ paddingX: 1 }}>
                     <Grid item md={4} sm={12} marginBottom={5} sx={{ padding: '0px', marginRight: { md: '30px' }, backgroundColor: 'rgba(243, 239, 239, 1)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} >
@@ -105,7 +105,7 @@ const ContactPage = () => {
                                     <Typography color="#58595b" fontWeight='bold' fontSize={13} marginRight={1}>Call Us Toll Free: </Typography>
                                     <Typography color="#58595b">+91 18003454325</Typography>
                                 </Box>
-                                <Typography color="#58595b" fontWeight='bold' fontSize={12}>(9:00 AM to 5:00 PM IST)</Typography>
+                                <Typography color="#58595b" fontWeight='bold' fontSize={12}>(9:00 AM to 5:00 PM IST, Monday to Saturday)</Typography>
                             </Box>
                         </Box>
                         <Box display='none' width='100%' borderTop='0.2px #B0B0B0 solid'></Box>
@@ -256,7 +256,7 @@ const ContactPage = () => {
                                                 fontSize: '13px',
                                                 backgroundColor: 'rgba(243, 239, 239, 1)'
                                             },
-                                            placeholder: "Enter Your Name", // Needed here for styling placeholder
+                                            // placeholder: "Enter Your Name", // Needed here for styling placeholder
                                         }}
                                     />
                                 </Grid>
@@ -296,7 +296,7 @@ const ContactPage = () => {
                                                 fontSize: '13px',
                                                 backgroundColor: 'rgba(243, 239, 239, 1)'
                                             },
-                                            placeholder: "Enter Your Name", // Needed here for styling placeholder
+                                            // placeholder: "Enter Your Name", // Needed here for styling placeholder
                                         }}
                                     />
                                 </Grid>
