@@ -81,7 +81,7 @@ const DoctorSlider = () => {
                         Our Doctors
                     </Typography>
                 </Grid>
-                <Grid item lg={4} md={6} sm={6} xs={12} sx={{paddingX:{xs:'0px',sm:'20px' }}}>
+                <Grid item lg={4} md={6} sm={6} xs={12} sx={{paddingX:{xs:'0px',sm:'20px' }, marginTop:{xs:'20px',sm:'0px' }}}>
                     <Box position='relative'>
                         <SearchDoctors doctors={doctors} />
                     </Box>

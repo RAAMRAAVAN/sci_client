@@ -43,7 +43,7 @@ const Facilities = ({ expand, FID }) => {
           sx={{
             height: {
               background: "linear-gradient(to right, #ded5d9, #e1e5ea)",
-              borderRadius: "8px",
+              borderRadius: "15px",
               cursor: "pointer",
             },
           }}

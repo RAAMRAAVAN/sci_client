@@ -4,6 +4,9 @@ import { Facebook, Instagram, LocationCity, Mail, Phone, ShareOutlined, Twitter,
 import { useSelector } from "react-redux";
 import { selectHospitalDetails } from "@/redux/features/hospitalDetailSlice";
 import { Font, ContactColor } from "../Global";
+import { FiPhone } from "react-icons/fi";
+import { RiShareLine } from "react-icons/ri";
+import { GrLocation } from "react-icons/gr";
 
 const ContactPage = () => {
     // const HospitalDetails = useHospital();
@@ -18,18 +21,30 @@ const ContactPage = () => {
             width="100%"
             sx={{
                 position: 'relative',
-                background: "url(/background.jpg)",
-                backgroundSize: "cover",         // Makes the image cover the entire area
-                backgroundRepeat: "no-repeat",   // Prevents the image from repeating
-                backgroundPosition: "center",    // Centers the image
                 p: { md: 2, xs: 0 },
                 marginBottom: 5,
-                height: { md: '105vh' }
-            }}
+                height: { md: '105vh' },
+                overflow: 'hidden',
 
+                // Pseudo-element for background blur
+                '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: "url(/background.jpg)",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    filter: 'blur(4px)',
+                    zIndex: 0,
+                },
+            }}
             flexDirection="column"
             alignItems="center"
-            justifyContent='center'
+            justifyContent="center"
         >
             {/* Black Overlay */}
             <Box
@@ -51,30 +66,118 @@ const ContactPage = () => {
                 <Grid container width='100%' marginTop={5} height='100%' justifyContent='center' sx={{ paddingX: 1 }}>
                     <Grid item md={4} sm={12} marginBottom={5} sx={{ padding: '0px', marginRight: { md: '30px' }, backgroundColor: 'rgba(243, 239, 239, 1)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} >
                         <Box padding={3}>
-                            <Typography fontFamily='Montserrat,sans-serif' fontWeight='600' fontSize='20px' color="#454545">Contact Details</Typography>
+                            <Typography fontFamily='Montserrat,sans-serif' fontWeight='600' fontSize='20px' color="#454545">Talk to Us</Typography>
                         </Box>
                         <Box paddingX={3} paddingBottom={2} display='flex' component="a"
                             href={`tel:${HospitalDetails.PhoneNumber || ""}`} sx={{ cursor: "pointer", '&:hover': { color: 'black' } }}>
-                            <Avatar sx={{ bgcolor: ContactColor, marginRight: 2, width: 46, height: 46 }}>
-                                <Phone sx={{ fontSize: 20 }} />
-                            </Avatar>
+                            <Box
+                                sx={{
+                                    width: 70,
+                                    height: 70,
+                                    clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                    backgroundColor: ContactColor, // border color
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: 2,
+                                }}
+                            >
+                                <Avatar
+                                    sx={{
+                                        width: 64,
+                                        height: 64,
+                                        backgroundColor: 'rgba(243, 239, 239, 1)',
+                                        clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    {/* <Phone sx={{ fontSize: 30, color: ContactColor }} /> */}
+                                    <FiPhone style={{ color: ContactColor, fontSize: 30 }} />
+                                </Avatar>
+                            </Box>
+
+
                             <Box>
                                 <Typography fontWeight='bold' color="#58595b">Phone Number</Typography>
-                                <Typography color="#58595b">+91 18003454325</Typography>
+                                <Box display='flex' alignItems='baseline' sx={{ flexDirection: 'column' }}>
+                                    <Typography color="#58595b" fontWeight='bold' fontSize={13} marginRight={1}>Call Us Toll Free: </Typography>
+                                    <Typography color="#58595b">+91 18003454325</Typography>
+                                </Box>
+                                <Typography color="#58595b" fontWeight='bold' fontSize={12}>(9:00 AM to 5:00 PM IST)</Typography>
+                            </Box>
+                        </Box>
+                        <Box display='none' width='100%' borderTop='0.2px #B0B0B0 solid'></Box>
+                        <Box paddingX={3} paddingY={2} display='none'>
+                            <Box
+                                sx={{
+                                    width: 70,
+                                    height: 70,
+                                    clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                    backgroundColor: ContactColor, // border color
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: 2,
+                                }}
+                            >
+                                <Avatar
+                                    sx={{
+                                        width: 64,
+                                        height: 64,
+                                        backgroundColor: 'rgba(243, 239, 239, 1)',
+                                        clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    {/* <Phone sx={{ fontSize: 30, color: ContactColor }} /> */}
+                                    <GrLocation style={{ color: ContactColor, fontSize: 35 }} />
+                                </Avatar>
+                            </Box>
+                            <Box>
+                                <Typography fontWeight='bold' color="#58595b">Walk In</Typography>
+                                <Typography color="#58595b" fontSize={12}>State Cancer Institute, Opposite GMCH, GMC Hospital Rd, Bhangagarh , Guwahati, Assam 781032</Typography>
                             </Box>
                         </Box>
                         <Box display='flex' width='100%' borderTop='0.2px #B0B0B0 solid'></Box>
                         <Box paddingX={3} paddingY={2} display='flex'>
-                            <Avatar sx={{ bgcolor: ContactColor, marginRight: 2, width: 46, height: 46 }}>
-                                <ShareOutlined sx={{ fontSize: 30 }} />
-                            </Avatar>
+                            <Box
+                                sx={{
+                                    width: 70,
+                                    height: 70,
+                                    clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                    backgroundColor: ContactColor, // border color
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: 2,
+                                }}
+                            >
+                                <Avatar
+                                    sx={{
+                                        width: 64,
+                                        height: 64,
+                                        backgroundColor: 'rgba(243, 239, 239, 1)',
+                                        clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    {/* <Phone sx={{ fontSize: 30, color: ContactColor }} /> */}
+                                    <RiShareLine style={{ color: ContactColor, fontSize: 30 }} />
+                                </Avatar>
+                            </Box>
                             <Box>
                                 <Typography fontWeight='bold' color="#58595b">Follow us</Typography>
                                 <Box>
-                                    <Facebook sx={{ color: '#58595b', marginRight: 1, cursor:'pointer' }} onClick={() => window.open(HospitalDetails.Facebook, "_blank")}/>
-                                    <X sx={{ color: '#58595b', marginRight: 1, cursor:'pointer' }} onClick={() => window.open(HospitalDetails.Twitter, "_blank")}/>
-                                    <Instagram sx={{ color: '#58595b', marginRight: 1, cursor:'pointer' }} onClick={() => window.open(HospitalDetails.Insta, "_blank")}/>
-                                    <YouTube sx={{ color: '#58595b', fontSize: 30, marginRight: 1, cursor:'pointer' }} onClick={() => window.open("/", "_blank")}/>
+                                    <Facebook sx={{ color: '#58595b', marginRight: 1, cursor: 'pointer' }} onClick={() => window.open(HospitalDetails.Facebook, "_blank")} />
+                                    <X sx={{ color: '#58595b', marginRight: 1, cursor: 'pointer' }} onClick={() => window.open(HospitalDetails.Twitter, "_blank")} />
+                                    <Instagram sx={{ color: '#58595b', marginRight: 1, cursor: 'pointer' }} onClick={() => window.open(HospitalDetails.Insta, "_blank")} />
+                                    <YouTube sx={{ color: '#58595b', fontSize: 30, marginRight: 1, cursor: 'pointer' }} onClick={() => window.open("/", "_blank")} />
                                 </Box>
                             </Box>
                         </Box>
