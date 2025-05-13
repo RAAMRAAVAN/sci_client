@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+// import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,77 +14,113 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box, Grid } from "@mui/material";
 import NewsCard from './NewsCard';
 import { setID } from "@/redux/features/newsSlice";
+import { useState } from 'react';
 
 export default function NewsLink() {
   const router = useRouter();
+  const [clicked, setClicked] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
   const news = useSelector(selectNewses);
   const dispatch = useDispatch();
+  console.log(selectedCard, clicked);
   return (
 
     <Grid container spacing={5} justifyContent="start" display='flex' sx={{ width: { md: '100%', sm: '100%' } }}>
-      <Grid key={1} item xs={12} sm={6} md={3} display="flex" justifyContent="center">
-        <Card onClick={() => router.push('/news')} style={{ backgroundColor: 'rgb(232, 237, 238)' }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              sx={{
-                height: '175px'
-              }}
-              image={`News/news.jpg`}
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="div" sx={{ height: '4em' }}>
-                News & Events
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                Find the latest news about our work and achievements
 
-              </Typography>
-            </CardContent>
-            <CardActions sx={{ paddingY: 1, marginBottom: 2 }}>
-              <div className="news-arrow">
-                <East fontSize="large" />
-              </div>
-            </CardActions>
-          </CardActionArea>
-        </Card>
-      </Grid>
+      <Grid item xs={12} sm={6} md={3} display="flex" justifyContent="center">
+        {/* onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} */}
+          <Card className='news-card'  style={{ backgroundColor: 'rgb(232, 237, 238)', display: 'flex', width: '100%', position: 'relative' }}>
+            <CardActionArea sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'start' }}>
+              <Box display='flex' width='100%'>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    display: 'flex',
+                    height: '175px',
+                    width: '100%', // Optional: ensures it fills horizontally
+                    // border: '1px black solid',
+                    // objectFit: 'cover', // or 'contain' to avoid cropping
+                  }}
+                  image={`News/news.jpg`}
+                  alt="green iguana"
+                />
+              </Box>
+              <Box display='flex'>
+                <CardContent>
+                  <Typography gutterBottom variant="h6" onClick={()=>{setClicked(true); setSelectedCard(0); router.push(`/news`)}} display='inline-block' className='change-header-color' component="div" sx={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    backgroundColor: clicked && (selectedCard === 0)?'#ffeb3b':'',
+                    textDecoration: clicked && (selectedCard === 0)?'underline':null,
+                  }}>
+                    News and events
+                  </Typography>
+                  <Typography variant="body2" sx={{
+                    color: 'text.secondary', display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}>
+                    Find the latest news about our work and achievements
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardActions onClick={()=>{router.push(`/news`)}} sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
+                <div className="news-arrow">
+                  <East fontSize="large" />
+                </div>
+              </CardActions>
+            </CardActionArea>
+          </Card>
+        </Grid>
 
       {news.slice(0, 3).map((entry, index) => (
         <Grid key={index} item xs={12} sm={6} md={3} display="flex" justifyContent="center">
-          <Card onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} style={{ backgroundColor: 'rgb(232, 237, 238)', display: 'flex', width: '100%', position: 'relative' }}>
+          {/* onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} */}
+          <Card className='news-card'  style={{ backgroundColor: 'rgb(232, 237, 238)', display: 'flex', width: '100%', position: 'relative' }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'start' }}>
-              <CardMedia
-                component="img"
-                sx={{
-                  height: '175px',
-                  // border:'1px black  solid'
-                }}
-                image={`/News/${entry.id}/1.jpg`}
-                alt="green iguana"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h6" component="div" sx={{
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}>
-                  {entry.content_heading}
-                </Typography>
-                <Typography variant="body2" sx={{
-                  color: 'text.secondary', display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}>
-                  {entry.sub_heading}
-                </Typography>
-              </CardContent>
-              <CardActions sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
+              <Box display='flex' width='100%'>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    display: 'flex',
+                    height: '175px',
+                    width: '100%', // Optional: ensures it fills horizontally
+                  }}
+                  image={`/News/${entry.id}/1.jpg`}
+                  alt="green iguana"
+                />
+              </Box>
+              <Box display='flex'>
+                <CardContent>
+                  <Typography gutterBottom variant="h6" display='inline-block' onClick={()=>{setClicked(true); setSelectedCard(entry.id);dispatch(setID(entry.id)); router.push(`/news#${entry.id}`)}} component="div" sx={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    backgroundColor: clicked && (selectedCard === entry.id)?'#ffeb3b':'',
+                    textDecoration: clicked && (selectedCard === entry.id)?'underline':null,
+                  }}>
+                    {entry.content_heading}
+                  </Typography>
+                  <Typography  variant="body2" sx={{
+                    color: 'text.secondary', display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    
+                  }}>
+                    {entry.sub_heading}
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardActions onClick={()=>{dispatch(setID(entry.id)); router.push(`/news/details`)}} sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
                 <div className="news-arrow">
                   <East fontSize="large" />
                 </div>

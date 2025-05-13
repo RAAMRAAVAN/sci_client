@@ -130,16 +130,28 @@ body {
 }
 
 .news-card:hover .news-arrow {
-  background-color: #f7941d;
+  background-color: #ffeb3b;
   margin-left: 20px;
+  /* color: white; */
 }
 
+/* .news-card:hover .change-header-color {
+  background-color: #ffeb3b;
+  color: white;
+  margin-left: 20px;
+} */
+
+/* .hange-header-color:local-link {
+  background-color: #ffeb3b;
+} */
+
 .news-card{
-  transition: 300ms;
+  /* transition: 300ms; */
+  /* transition:ease-in-out 600ms; */
 }
 
 .news-card:hover{
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
 }
 
 .doctor-modal-list{

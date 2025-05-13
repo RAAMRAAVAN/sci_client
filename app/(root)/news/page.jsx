@@ -1,8 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import Entries from "./entries";
-import { API, color1, color4, HName } from "@/app/(components)/Global";
+import { API, color1, color4, color6, color7, HName } from "@/app/(components)/Global";
 import VideoGrid from "@/app/(components)/Videos/VideoGrid";
+import Facilities from '@/app/(components)/News2/FacilityData'
 import ParallelogramGrid from './ParallelogramGrid';
 const page = async () => {
     const HoName = HName;
@@ -25,11 +26,12 @@ const page = async () => {
                 </Typography>
             </Box>
         </Box>
-        <Box position='relative' >
+        <Box position='relative' display='none'>
             <ParallelogramGrid />
             <Box
                 bottom='0px'
-                sx={{background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`,}}
+                // sx={{background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`,}}
+                sx={{background: `linear-gradient(135deg, ${color6}, ${color7})`}}
                 px={4}
                 boxShadow={3}
                 // position='absolute'
@@ -62,7 +64,7 @@ const page = async () => {
         </Box>
 
         <Box display="flex" justifyContent="center" marginY={5}>
-            <Entries />
+            <Facilities/>
         </Box>
         <Box display='flex' width='100%' justifyContent='center'>
             <Box display='flex' width='90%' flexDirection='column' marginTop={2}>

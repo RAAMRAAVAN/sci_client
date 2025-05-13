@@ -9,7 +9,7 @@ export const ContactUsAccess = true;
 export const AcademicsAccess = false;
 export const VideosAccess = true;
 export const SocialInfraAccess = false;
-export const UpdatesAccess = true;
+export const UpdatesAccess = false;
 
 export const HomeContent = {
   "_id": "67d5201b92ae82369ef8f29d",

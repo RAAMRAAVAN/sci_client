@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HName } from '@/lib/fetchData';
 import ParallelogramGrid from "./ParallelogramGrid";
+import { color6, color7 } from "@/app/(components)/Global";
 
 const FacilitiesClient = () => {
     const searchParams = useSearchParams();
@@ -20,13 +21,6 @@ const FacilitiesClient = () => {
         }
     }, []);
 
-    // useEffect(() => {
-    //     if (typeof window !== "undefined") {
-    //       const hash = window.location.hash?.substring(1); // facility ID from hash
-    //       setExpand(expandParam === "true");
-    //       setFID(hash || null);
-    //     }
-    //   }, [expand]);
     return (
         <>
             <Box display="none" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
@@ -58,11 +52,12 @@ const FacilitiesClient = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Box position='relative' >
+            <Box position='relative' display='none'>
                 <ParallelogramGrid />
                 <Box
                     bottom='0px'
-                    sx={{ background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`, }}
+                    // sx={{ background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`, }}
+                    sx={{background: `linear-gradient(135deg, ${color6}, ${color7})`}}
                     px={4}
                     boxShadow={3}
                     // position='absolute'
