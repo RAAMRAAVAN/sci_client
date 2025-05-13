@@ -8,7 +8,7 @@ const Entries = () => {
     const news = useSelector(selectNewses);
     return (
         <Box display="flex" flexDirection="column" alignItems="center" width='100%' margin="auto">
-            <Grid container spacing={3} justifyContent="start" display='flex' sx={{ width: { md: '85%', sm: '100%' } }}>
+            <Grid container spacing={3} justifyContent="start" paddingX={1} display='flex' sx={{ width: { md: '85%', sm: '100%' } }}>
                 {news.map((entry, index) => (
                     <Grid key={entry.id} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
                         <NewsCard
