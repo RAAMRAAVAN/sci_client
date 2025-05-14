@@ -1,5 +1,5 @@
 'use client'
-import { Avatar, Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { Alert, Avatar, Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import { Facebook, Instagram, LocationCity, Mail, Phone, ShareOutlined, Twitter, WhatsApp, X, YouTube } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { selectHospitalDetails } from "@/redux/features/hospitalDetailSlice";
@@ -7,15 +7,100 @@ import { Font, ContactColor } from "../Global";
 import { FiPhone } from "react-icons/fi";
 import { RiShareLine } from "react-icons/ri";
 import { GrLocation } from "react-icons/gr";
+import axios from 'axios';
+import { useState } from "react";
+import ErrorMessage from '../ErrorMessage';
 
 const ContactPage = () => {
-    // const HospitalDetails = useHospital();
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState('');
+    const [mobileNo, setMobileNo] = useState(null);
+    const [message, setMessage] = useState(null);
+    const [errormsg, setErrormsg] = useState('');
+    const [openError, setOpenError] = useState(false);
+    const [errorType, setErrorType] = useState('error');
     const HospitalDetails = useSelector(selectHospitalDetails);
     if (!HospitalDetails) {
         return <Typography textAlign="center" mt={5}>Loading...</Typography>;
     }
 
-    return (
+    const Validate = () => {
+        const phoneRegex = /^[0-9]{10}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name || name.trim() === '') {
+            setErrormsg('Please enter your name');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        if (!mobileNo || mobileNo.trim() === '') {
+            setErrormsg('Please enter your phone number');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        if (!phoneRegex.test(mobileNo)) {
+            setErrormsg('Phone number must be 10 digits and numeric only');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        if (!email || email.trim() === '') {
+            setErrormsg('Please enter your email');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        if (!emailRegex.test(email)) {
+            setErrormsg('Please enter a valid email address');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        if (!message || message.trim() === '') {
+            setErrormsg('Please enter your message');
+            setErrorType("error")
+            setOpenError(true);
+            return false;
+        }
+
+        return true;
+    };
+
+    const Truncate = () => {
+        setName('');
+        setEmail('');
+        setMobileNo('');
+        setMessage(''); 
+        // setErrorType("error")
+    }
+    const SubmitForm = async () => {
+        if (Validate()) {
+            try {
+                const result = await axios.post("https://accf-api.cancercareinstituteguwahati.org/api/submit-message", {
+                    "hospitalId": "1",
+                    "name": name,
+                    "email": email,
+                    "mobile": mobileNo,
+                    "message": message
+                })
+                setErrormsg('We Received Your Message');
+                setErrorType("success")
+                setOpenError(true);
+                Truncate();
+            } catch (e) {
+                alert(e);
+            }
+        }
+    }
+    return (<>
+        <ErrorMessage type={errorType} openError={openError} setOpenError={setOpenError} message={errormsg} />
         <Box
             display="flex"
             width="100%"
@@ -47,6 +132,7 @@ const ContactPage = () => {
             justifyContent="center"
         >
             {/* Black Overlay */}
+
             <Box
                 sx={{
                     position: 'absolute',
@@ -58,6 +144,7 @@ const ContactPage = () => {
                     zIndex: 1,
                 }}
             />
+
             <Box sx={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                 <Typography variant="h5" my={1} fontWeight="bold" color="white">Contact Us</Typography>
                 <Typography my={1} mx={1} textAlign="center" color="white" fontWeight='bold' display='flex'>
@@ -183,7 +270,6 @@ const ContactPage = () => {
                         </Box>
                     </Grid>
                     <Grid item md={7} sm={12} marginBottom={5} sx={{ backgroundColor: 'rgba(243, 239, 239, 1)' }} display='flex' flexDirection='column' width='100%' borderRadius={5} backgroundColor='#f6f6f6'>
-
                         <Box paddingX={3} marginY={3}>
                             <Grid container spacing={3}>
                                 <Grid item xs={12} md={6}>
@@ -191,6 +277,8 @@ const ContactPage = () => {
                                         required
                                         id="filled-required"
                                         label="Name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                         defaultValue=""
                                         placeholder="Enter Your Name"
                                         variant="filled"
@@ -229,6 +317,8 @@ const ContactPage = () => {
                                         id="filled-required"
                                         label="E-mail"
                                         defaultValue=""
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         placeholder="Enter Your E-mail"
                                         variant="filled"
                                         fullWidth
@@ -267,6 +357,8 @@ const ContactPage = () => {
                                         id="filled-required"
                                         label="Mobile No."
                                         defaultValue=""
+                                        value={mobileNo}
+                                        onChange={(e) => setMobileNo(e.target.value)}
                                         placeholder="Enter Your Phone Number"
                                         variant="filled"
                                         fullWidth
@@ -306,7 +398,8 @@ const ContactPage = () => {
                                     <TextField
                                         id="outlined-multiline-static"
                                         multiline
-
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
                                         rows={3}
                                         placeholder="Enter Your Message Here"
                                         fullWidth
@@ -346,15 +439,13 @@ const ContactPage = () => {
                         </Box>
                         <Box display='flex' justifyContent='center' width='100%' marginBottom={2}>
                             <Box>
-                                <Button variant="contained" size="large" sx={{ bgcolor: ContactColor, fontWeight: 'bold', textTransform: 'none', borderRadius: '20px', marginX: 1, paddingX: 5, paddingY: 1, fontSize: 13 }}>Submit</Button>
-                                {/* <Button variant="contained" sx={{ bgcolor: ContactColor, fontWeight: 'bold', textTransform: 'none', borderRadius: '20px', marginX: 1 }}>Feedback</Button> */}
-                                {/* <Button variant="contained" sx={{ bgcolor: ContactColor, fontWeight: 'bold', textTransform: 'none', borderRadius: '20px', marginX: 1 }}>Others</Button> */}
+                                <Button variant="contained" onClick={() => { SubmitForm() }} size="large" sx={{ bgcolor: ContactColor, fontWeight: 'bold', textTransform: 'none', borderRadius: '20px', marginX: 1, paddingX: 5, paddingY: 1, fontSize: 13 }}>Submit</Button>
                             </Box>
                         </Box>
                     </Grid>
                 </Grid>
             </Box>
-        </Box>
+        </Box></>
     );
 };
 export default ContactPage;
