@@ -34,7 +34,7 @@ const ContactPage = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundImage: "url(/background.jpg)",
+                    backgroundImage: "url(/SCI/slider/1.jpg)",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
