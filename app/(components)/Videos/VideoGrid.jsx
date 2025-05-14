@@ -20,6 +20,7 @@ const VideoCard = ({ LatestVideosData, setOpen, setSelectedVideo, id }) => {
       position: 'relative',
 
     }}
+    boxShadow={5}
   >
     {/* <Box >     */}
     <img

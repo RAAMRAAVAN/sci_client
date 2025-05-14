@@ -40,6 +40,8 @@ const Facilities = ({ expand, FID }) => {
           flexDirection="column"
           width="100%"
           className="facility-box"
+          boxShadow={5}
+          borderRadius={3}
           sx={{
             height: {
               background: "linear-gradient(to right, #ded5d9, #e1e5ea)",
