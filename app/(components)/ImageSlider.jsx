@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { memo } from "react";
+import { Margin } from "@mui/icons-material";
 
 const ImageSlider = ({ id, Images = [] }) => {
   const imageArray = id === 70 ? ['2.jpg']
@@ -27,6 +28,7 @@ const ImageSlider = ({ id, Images = [] }) => {
         overflow: "hidden",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
         position: "relative",
+        // border:'1px black solid',
         borderRadius:'10px',
         "& .swiper-button-prev, & .swiper-button-next": {
           color: "#fff",
@@ -120,8 +122,9 @@ const navButtonStyle = (position) => ({
   color: "#fff",
   padding: "10px",
   borderRadius: "50%",
-  zIndex: 1000,
+  zIndex: 3,
   cursor: "pointer",
+  marginRight: "10px",
   fontSize: "20px",
   transition: "background-color 0.3s",
   "&:hover": {

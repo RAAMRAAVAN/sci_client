@@ -66,7 +66,7 @@ const Facilities = ({ expand, FID }) => {
                 float: { sm: "none", md: 'left' },
                 top: "0",
                 marginLeft: { sm: 0, md: "10px" },
-                paddingX: { xs: 1, md: 1 },
+                paddingX: { xs: 1, md: 2 },
                 position: 'relative'
               }}
             // border='1px black solid'
