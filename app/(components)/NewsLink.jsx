@@ -120,7 +120,7 @@ export default function NewsLink() {
                   </Typography>
                 </CardContent>
               </Box>
-              <CardActions onClick={()=>{dispatch(setID(entry.id)); router.push(`/news/details`)}} sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
+              <CardActions onClick={()=>{setClicked(true); setSelectedCard(entry.id);dispatch(setID(entry.id)); router.push(`/news#${entry.id}`)}} sx={{ display: 'flex', height: '100%', alignItems: 'end', marginBottom: 2, width: '100%' }}>
                 <div className="news-arrow">
                   <East fontSize="large" />
                 </div>
