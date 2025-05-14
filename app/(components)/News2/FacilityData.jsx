@@ -11,6 +11,25 @@ import ReadMoreText from "./ReadMoreText";
 import { selectNewses } from "@/redux/features/newsSlice";
 import ImageSlider from "../ImageSlider";
 
+function formatDateToReadable(dateStr) {
+    const date = new Date(dateStr);
+
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+
+    // Helper to get ordinal suffix (st, nd, rd, th)
+    const getOrdinal = (n) => {
+        const s = ["th", "st", "nd", "rd"];
+        const v = n % 100;
+        return s[(v - 20) % 10] || s[v] || s[0];
+    };
+
+    const dayWithSuffix = day.toString().padStart(2, '0') + getOrdinal(day);
+    return `${dayWithSuffix} ${month} ${year}`;
+}
+
+
 const Facilities = ({ expand, FID }) => {
   const facilities = useSelector(selectFacilities);
   const News = useSelector(selectNewses);
@@ -84,7 +103,7 @@ const Facilities = ({ expand, FID }) => {
               >
                 {news.content_heading}
               </Typography>
-              <Typography variant="subtitle1" marginY={1} color="gray" fontSize={18}>{news.news_event_date}</Typography>
+              <Typography variant="subtitle1" marginY={1} color="gray" fontSize={18}>{formatDateToReadable(news.news_event_date)}</Typography>
               {FID === news.id ? <><Box display='none'></Box><ReadMoreText ShortText={news.content} LongText={news.content} Expand={true} ReadMoreOption={false} showReadmore={false} scrollBack={`facility-title-${news.id}`} /></> : <><ReadMoreText ShortText={news.content} LongText={news.content} Expand={false} ReadMoreOption={false} showReadmore={false} scrollBack={`facility-title-${news.id}`} /></>}
             </Box>
           </Box>
