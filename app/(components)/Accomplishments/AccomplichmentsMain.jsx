@@ -1,8 +1,19 @@
+'use client'
 import Accomplishments from './Accomplishments'
 import { fetchAccomplishments2 } from '../../../lib/fetchData';
-export default async function ImageSliderMain() {
-    const accomplishments = await fetchAccomplishments2();
+import { useEffect, useState } from 'react';
+const ImageSliderMain = () => {
+    const [accomplishments, setAccomplishments] = useState({});
+
+    const fetchAccomplishments = async() => {
+        setAccomplishments(await fetchAccomplishments2())
+    }
+    useEffect(() => {
+        fetchAccomplishments();
+    }, [])
+
     return (<>
         <Accomplishments accomplishments={accomplishments} />
     </>);
 }
+export default ImageSliderMain;

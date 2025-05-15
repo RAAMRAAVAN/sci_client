@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ExportedImage from "next-image-export-optimizer";
 import { Box, Fab, Grid, Typography } from "@mui/material";
 import { KeyboardArrowUp } from "@mui/icons-material";
-import Navbar from "../Navbar";
+import Navbar from "../Navbar/Navbar";
 import SocialIcons from "../SocialIcons";
 import ContactUs from "../ContactUs/ContactUs";
 import { color1, color2, color3, Font, HName } from "../Global";
@@ -13,6 +13,7 @@ import { color } from "../Global";
 // import Router from "next/router";
 import { useRouter } from "next/navigation";
 import { VideosAccess } from "@/lib/fetchData";
+import ScrollNav from '../ScrollNav';
 
 const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
     const router = useRouter()
@@ -54,9 +55,9 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                     px: { xs: 2, md: 4 },
                     justifyContent: "center",
                     color: "black",
-                    marginBottom:{xs: '10px', md: '0px'}
+                    marginBottom: { xs: '10px', md: '0px' }
                 }}
-                // mb={2}
+            // mb={2}
             >
                 <Grid container alignItems="center" justifyContent="space-between" spacing={2} width="100%">
                     {/* Logo & Hospital Name */}
@@ -72,14 +73,14 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             gap: 2,
                             // position: 'relative'
                         }}
-                    > 
+                    >
                         <Grid item xs={12} sx={{
                             display: { sm: 'flex', md: 'none' },
                             justifyContent: 'space-between',
                             width: '100%',
                             // border: '1px black solid',
                             flexDirection: 'column',
-                            position:'relative'
+                            position: 'relative'
                         }}>
                             <Grid item xs={5}>
                                 <ExportedImage
@@ -88,7 +89,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                     width={80}
                                     height={90}
                                     priority
-                                    style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                    style={{ objectFit: "contain", width: 'auto', height: 'auto', cursor: 'pointer' }}
                                     onClick={() => window.location.href = '/'}
                                 />
                             </Grid>
@@ -99,7 +100,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                     width={100}
                                     height={100}
                                     priority
-                                    style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                    style={{ objectFit: "contain", width: 'auto', height: 'auto', cursor: 'pointer' }}
                                     onClick={() => window.location.href = '/'}
                                 />
                             </Grid>
@@ -114,15 +115,15 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 width={80}
                                 height={90}
                                 priority
-                                style={{ objectFit: "contain", width:'auto', height:'100px', cursor:'pointer' }}
+                                style={{ objectFit: "contain", width: 'auto', height: '100px', cursor: 'pointer' }}
                                 onClick={() => window.location.href = '/'}
                             />
                         </Box>
                         <Box textAlign={{ xs: "center", md: "left" }}>
-                            <Typography  variant="h6" fontWeight="bold">
+                            <Typography variant="h6" fontWeight="bold">
                                 ৰাজ্যিক কৰ্কট প্ৰতিষ্ঠান
                             </Typography>
-                            <Typography 
+                            <Typography
                                 variant="h6"
                                 sx={{
                                     color: "#bf1e2e",
@@ -132,7 +133,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             >
                                 {HospitalDetails?.name || "Hospital Name"}
                             </Typography>
-                            <Typography  variant="body2" sx={{ color: "#bf1e2e", fontSize: { xs: "12px", sm: "14px" } }}>
+                            <Typography variant="body2" sx={{ color: "#bf1e2e", fontSize: { xs: "12px", sm: "14px" } }}>
                                 A Unit Of Assam Cancer Care Foundation
                             </Typography>
                         </Box>
@@ -145,7 +146,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 width={100}
                                 height={100}
                                 priority
-                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
+                                style={{ objectFit: "contain", width: 'auto', height: 'auto', cursor: 'pointer' }}
                                 onClick={() => window.location.href = '/'}
                             />
                         </Box>
@@ -153,7 +154,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
 
                     {/* Contact Info and Social Icons */}
                     <Grid item xs={12} md={5} sx={{ textAlign: { xs: "center", md: "right" } }}>
-                        <Typography 
+                        <Typography
                             variant="h6"
                             component="a"
                             href="tel:18003454325"
@@ -194,10 +195,14 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                     top: 0,
                     zIndex: 5,
                     backgroundColor: "white",
+                    // height:'120px'
                 }}
             >
                 <Navbar Title={HospitalDetails?.name} OurHospitals={OurHospitals} Facilities={Facilities} />
                 {/* You can enable the UPDATES section here if needed */}
+                <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', position: 'absolute' }}>
+                    <hr style={{ borderTop: "1px solid lightgray", display: 'flex', width: '100%' }} />
+                </Box>
             </Box>
 
             {/* Contact Us Modal */}
@@ -207,7 +212,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
             {/* {VideosAccess?<Box display="flex" width="100%" justifyContent="center">
                 <LatestEvent open={open} handleClose={() => setOpen(false)} setOpen={setOpen}/>
             </Box>:<></>} */}
-            
+
 
             {/* Scroll to Top FAB */}
             <Fab
