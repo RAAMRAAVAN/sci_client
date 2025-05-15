@@ -28,7 +28,7 @@ const ErrorMessage = ({ type, openError, setOpenError, message = "This is a fill
             right={20}
             zIndex={1300}
         >
-            <Stack sx={{ width: '30%' }} spacing={2}>
+            <Stack sx={{ width: {xs: '90%', sm: '90%', md: '50%',lg: '30%'} }} spacing={2}>
                 <Alert
                     variant="filled"
                     severity={type}

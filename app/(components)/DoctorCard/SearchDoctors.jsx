@@ -361,7 +361,7 @@ const SearchDoctors = ({ doctors }) => {
                                 },
                             },
                             position: 'relative',
-                            zIndex: 4,
+                            zIndex: 3,
                             padding:0,
                             // border:'1px black solid',
                             margin:0

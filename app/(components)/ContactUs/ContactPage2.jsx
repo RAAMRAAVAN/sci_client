@@ -95,7 +95,9 @@ const ContactPage = () => {
                 setOpenError(true);
                 Truncate();
             } catch (e) {
-                alert(e);
+                setErrormsg('There is some technical issue, please call on: 18003454325');
+                setErrorType("error")
+                setOpenError(true);
             }
         }
     }
