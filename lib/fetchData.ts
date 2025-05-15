@@ -8,7 +8,7 @@ export const FacilitiesAccess = true;
 export const HospitalsAccess = true;
 export const NewsAndEventsAccess = true;
 export const ContactUsAccess = true;
-export const AcademicsAccess = true;
+export const AcademicsAccess = false;
 export const VideosAccess = false;
 export const SocialInfraAccess = true;
 export const UpdatesAccess = false;
@@ -311,21 +311,21 @@ export const FetchFacilitiesData = [{
   "color1": "#cbdae64",
   "color2": "#ced0d61"
 },
-{
-  "_id": "67edf9f274c62b1f3d0231dc",
-  "id": 52,
-  "HospitalID": 8,
-  "title": "Tele Health Services – Tele-radiology, Virtual Tumour Board (VTB), DiNC",
-  "short_description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
-    "long_description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
-    "read_more": true,
-    "read_more2": false,
-  "description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
-  "path": "Dibrugarh/Facilities/13.jpg",
-  "Loader": "#0076bd",
-  "color1": "#cbdae66",
-  "color2": "#ced0d63"
-},
+// {
+//   "_id": "67edf9f274c62b1f3d0231dc",
+//   "id": 52,
+//   "HospitalID": 8,
+//   "title": "Tele Health Services – Tele-radiology, Virtual Tumour Board (VTB), DiNC",
+//   "short_description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
+//     "long_description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
+//     "read_more": true,
+//     "read_more2": false,
+//   "description": "The telehealth services consist of our central hub at Guwahati, which is called DiNC (Digital Nerve center) and all our Hospitals have Tele-radiology and Virtual Tumour Board (VTB) services.",
+//   "path": "Dibrugarh/Facilities/13.jpg",
+//   "Loader": "#0076bd",
+//   "color1": "#cbdae66",
+//   "color2": "#ced0d63"
+// },
 
 {
   "_id": "67edf9f274c62b1f3d0231e4",
@@ -519,9 +519,9 @@ export const FetchAboutUs = [
     "_id": "67f163b746886839f4f9b662",
     "HospitalID": 1,
     "title": "How does the centre help?",
-    "short_description": "Dibrugarh Cancer Centre is strategically located to cater to the needs of cancer patients in Dibrugarh, its neighbouring districts, and adjacent states. Patients from neighbouring countries can also avail the services. The location of the centre has helped in reducing financial and emotional burdens of the local population, who otherwise would have travelled to state headquarters for treatment. The centre offers cashless treatment for patients under State Government scheme – AAA (Atal Amrit Abhiyan); Central Government scheme – PMJAY (Ayushman Bharat Pradhan Mantri Jan Arogya Yojana) and ESIC.",
+    "short_description": "Dibrugarh Cancer Centre is strategically located to cater to the needs of cancer patients in Dibrugarh, its neighbouring districts, and adjacent states. Patients from neighbouring countries can also avail the services. The location of the centre has helped in reducing financial and emotional burdens of the local population, who otherwise would have travelled to state headquarters for treatment. The centre offers cashless treatment for patients under State Government scheme –  Central Government scheme – PMJAY (Ayushman Bharat Pradhan Mantri Jan Arogya Yojana) and ESIC, etc.",
     "read_more2": false,
-    "description": "Dibrugarh Cancer Centre is strategically located to cater to the needs of cancer patients in Dibrugarh, its neighbouring districts, and adjacent states. Patients from neighbouring countries can also avail the services. The location of the centre has helped in reducing financial and emotional burdens of the local population, who otherwise would have travelled to state headquarters for treatment. The centre offers cashless treatment for patients under State Government scheme – AAA (Atal Amrit Abhiyan); Central Government scheme – PMJAY (Ayushman Bharat Pradhan Mantri Jan Arogya Yojana) and ESIC.",
+    "description": "Dibrugarh Cancer Centre is strategically located to cater to the needs of cancer patients in Dibrugarh, its neighbouring districts, and adjacent states. Patients from neighbouring countries can also avail the services. The location of the centre has helped in reducing financial and emotional burdens of the local population, who otherwise would have travelled to state headquarters for treatment. The centre offers cashless treatment for patients under State Government scheme –  Central Government scheme – PMJAY (Ayushman Bharat Pradhan Mantri Jan Arogya Yojana) and ESIC, etc.",
     "active": "Y",
     "path": "Dibrugarh/about/centre_help.jpg"
   }
@@ -663,13 +663,13 @@ export const AcademicsContents = [
     "id": 1,
     "Title": "",
     "Description": "Nursing Fellowship Programme (NFP) - a first-of-its-kind in Assam is building a cadre of professionals trained to specialise in oncology nursing to deliver high-quality cancer care.\n\nThe nurses at cancer facilities have a challenging and delicate responsibility and it requires a novel and empathetic approach towards patients. There is also a specific psychosocial need of patients as well as their immediate caregivers. To equip nurses with specialised knowledge and skills in cancer care and treatment, it was essential to train nursing talent so that they can become champions in the cancer care delivery system.\n\nNFP programme was launched in July 2020, by the Tata Trusts and Assam Cancer Care Foundation (ACCF). The eleven-month long programme offers cancer nursing, treatment modalities, palliative care nursing, communication and counselling, and leadership lessons.",
-    "ImagePath": "/Dibrugarh/Nursing/1.jpg"
+    "ImagePath": "/nfp/nfp1.jpg"
   },
   {
     "id": 2,
     "Title": "",
     "Description": "The nurses undergo intensive training by in-house master trainers and facilitators; the Foundation's Medical Oncologists, Radiation Oncologists, Surgical Oncologists and Palliative Care doctors; other Cancer Care professionals from BBCI Guwahati, TMH Mumbai and TMC Kolkata. Senior nursing professionals from India and abroad are also involved in programme design and implementation.\n\nThe specialised oncology nursing team will help ACCF bridge a key human resource gap in the ten cancer hospitals it is establishing in Assam. The programme is not in the scheduled list of Indian Nursing Council and is basically an upskilling initiative.\n\nFor information on the programme contact\ninfo@accf.in",
-    "ImagePath": "/Dibrugarh/Nursing/2.jpg"
+    "ImagePath": "/nfp/nfp2.jpg"
   }
 ]
 

@@ -9,10 +9,12 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { memo } from "react";
 
-const ImageSlider = ({ id, Images = [] }) => {
-  const imageArray = id === 70 ? ['2.jpg']
-    : id === 69 ? ['1.jpg']
-      : JSON.parse(Images);
+function convertToArray(input) {
+  return input.split(',').map(item => item.trim());
+}
+
+const ImageSlider = ({ id, Images}) => {
+  const imageArray = convertToArray(Images);
 
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));

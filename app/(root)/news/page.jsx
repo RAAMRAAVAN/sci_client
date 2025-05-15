@@ -1,9 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import ExportedImage from "next-image-export-optimizer";
 import Entries from "./entries";
-import { API, HName } from "@/app/(components)/Global";
+import { API, color1, color4, color6, color7, HName } from "@/app/(components)/Global";
 import VideoGrid from "@/app/(components)/Videos/VideoGrid";
-
+import ParallelogramGrid from './ParallelogramGrid';
+import { VideosAccess } from "@/lib/fetchData";
 const page = async () => {
     const HoName = HName;
     return (<>
@@ -25,19 +26,56 @@ const page = async () => {
                 </Typography>
             </Box>
         </Box>
-        <Box display="flex" justifyContent="center" marginY={4}>
+        <Box position='relative' >
+            <ParallelogramGrid />
+            <Box
+                bottom='0px'
+                // sx={{ background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`, }}
+                sx={{background: `linear-gradient(135deg, ${color6}, ${color7})`}}
+                px={4}
+                boxShadow={3}
+                // position='absolute'
+                display="flex"
+                width='100%'
+                py={1}
+            >
+                <Typography color="white" variant="h6" fontWeight="bold">
+                    News & Events
+                </Typography>
+            </Box>
+            <Box display='none' width='100%' justifyContent='center'>
+                <Box
+                    bottom='5px'
+                    // left="45%"
+                    sx={{ background: `linear-gradient(to left, ${color6}, ${color7})` }}
+                    // width="fit-content"
+                    px={4}
+                    py={1}
+                    borderRadius='0px 10px 0px 10px'
+                    position="absolute"
+                    boxShadow={3}
+                // border='2px white solid'
+                >
+                    <Typography color="white" variant="h6" fontWeight="bold">
+                        News & Events
+                    </Typography>
+                </Box>
+            </Box>
+        </Box>
+
+        <Box display="flex" justifyContent="center" marginY={5}>
             <Entries />
         </Box>
-        <Box display='flex' width='100%' justifyContent='center'>
+        {VideosAccess ? <Box display='flex' width='100%' justifyContent='center'>
             <Box display='flex' width='90%' flexDirection='column' marginTop={2}>
                 <Typography variant="h5" fontWeight="bold" marginBottom={3}>
                     Our Stories
                 </Typography>
                 {/* <Suspense> */}
-                    <VideoGrid />
+                <VideoGrid />
                 {/* </Suspense> */}
             </Box>
-        </Box>
+        </Box> : <></>}
     </>)
 }
 export default page;

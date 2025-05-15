@@ -47,7 +47,7 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
   // Preload Image when component mounts
   useEffect(() => {
     const imageUrl = image
-      ? `http://barpetacancercentre.org/images/allLocationDoctors/${image}`
+      ? `https://barpetacancercentre.org/images/allLocationDoctors/${image}`
       : "/Doctors/doctor_image.webp";
     preloadImage(imageUrl)
       .then((src) => setPreloadedImage(src))
@@ -58,14 +58,15 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
 
   return (
     <>
-      <DINCModal open={open} handleClose={() => setOpen(false)} doctorDetails={doctorDetails} />
+      {/* <DINCModal open={open} handleClose={() => setOpen(false)} doctorDetails={doctorDetails} /> */}
       <Card
         key={id}
         sx={{
-          width: 500,
+          width: '100%',
           maxWidth: 500,
           mx: "auto",
           height: 400,
+          borderRadius: 3,
           display: "flex",
           flexDirection: "column",
           p: 2,
@@ -106,15 +107,20 @@ const NewDoctorCard = ({ id, image, name, speciality, designation, department, q
             </Box>
 
             <Box display="flex" width="65%" flexDirection="column">
-              <Typography
-                fontWeight="bold"
-                variant="h6"
-                overflow="hidden"
-                textOverflow="ellipsis"
-                whiteSpace="nowrap"
-              >
-                {name}
-              </Typography>
+               <Typography
+               fontWeight="bold"
+               variant="h6"
+               fontSize={16}
+               sx={{
+                 display: '-webkit-box',
+                 WebkitLineClamp: 2,
+                 WebkitBoxOrient: 'vertical',
+                 overflow: 'hidden',
+                 textOverflow: 'ellipsis',
+               }}
+             >
+               {name}
+             </Typography>
               <Typography color="gray" noWrap fontSize={13}>
                 {designation || "Designation"}
               </Typography>

@@ -48,7 +48,7 @@ const LatestEvent = ({ open, setOpen }) => {
 
     return (
         <Box
-            zIndex={10001}
+            zIndex={10}
             sx={{ pointerEvents: "none", display: open ? 'flex' : 'none' }}
         >
             <Box
@@ -77,7 +77,7 @@ const LatestEvent = ({ open, setOpen }) => {
                         display: "flex",
                         justifyContent: "flex-end",
                         bgcolor: "background.paper",
-                        zIndex: 10,
+                        zIndex: 3,
                     }}
                 >
                     <IconButton onClick={handleClose} sx={{ padding: '0' }}>

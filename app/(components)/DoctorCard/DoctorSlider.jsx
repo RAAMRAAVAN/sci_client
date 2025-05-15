@@ -1,15 +1,15 @@
 "use client";
-import { Box, IconButton, Grid, useMediaQuery, Typography } from "@mui/material";
+import { Box, IconButton, Grid, useMediaQuery, Typography, TextField } from "@mui/material";
 import { useState, useEffect, useMemo } from "react";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { useSwipeable } from "react-swipeable";
 import NewDoctorCard from "../../(components)/NewDoctorCard";
-import { color1 } from "../Global";
+import { color1, MedantaOrange } from "../Global";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDoctors, selectPage, setPage } from "@/redux/features/doctorSlice";
 import Loader from "../Loader";
 import { AnimatePresence, motion } from "framer-motion";
-
+import SearchDoctors from "./SearchDoctors";
 const DoctorSlider = () => {
     const dispatch = useDispatch();
     const doctors = useSelector(selectDoctors);
@@ -20,9 +20,10 @@ const DoctorSlider = () => {
 
     const isXs = useMediaQuery("(max-width:600px)");
     const isSm = useMediaQuery("(min-width:601px) and (max-width:960px)");
-    const isMd = useMediaQuery("(min-width:961px)");
+    const isMd = useMediaQuery("(min-width:961px) and (max-width:1280px)");
+    const isLg = useMediaQuery("(min-width:1281px)");
 
-    const doctorsPerPage = isXs ? 1 : isSm ? 2 : 3;
+    const doctorsPerPage = isXs ? 1 : isSm ? 2 : isMd ? 2 : 3;
 
     // Use memoization to avoid recalculating filteredDoctors on each render
     const filteredDoctors = useMemo(() =>
@@ -57,28 +58,35 @@ const DoctorSlider = () => {
         trackMouse: true,
     });
 
-    useEffect(() => {
-        const preloadImages = () => {
-            filteredDoctors.forEach((doctor) => {
-                if (doctor.doctor_image && !preloadedImages.has(doctor.doctor_image)) {
-                    const img = new Image();
-                    img.src = doctor.doctor_image;
-                    img.onload = () => {
-                        setPreloadedImages((prev) => new Set(prev).add(doctor.doctor_image));
-                    };
-                }
-            });
-        };
-        preloadImages();
-    }, [filteredDoctors]);
+    // useEffect(() => {
+    //     const preloadImages = () => {
+    //         filteredDoctors.forEach((doctor) => {
+    //             if (doctor.doctor_image && !preloadedImages.has(doctor.doctor_image)) {
+    //                 const img = new Image();
+    //                 img.src = doctor.doctor_image;
+    //                 img.onload = () => {
+    //                     setPreloadedImages((prev) => new Set(prev).add(doctor.doctor_image));
+    //                 };
+    //             }
+    //         });
+    //     };
+    //     preloadImages();
+    // }, [filteredDoctors]);
 
     return (<>
         <Box display='flex' width='100%' justifyContent='center'>
-            <Box display='flex' width='90%' flexDirection='column'>
-                <Typography variant="h5" fontWeight="bold" marginTop={5} onClick={()=>dispatch(setPage(1))} sx={{cursor:'pointer'}}>
-                    Our Doctors
-                </Typography>
-            </Box>
+            <Grid container display='flex' sx={{width: { lg: '90%', md: "90%", sm: "100%", xs:"90%"}}} alignItems='center' marginTop={5} justifyContent='space-between'>
+                <Grid item lg={2} md={4} sm={4} xs={12}>
+                    <Typography variant="h5" fontWeight="bold" onClick={() => dispatch(setPage(1))} sx={{ cursor: 'pointer' }}>
+                        Our Doctors
+                    </Typography>
+                </Grid>
+                <Grid item lg={4} md={6} sm={6} xs={12} sx={{paddingX:{xs:'0px',sm:'20px' }, marginTop:{xs:'20px',sm:'0px' }}}>
+                    <Box position='relative'>
+                        <SearchDoctors doctors={doctors} />
+                    </Box>
+                </Grid>
+            </Grid>
         </Box>
         <Box
             {...handlers}
@@ -93,13 +101,14 @@ const DoctorSlider = () => {
             {filteredDoctors.length > 0 ? (
                 <Box
                     sx={{
-                        width: { md: "90%", xs: "100%" },
+                        width: { lg: '90%', md: "90%", xs: "100%" },
                         minHeight: "380px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexDirection: "column",
                         overflow: "hidden",
+                        // border: '1px black solid'
                     }}
                 >
                     <IconButton
@@ -113,7 +122,7 @@ const DoctorSlider = () => {
                             fontSize: "3rem",
                             color: color1,
                             "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.2)" },
-                            display: isMd ? "flex" : "none",
+                            display: isXs? "none" : "flex",
                         }}
                     >
                         <ArrowBackIosNew sx={{ fontSize: "3rem" }} />
@@ -143,12 +152,14 @@ const DoctorSlider = () => {
                                         item
                                         xs={12}
                                         sm={6}
-                                        md={4}
+                                        md={6}
+                                        lg={4}
                                         display="flex"
                                         justifyContent="center"
                                         alignItems="stretch"
                                         marginY={2}
                                         position="relative"
+                                        // border='1px black solid'
                                     >
                                         <NewDoctorCard
                                             id={doctor.id}
@@ -175,7 +186,7 @@ const DoctorSlider = () => {
                             fontSize: "3rem",
                             color: color1,
                             "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.2)" },
-                            display: isMd ? "flex" : "none",
+                            display: isXs? "none" : "flex",
                         }}
                     >
                         <ArrowForwardIos sx={{ fontSize: "3rem" }} />
@@ -184,7 +195,8 @@ const DoctorSlider = () => {
             ) : (
                 <Loader />
             )}
-        </Box></>
+        </Box>
+    </>
     );
 };
 

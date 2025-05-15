@@ -5,7 +5,9 @@ import Facilities from "../../(components)/FacilitiesNew2/FacilityData";
 // import { API, HName } from "@/app/(components)/Global";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import {HName} from '@/lib/fetchData';
+import { HName } from '@/lib/fetchData';
+import ParallelogramGrid from "./ParallelogramGrid";
+import { color6, color7 } from "@/app/(components)/Global";
 
 const FacilitiesClient = () => {
     const searchParams = useSearchParams();
@@ -28,7 +30,7 @@ const FacilitiesClient = () => {
     //   }, [expand]);
     return (
         <>
-            <Box display="flex" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
+            <Box display="none" sx={{ position: "relative", overflow: "hidden" }} width="100%" height="350px">
                 <ExportedImage
                     src={`${HName}/Facilities/facilities_bg.jpg`}
                     alt="background"
@@ -57,8 +59,27 @@ const FacilitiesClient = () => {
                     </Typography>
                 </Box>
             </Box>
+            <Box position='relative' >
+                <ParallelogramGrid />
+                <Box
+                    bottom='0px'
+                    // sx={{ background: `linear-gradient(to left, rgba(191, 30, 46, 1), rgba(255, 123, 0, 1))`, }}
+                    sx={{background: `linear-gradient(135deg, ${color6}, ${color7})`}}
+                    px={4}
+                    boxShadow={3}
+                    // position='absolute'
+                    display="flex"
+                    width='100%'
+                    py={1}
+                >
+                    <Typography color="white" variant="h6" fontWeight="bold">
+                        Facilities
+                    </Typography>
+                </Box>
+            </Box>
+            {/* <ParallelogramGrid/> */}
             <Box sx={{ padding: { md: 4, sm: 0 } }}>
-                <Facilities expand={expand === "true"} FID={FID}/>
+                <Facilities expand={expand === "true"} FID={FID} />
             </Box>
         </>
     );

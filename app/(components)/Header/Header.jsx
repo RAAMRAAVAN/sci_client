@@ -58,7 +58,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                 }}
                 // mb={2}
             >
-                <Grid container alignItems="center" justifyContent="space-between" spacing={2} width="100%">
+                <Grid container alignItems="center"  justifyContent="space-between" spacing={2} width="100%">
                     {/* Logo & Hospital Name */}
 
                     <Grid
@@ -70,6 +70,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             flexDirection: { xs: "column", md: "row" },
                             alignItems: { xs: "center", md: "center" },
                             gap: 2,
+                            marginY:1
                             // position: 'relative'
                         }}
                     > 
@@ -81,7 +82,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             flexDirection: 'column',
                             position:'relative'
                         }}>
-                            <Grid item xs={5}>
+                            {/* <Grid item xs={5}>
                                 <ExportedImage
                                     src="/SCI_Logo.png"
                                     alt="SCI Logo"
@@ -91,8 +92,8 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                     style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
                                     onClick={() => window.location.href = '/'}
                                 />
-                            </Grid>
-                            <Grid item xs={5} position='absolute' top={10} right={0}>
+                            </Grid> */}
+                            <Grid item xs={5} position='absolute' top={10}  right={0}>
                                 <ExportedImage
                                     src={`/accf_logo.png`}
                                     alt="ACCF Logo"
@@ -109,25 +110,25 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                             display: { xs: 'none', md: 'flex' },
                         }}>
                             <ExportedImage
-                                src="/SCI_Logo.png"
-                                alt="SCI Logo"
-                                width={80}
-                                height={90}
+                                src={`/accf_logo.png`}
+                                alt="ACCF Logo"
+                                width={95}
+                                height={95}
                                 priority
-                                style={{ objectFit: "contain", width:'auto', height:'100px', cursor:'pointer' }}
+                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
                                 onClick={() => window.location.href = '/'}
                             />
                         </Box>
                         <Box textAlign={{ xs: "center", md: "left" }}>
-                            <Typography  variant="h6" fontWeight="bold">
+                            {/* <Typography  variant="h6" fontWeight="bold">
                                 ৰাজ্যিক কৰ্কট প্ৰতিষ্ঠান
-                            </Typography>
+                            </Typography> */}
                             <Typography 
-                                variant="h6"
+                                variant="h5"
                                 sx={{
                                     color: "#bf1e2e",
                                     fontWeight: "bold",
-                                    fontSize: { xs: "24px", sm: "18px", md: "20px" },
+                                    fontSize: { xs: "24px", sm: "18px", md: "25px" },
                                 }}
                             >
                                 {HospitalDetails?.name || "Hospital Name"}
@@ -136,19 +137,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                                 A Unit Of Assam Cancer Care Foundation
                             </Typography>
                         </Box>
-                        <Box sx={{
-                            display: { xs: 'none', md: 'flex' },
-                        }}>
-                            <ExportedImage
-                                src={`/accf_logo.png`}
-                                alt="ACCF Logo"
-                                width={100}
-                                height={100}
-                                priority
-                                style={{ objectFit: "contain", width:'auto', height:'auto', cursor:'pointer' }}
-                                onClick={() => window.location.href = '/'}
-                            />
-                        </Box>
+                        
                     </Grid>
 
                     {/* Contact Info and Social Icons */}
@@ -192,7 +181,7 @@ const Header = ({ HospitalDetails, OurHospitals, Facilities }) => {
                     width: "100%",
                     position: "sticky",
                     top: 0,
-                    zIndex: 1001,
+                    zIndex: 5,
                     backgroundColor: "white",
                 }}
             >

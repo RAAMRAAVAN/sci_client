@@ -21,8 +21,8 @@ export default function NewsLink() {
   const dispatch = useDispatch();
   return (
 
-    <Grid container spacing={5} justifyContent="start" display='flex' sx={{ width: { md: '75%', sm: '100%' } }}>
-      <Grid key={1} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
+    <Grid container spacing={5} justifyContent="start" display='flex' sx={{ width: { md: '100%', sm: '100%' } }}>
+      <Grid key={1} item xs={12} sm={6} md={3} display="flex" justifyContent="center">
         <Card onClick={() => router.push('/news')} style={{ backgroundColor: 'rgb(232, 237, 238)' }}>
           <CardActionArea>
             <CardMedia
@@ -51,8 +51,8 @@ export default function NewsLink() {
         </Card>
       </Grid>
 
-      {news.slice(0, 2).map((entry, index) => (
-        <Grid key={index} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
+      {news.slice(0, 3).map((entry, index) => (
+        <Grid key={index} item xs={12} sm={6} md={3} display="flex" justifyContent="center">
           <Card onClick={() => { dispatch(setID(entry.id)); router.push(`/news/details`) }} style={{ backgroundColor: 'rgb(232, 237, 238)', display: 'flex', width: '100%', position: 'relative' }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'start' }}>
               <CardMedia
