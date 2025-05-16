@@ -13,6 +13,7 @@ import { ExpandMore } from "@mui/icons-material";
 import { Bold, HName, NavBackground, NavElements } from "../Global";
 import { motion } from "framer-motion";
 import ContactUsDropdown from './ContactUsDropdown';
+import MobileView from './MobileView';
 import FacilitiesDropdown from './FacilitiesDropDown';
 import { HomePageAccess, AboutUsAccess, FacilitiesAccess, HospitalsAccess, NewsAndEventsAccess, ContactUsAccess, SocialInfraAccess, AcademicsAccess } from "@/lib/fetchData";
 import { useSelector } from "react-redux";
@@ -32,13 +33,6 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorE2, setAnchorE2] = useState(null); // separate for facilities
-  const doctors = useSelector(selectDoctors);
-
-  const pathname = usePathname();
-  // const searchParams = useSearchParams();
-  const showSpecialButton = pathname === '/consultants';
-  const HoName = HName;
-
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
   const handleHospitalsClick = (event) => setAnchorEl(event.currentTarget);
   const handleFacilitiesClick = (event) => setAnchorE2(event.currentTarget);
@@ -73,7 +67,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                         return (
                           <Box key={item.name}>
                             <Button
-                              sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}
+                              sx={{ color: NavElements, fontWeight: Bold ? 'bold' : 'none' }}
                               onClick={handleHospitalsClick}
                               aria-controls={anchorEl ? "hospitals-menu" : undefined}
                               aria-haspopup="true"
@@ -112,7 +106,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                           {/* <FacilitiesDropdown item={item} Facilities={Facilities}/> */}
                           <Box key={item.name}>
                             <Button
-                              sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}
+                              sx={{ color: NavElements, fontWeight: Bold ? 'bold' : 'none' }}
                               onClick={handleFacilitiesClick}
                               aria-controls={anchorE2 ? "facilities-menu" : undefined}
                               aria-haspopup="true"
@@ -151,7 +145,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                       default:
                         return (
                           <Link key={item.name} href={item.link} passHref legacyBehavior>
-                            <Button sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}>{item.name}</Button>
+                            <Button sx={{ color: NavElements, fontWeight: Bold ? 'bold' : 'none' }}>{item.name}</Button>
                           </Link>
                         );
                     }
@@ -175,23 +169,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
             <MenuIcon />
           </IconButton>
         </Toolbar>
-
-        <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
-          <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle}>
-            <List>
-              {navItems.map((item) => {
-                if (item.Active) return (
-
-                  <Link key={item.name} href={item.link} passHref legacyBehavior>
-                    <ListItem component="div">
-                      <ListItemText primary={item.name} />
-                    </ListItem>
-                  </Link>
-                )
-              })}
-            </List>
-          </Box>
-        </Drawer>
+        <MobileView mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} OurHospitals={OurHospitals}/>
       </AppBar>
     </motion.div>
   );
