@@ -3,6 +3,7 @@ import { Box, Link, Typography } from '@mui/material';
 import { Link as ScrollLink } from 'react-scroll';
 import { color1, color4, MedantaOrange } from './Global';
 import { useState } from 'react';
+// import { Height } from '@mui/icons-material';
 
 const navItems = [
     { label: 'Introduction', to: 'Intro' },
@@ -24,14 +25,13 @@ const ScrollNav = () => {
     return (<Box sx={{
         width: "100%",
         position: "sticky",
-        top: 60,
+        top: 53,
         zIndex: 4,
         backgroundColor: "white",
-        // height:'120px'
     }}>
-        <Box display="flex" flexWrap="wrap" gap={1} alignItems="center" paddingX={4}>
+        <Box display="flex" flexWrap="wrap" gap={1} alignItems="center" paddingX={4} >
             {navItems.map((item, index) => (
-                <Box key={index} display="flex" alignItems="center">
+                <Box key={index} display="flex" alignItems="center" marginY={0}  height='40px'>
                     <ScrollLink
                         to={item.to}
                         smooth={true}
@@ -42,17 +42,18 @@ const ScrollNav = () => {
                             }
                         }}
                         offset={-80} // adjust if you have a fixed header
+                        // style={{border:'1px black solid', display:'flex', }}
                     >
                         <Link
                             underline="none"
                             // color="text.secondary"
-                            sx={{ fontSize: '12px', cursor: 'pointer', color: selected === index ? color4 : '#B0B0B0', fontWeight: 'bold' }}
+                            sx={{ fontSize: '12px', cursor: 'pointer', color: selected === index ? color1 : '#B0B0B0', fontWeight: 'bold' }}
                         >
                             {item.label}
                         </Link>
                     </ScrollLink>
                     {index !== navItems.length - 1 && (
-                        <Typography sx={{ mx: 1, color: 'gray', fontSize: 30, color: selected === index ? color4 : '#B0B0B0' }}>•</Typography>
+                        <Typography sx={{ mx: 1, color: 'gray', fontSize: 30, color: selected === index ? color1 : '#B0B0B0' }}>•</Typography>
                     )}
                 </Box>
             ))}

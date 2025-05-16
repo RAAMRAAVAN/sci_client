@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { usePathname} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import {
   AppBar, Box, Toolbar, IconButton, Typography, Button, Drawer,
   List, ListItem, ListItemText, Menu, MenuItem, Avatar,
@@ -9,8 +9,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
-import { ExpandMore} from "@mui/icons-material";
-import { HName } from "../Global";
+import { ExpandMore } from "@mui/icons-material";
+import { Bold, HName, NavBackground, NavElements } from "../Global";
 import { motion } from "framer-motion";
 import ContactUsDropdown from './ContactUsDropdown';
 import FacilitiesDropdown from './FacilitiesDropDown';
@@ -53,8 +53,8 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <AppBar elevation={0} position="static" style={{ zIndex: 6,backgroundColor:'white', color:'black'}}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: 'relative', zIndex: 6 }} boxShadow={0}>
+      <AppBar elevation={0} position="static" style={{ zIndex: 6, backgroundColor: NavBackground, color: 'black' }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: 'relative', zIndex: 6, minHeight: '52px !important', }} boxShadow={0}>
           <Box sx={{ display: { xs: "none", md: "none" }, mr: 1 }}>
             <ExportedImage src="/vercel.gif" alt="logo" width={50} height={50} />
           </Box>
@@ -73,7 +73,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                         return (
                           <Box key={item.name}>
                             <Button
-                              sx={{ color: "gray", fontWeight:'bold'}}
+                              sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}
                               onClick={handleHospitalsClick}
                               aria-controls={anchorEl ? "hospitals-menu" : undefined}
                               aria-haspopup="true"
@@ -108,48 +108,50 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
                           </Box>
                         );
                       case "Facilities":
-                        return (<FacilitiesDropdown item={item} Facilities={Facilities}/>
-                          // <Box key={item.name}>
-                          //   <Button
-                          //     sx={{ color: "gray", fontWeight:'bold' }}
-                          //     onClick={handleFacilitiesClick}
-                          //     aria-controls={anchorE2 ? "facilities-menu" : undefined}
-                          //     aria-haspopup="true"
-                          //   >
-                          //     {item.name} <ExpandMore />
-                          //   </Button>
-                          //   <Menu
-                          //     id="facilities-menu"
-                          //     anchorEl={anchorE2}
-                          //     open={Boolean(anchorE2)}
-                          //     onClose={handleFacilitiesClose}
-                          //   >
-                          //     {Facilities?.length > 0 ? (
-                          //       Facilities.map((facility) => (
-                          //         <Link
-                          //           key={facility.id}
-                          //           href={`/facilities#${facility._id}`}
-                          //           passHref
-                          //           legacyBehavior
-                          //         >
-                          //           <MenuItem key={facility.name || facility.title} onClick={handleFacilitiesClose}>
-                          //             <Typography >{facility.title}</Typography>
-                          //           </MenuItem></Link>
-                          //       ))
-                          //     ) : (
-                          //       <MenuItem disabled>
-                          //         <Typography >No facilities available</Typography>
-                          //       </MenuItem>
-                          //     )}
-                          //   </Menu>
-                          // </Box>
+                        return (<>
+                          {/* <FacilitiesDropdown item={item} Facilities={Facilities}/> */}
+                          <Box key={item.name}>
+                            <Button
+                              sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}
+                              onClick={handleFacilitiesClick}
+                              aria-controls={anchorE2 ? "facilities-menu" : undefined}
+                              aria-haspopup="true"
+                            >
+                              {item.name} <ExpandMore />
+                            </Button>
+                            <Menu
+                              id="facilities-menu"
+                              anchorEl={anchorE2}
+                              open={Boolean(anchorE2)}
+                              onClose={handleFacilitiesClose}
+                            >
+                              {Facilities?.length > 0 ? (
+                                Facilities.map((facility) => (
+                                  <Link
+                                    key={facility.id}
+                                    href={`/facilities#${facility._id}`}
+                                    passHref
+                                    legacyBehavior
+                                  >
+                                    <MenuItem key={facility.name || facility.title} onClick={handleFacilitiesClose}>
+                                      <Typography >{facility.title}</Typography>
+                                    </MenuItem></Link>
+                                ))
+                              ) : (
+                                <MenuItem disabled>
+                                  <Typography >No facilities available</Typography>
+                                </MenuItem>
+                              )}
+                            </Menu>
+                          </Box>
+                        </>
                         );
                       case "Contact Us":
                         return <ContactUsDropdown key={item.name} />;
                       default:
                         return (
                           <Link key={item.name} href={item.link} passHref legacyBehavior>
-                            <Button sx={{ color: "gray", fontWeight:'bold' }}>{item.name}</Button>
+                            <Button sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}>{item.name}</Button>
                           </Link>
                         );
                     }
@@ -157,8 +159,6 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
               </Box>
             </Grid>
             <Grid item lg={4} md={8} sm={8} xs={10} sx={{ display: 'flex', width: '100%' }}>
-              {/* {showSpecialButton ? <><DepartmentButton/>
-              </> : <><SearchDoctors doctors={doctors} /></>} */}
             </Grid>
           </Grid>
           {SocialInfraAccess ? <Link href="/social_infra" passHref legacyBehavior>
@@ -191,7 +191,7 @@ export default function Navbar({ Title, OurHospitals, Facilities }) {
               })}
             </List>
           </Box>
-        </Drawer> 
+        </Drawer>
       </AppBar>
     </motion.div>
   );

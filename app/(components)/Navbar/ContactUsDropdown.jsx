@@ -5,6 +5,7 @@ import { IoIosMail } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
 import { RiContactsLine } from "react-icons/ri";
 import { ExpandMore } from "@mui/icons-material";
+import { Bold, NavElements } from "../Global";
 
 const ContactUsDropdown = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,7 @@ const ContactUsDropdown = () => {
       sx={{ display: "inline-block", position: 'relative', zIndex:'10001' }}
     >
       <Button
-        sx={{ color: "gray", fontWeight:'bold' }}
+        sx={{ color: NavElements, fontWeight: Bold?'bold':'none' }}
         onMouseEnter={() => setOpen(true)} // Change onHover to onMouseEnter
         onMouseLeave={() => setOpen(false)} // Optionally, close on mouse leave
       >
