@@ -213,11 +213,7 @@ const CustomPopper = ({
 
 const SearchDoctors = ({ doctors }) => {
     const [inputValue, setInputValue] = useState('');
-    const [filteredDoctors, setFilteredDoctors] = useState(
-        doctors.filter(doc =>
-            doc.depertment?.toLowerCase() !== 'hospital administration'
-        )
-    ); 
+    const [filteredDoctors, setFilteredDoctors] = useState(doctors); 
     const dispatch = useDispatch();
     const router = useRouter();
     const [open, setOpen] = useState(false);
@@ -226,7 +222,12 @@ const SearchDoctors = ({ doctors }) => {
     const [specialityList, setSpecialityList] = useState(false);
     const [departments, setDepartments] = useState([]);
 
-    // console.log("special=", departments);
+    const FilterDoctors = () => {
+        setFilteredDoctors(doctors.filter(doc =>
+            doc.depertment !== 'Hospital Administration'
+        ))
+    }
+    // console.log("filtered=", filteredDoctors);
 
     const wrapperRef = useRef();
 
@@ -234,7 +235,7 @@ const SearchDoctors = ({ doctors }) => {
 
     useEffect(() => {
         if (doctors.length > 0) {
-            console.log("working");
+            FilterDoctors();
             const uniqueDepartments = [...new Set(
                 doctors
                     .map(doc => doc.depertment)
@@ -246,6 +247,7 @@ const SearchDoctors = ({ doctors }) => {
     }, [doctors]);
 
     useEffect(() => {
+        
         const handleClickOutside = (event) => {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
                 setDoctorList(false);
@@ -361,7 +363,7 @@ const SearchDoctors = ({ doctors }) => {
                                 },
                             },
                             position: 'relative',
-                            zIndex: 3,
+                            zIndex: 4,
                             padding:0,
                             // border:'1px black solid',
                             margin:0
